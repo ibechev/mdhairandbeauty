@@ -1,0 +1,141 @@
+@import "variables";		
+@import "mixins";
+@import "layouts";
+@import "views";
+
+// pointer-events: none; Disables events
+
+// CLASSES
+.wrapper {	
+	max-width: 960px;
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px;
+	box-sizing: border-box;
+	position: relative;
+}	
+
+.center { /* Centering the element inside */
+	display: table; /* Allow the centering to work */
+	margin: 0px auto;
+}
+
+
+
+.nav-fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+.p-top-60 {
+	padding-top: 60px;
+}
+
+.m-top-60 {
+	margin-top: 60px;
+}
+
+button {
+	&:focus {
+		outline: 0;
+	}
+
+	&:hover {
+		cursor: pointer;
+		}		
+}
+	
+	// FORM CLASSES
+
+	// Inputs
+
+	.flag-red {
+		border: 1px solid #E8959C !important;
+
+		&:hover {
+			border: 1px solid #e63441 !important;
+		}
+	
+		&:focus {
+			border: 1px solid #e6344a !important;
+		}
+	}
+
+	.flag-green{
+		border: 1px solid #64EC88 !important;
+
+		&:hover {
+			border: 1px solid #1AC513 !important;
+		}
+
+		&:focus {
+			border: 1px solid #1EE426 !important;
+		}
+	}
+
+	.flag-neutral {
+		border: 1px solid #b3b3b3 !important;
+
+		&:hover {
+			border: 1px solid #0087ce !important;
+		}
+
+		&:focus {
+			
+			border: 1px solid #0087ce !important;
+		}
+	}
+
+	// Pop Sign
+
+	.valid {
+		color: #4dbd27;
+	}
+
+	.not-valid {
+		color: #e26872;
+	}
+
+// END OF CLASSES
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+h1, h2, h3, h4, h5, p {
+	font-family: $sans-serif;
+}	
+
+textarea, input, button { outline: none; }
+
+span#scroller-top {
+	position: fixed;
+	top: 85%;
+	left: 92%;
+	font-size: 4em;
+	color: rgba(73, 176, 230, 0.39);
+	display: none;
+
+	&:hover {
+		@include transform(scale(1.1) !important);
+	}
+
+}		
+
+//=======================================================================
+		
+
+// Sections General
+section.index {
+	position: relative;	
+	border-bottom: 1px solid grey;
+	//	@include boxSizing(border-box);
+}
+

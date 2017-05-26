@@ -1,0 +1,115 @@
+section.home {
+	overflow: hidden;
+
+	div.background {
+		height: 100%;
+		background-image: url('../images/BGImageHome2.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		//opacity: 0.5;
+
+	}
+
+	div.content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		div.logo-wrapper {
+			position: relative;
+			padding: 30px 20px;
+			margin: auto 0;
+			background-color: #969696;
+
+			opacity: 0.7;
+
+			div.home-logo {
+				img {
+					margin: auto;
+					height: 100%;
+					width: auto;
+					max-width: 100%;
+				}
+			}
+
+			div.home-text {
+				p {
+					margin-top: 20px;
+					font-size: 1.2em;
+					line-height: 1;
+					letter-spacing: 3px;
+					color: #FFFFFF;
+					justify-content: center;
+					text-align: center;
+
+					// Desktop
+					@media only screen and(min-width: 768px) {
+						display: block;
+						margin: 0 auto;
+						font-size: 1.5em;
+					}
+				}
+			}
+
+			// Desktop
+			@media only screen and(min-width: 768px) {
+				height: 40%;
+			}
+		}
+
+		div.footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 60px;
+			padding: 15px 35px;
+
+			background-color: #000000;
+			opacity: 0.7;
+			text-align: center;
+
+			@include clearFix();
+			@include boxSizing(border-box);
+			
+			a {
+				width: 50px;
+				text-align: center;
+
+				i {
+					font-size: 2em;
+					color: white;
+				}
+			}
+
+			a.contact {
+				float: left;
+
+				@media only screen and(min-width: 768px) {
+					display: none;
+				}
+			}	
+
+			a.arrow {
+				i {
+					position: relative;
+					bottom: 8px;
+					font-size: 3em;
+
+				}
+			}
+
+			a.find {
+				float: right;
+				@include clearFix();
+
+				@media only screen and(min-width: 768px) {
+					display: none;
+				}
+			}
+		}
+	}
+}
