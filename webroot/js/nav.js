@@ -1,4 +1,4 @@
-var navMenu = {
+var nav = {
 
 	menu			: $('ul.menu-ul'),
 	fixedBar		: $('div.fixed-bar'),
@@ -19,12 +19,12 @@ var navMenu = {
 	screenMode: {	// Sets and checks in what currens style is the menu ( mobile or desktop )
 		modes: ['mobile', 'desktop'],
 		get: function() {
-			return navMenu.screenStyle;
+			return nav.screenStyle;
 		}, 
 
 		set: function(mode) {
 			if ($.inArray(mode, this.modes) != -1) {	// Check if the mode is valid
-				navMenu.screenStyle = mode;
+				nav.screenStyle = mode;
 			} else {
 				console.log('Screen mode is not valid!');
 			}
@@ -34,23 +34,23 @@ var navMenu = {
 	btnClick: {	// Button click object
 		listen: function() {	// Do something when a button is clicked
 			$('#menu-trigger').click(function() {	// Triggering menu
-				if (navMenu.checkAnimQ() === true) {	
-					if (navMenu.opened === false) {
-						navMenu.animation.showMenu();
+				if (nav.checkAnimQ() === true) {	
+					if (nav.opened === false) {
+						nav.animation.showMenu();
 					} else {
-						navMenu.animation.hideMenu();
+						nav.animation.hideMenu();
 					}
 				}
 			});
 
 			$('.go-to-page').click(function () {	//  Going to page
-				navMenu.btnClick.goToPage($(this).attr('id'));
+				nav.btnClick.goToPage($(this).attr('id'));
 			});
 		},
 
 		goToPage: function(page) {
 			if (window.innerWidth < 768) {
-				navMenu.animation.hideMenu();
+				nav.animation.hideMenu();
 			}
 			var coordinates = $('section.' + page).offset();
 			var distance = coordinates.top;
@@ -62,24 +62,24 @@ var navMenu = {
 	resize: {
 		listen: function() {	// Listen for any kind of resizing
 			$(window).resize(function() {
-				if (window.innerWidth < 768 && navMenu.screenMode.get() === 'desktop') {  
+
+				if (nav.getViewportSize().width < 768 && nav.screenMode.get() === 'desktop') {  
 					// create function to check the current device and store it in var
-					navMenu.resize.setInitPosMob();
-					navMenu.animation.menuTriggerDefault();
+					nav.resize.setInitPosMob();
+					nav.animation.menuTriggerDefault();
 				} else if (window.innerWidth >= 768) {
-					console.log(window.innerWidth);
-					navMenu.resize.setInitPosDesk();
+					nav.resize.setInitPosDesk();
 				}
 			});
 
 			$(window).on('orientationchange', function() {
-				navMenu.resize.orientationChange();
-				navMenu.centerVert();
+				nav.resize.orientationChange();
+				nav.centerVert();
 			})
 		},
 
 		init: function() {
-			if (window.innerWidth < 768) {
+			if (nav.getViewportSize().width < 768) {
 				this.setInitPosMob();
 			} else {
 				this.setInitPosDesk();
@@ -88,42 +88,41 @@ var navMenu = {
 		},
 
 		orientationChange: function() {
-				navMenu.menu.css('height', (window.innerHeight - navMenu.fixedBar.innerHeight()) + 'px');
-				console.log(window.height);
+				nav.menu.css('height', (nav.getViewportSize().height - nav.fixedBar.innerHeight()) + 'px');
 		},
 
 		setInitPosMob: function() {	// Set the default position and and dimentions on page load
 			// Set the height and position of the drop menu to the height of the screen minus height of the fixed bar 
-			if (window.innerWidth < 768) {	// For screen width 768 or less
-				navMenu.menu.css('height', (window.innerHeight - navMenu.fixedBar.innerHeight()) + 'px').css('top', (navMenu.menu.innerHeight() * -1) + 'px');
+			if (nav.getViewportSize().width < 768) {	// For screen width 768 or less
+				nav.menu.css('height', (window.innerHeight - nav.fixedBar.innerHeight()) + 'px').css('top', (nav.menu.innerHeight() * -1) + 'px');
 
 				// Add 'overflow: scroll' to the menu only if the devise is mobile
 				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-					navMenu.menu.css('overflow-y', 'scroll');
+					nav.menu.css('overflow-y', 'scroll');
 				}
 
-				navMenu.centerVert();
-				navMenu.screenMode.set('mobile');
+				nav.centerVert();
+				nav.screenMode.set('mobile');
 			}
 		},
 
 		setInitPosDesk: function() { // Default position for desktop
-			var ww = window.innerWidth;
-			var wh = window.innerHeight;
+			var ww = nav.getViewportSize().width;
+			var wh = nav.getViewportSize().height;
 
-			navMenu.menu	.css('top', 0)
+			nav.menu	.css('top', 0)
 							.css('height', '60px')
 							.css('opacity', 1);
-			navMenu.fixedBar.css('opacity', 0.7);
+			nav.fixedBar.css('opacity', 0.7);
 
 			if (ww >= 768 && ww < 1025) {
-				navMenu.menu.css('padding', '0 20px 0 0');
+				nav.menu.css('padding', '0 20px 0 0');
 			} else if (ww >= 1025) {
-				navMenu.menu.css('padding', '0 50px 0 0');
+				nav.menu.css('padding', '0 50px 0 0');
 			}
 
-			navMenu.opened = false;
-			navMenu.screenMode.set('desktop');
+			nav.opened = false;
+			nav.screenMode.set('desktop');
 		}
 	},
 
@@ -131,21 +130,21 @@ var navMenu = {
 		slideSpeed: 300,
 
 		showMenu: function() {
-			navMenu.fixedBar.animate({opacity: '1'}, 1);
-			navMenu.menu.animate({opacity: '0.9'}, 1);
-			navMenu.menu.animate({top: navMenu.fixedBar.innerHeight()}, this.slideSpeed, function() {
-				navMenu.animation.menuTriggerOpened();
+			nav.fixedBar.animate({opacity: '1'}, 1);
+			nav.menu.animate({opacity: '0.9'}, 1);
+			nav.menu.animate({top: nav.fixedBar.innerHeight()}, this.slideSpeed, function() {
+				nav.animation.menuTriggerOpened();
 			});
-			navMenu.opened = true;
+			nav.opened = true;
 		},
 
 		hideMenu: function() {
-			navMenu.menu.animate({top: '-' + navMenu.menu.innerHeight()}, this.slideSpeed, function() {
-				navMenu.menu.animate({opacity: '0'}, 1);
-				navMenu.animation.menuTriggerClosed();
+			nav.menu.animate({top: '-' + nav.menu.innerHeight()}, this.slideSpeed, function() {
+				nav.menu.animate({opacity: '0'}, 1);
+				nav.animation.menuTriggerClosed();
 			});
-			navMenu.fixedBar.animate({opacity: '0.7'}, 200);
-			navMenu.opened = false;
+			nav.fixedBar.animate({opacity: '0.7'}, 200);
+			nav.opened = false;
 		},
 
 		// Animate the trigger button
@@ -153,23 +152,23 @@ var navMenu = {
 				
 			// Menu opened - showing X
 			menuTriggerOpened: function() {
-				navMenu.barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, this.btnSpeed);
-				navMenu.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
-				navMenu.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
+				nav.barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, this.btnSpeed);
+				nav.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
+				nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
 			},
 
 			// Menu closed - showing 3 horizontal bars
 			menuTriggerClosed: function() {
-				navMenu.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				navMenu.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				navMenu.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
+				nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
+				nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
+				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
 			},
 
 			// Menu trigger in default position ( no animation )
 			menuTriggerDefault: function() {
-				navMenu.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
-				navMenu.barMiddle.css({x: 0, width: 35, rotate: 0});
-				navMenu.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
+				nav.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
+				nav.barMiddle.css({x: 0, width: 35, rotate: 0});
+				nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
 			}
 	},
 
@@ -184,43 +183,43 @@ var navMenu = {
 	centerVert: function() {
 		// Center the list items vertically	
 
-		var ww = window.innerWidth;
-		var wh = window.innerHeight;
+		var ww = nav.getViewportSize().width;
+		var wh = nav.getViewportSize().height;
  		var countMenuItems = this.menu.find('li:even').length;
 		var menuItemsHeight = this.menu.find('li:first').innerHeight() * countMenuItems;
 
 		if (ww < 768) {
 			if ((wh - this.fixedBar.innerHeight()) > menuItemsHeight) {
 
-				navMenu.menu.css('padding', (((wh - this.fixedBar.innerHeight()) - menuItemsHeight) / 2) + 'px 0px');
+				nav.menu.css('padding', (((wh - this.fixedBar.innerHeight()) - menuItemsHeight) / 2) + 'px 0px');
 			} else {
-				navMenu.menu.css('overflow', 'scroll');
-				navMenu.menu.css('padding', '20px 0');
+				nav.menu.css('overflow', 'scroll');
+				nav.menu.css('padding', '20px 0');
 			}
 
 		}
 	},	
+
+	//	Get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
+	getViewportSize: function(){
+	    if (typeof(window.innerWidth) == 'number') {
+	        my_width = window.innerWidth;
+	        my_height = window.innerHeight;
+	    } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+	        my_width = document.documentElement.clientWidth;
+	        my_height = document.documentElement.clientHeight;
+	    } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+	        my_width = document.body.clientWidth;
+	        my_height = document.body.clientHeight;
+	    }
+	    return {width: my_width, height: my_height};
+	}
 }
-
-/*You may use this function to get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
-
-var get_viewport_size = function(){
-    if(typeof(window.innerWidth) == 'number'){
-        my_width = window.innerWidth;
-        my_height = window.innerHeight;
-    }else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)){
-        my_width = document.documentElement.clientWidth;
-        my_height = document.documentElement.clientHeight;
-    }else if(document.body && (document.body.clientWidth || document.body.clientHeight)){
-        my_width = document.body.clientWidth;
-        my_height = document.body.clientHeight;
-    }
-    return {width: my_width, height: my_height};
-};*/
 
 $(document).ready(function() {
 
-	navMenu.init();
+	nav.init();
+
 
 	
 
