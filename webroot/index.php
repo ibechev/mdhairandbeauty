@@ -8,7 +8,7 @@ define('VIEWS_PATH', ROOT . DS . 'views');
 require_once(ROOT . DS . 'lib' . DS . 'init.php');
 
 
-App::run(str_replace('/mdhair&beauty', '', $_SERVER['REQUEST_URI']));	
+App::run(str_replace('/mdhairbeauty', '', $_SERVER['REQUEST_URI']));	
 
 
 
