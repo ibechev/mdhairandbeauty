@@ -10,6 +10,6 @@ require_once(ROOT . DS . 'lib' . DS . 'init.php');
 
 
 
-App::run(str_replace('/mdhairbeauty', '', $_SERVER['REQUEST_URI']));	
+App::run(str_replace('/mdhairandbeauty', '', $_SERVER['REQUEST_URI']));	
 
 
