@@ -11,7 +11,8 @@ $(document).ready(function() {
 	}); 
 
 	$('#scroller-top').click(function() {
-		document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
+		//document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
+		$('body').transition({y: 500}, 700, 'ease');
 	});
 
 });
