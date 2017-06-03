@@ -8,17 +8,6 @@ define('WEBROOT_PATH', ROOT . DS . 'webroot');
 
 require_once(ROOT . DS . 'lib' . DS . 'init.php');
 
-if ($_SERVER['HTTP_HOST'] == 'localhost') // or any other host
-{
-     // development
-	echo 'dev';
-}
-
-else
-{
-     // production
-	echo 'prod';
-}
 
 App::run(str_replace('/mdhairandbeauty', '', $_SERVER['REQUEST_URI']));	
 
