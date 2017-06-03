@@ -52,10 +52,11 @@ var nav = {
 			if (window.innerWidth < 768) {
 				nav.animation.hideMenu();
 			}
-			var coordinates = $('section.' + page).offset();
-			var distance = coordinates.top;
-			$('html, body').stop().animate({scrollTop: distance}, 800, 'swing');
-			return false;
+			//var coordinates = $('section.' + page).offset();
+			//var distance = coordinates.top;
+			//$('html, body').stop().animate({scrollTop: distance}, 800, 'swing');
+			document.querySelector('section.' + page).scrollIntoView({behavior: 'smooth'});
+			//return false;
 		}	
 	},
 

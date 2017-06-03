@@ -1,18 +1,19 @@
 	<?php include VIEWS_PATH . DS . 'includes/head.html'; ?>
 <body>
 	
-<div class="fixed-bar">
-	<div class="sub-fixed-bar">
-		<div id="logo-nav">
-			<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">
+<header>	
+	<div class="fixed-bar">
+		<div class="sub-fixed-bar">
+			<div id="logo-nav">
+				<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">
+			</div>
+			<div id="menu-trigger">
+				<span class="bar-1"></span>
+				<span class="bar-2"></span>
+				<span class="bar-3"></span>
+			</div>
 		</div>
-		<div id="menu-trigger">
-			<span class="bar-1"></span>
-			<span class="bar-2"></span>
-			<span class="bar-3"></span>
-		</div>
-	</div>
-</div>	
+	</div>	
 
 	<ul class="menu-ul">
 		<li class="go-to-page" id="services">services</li><li></li>
@@ -22,4 +23,4 @@
 		<li class="go-to-page" id="about">about</li><li></li>
 		<li class="go-to-page" id="contact">contact</li>
 	</ul>
-
+</header>
