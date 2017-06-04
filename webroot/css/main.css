@@ -268,8 +268,8 @@ section.home {
             display: none; } }
       section.home div.content div.footer a.arrow i {
         position: relative;
-        bottom: 130px;
-        font-size: 8em;
+        bottom: 10px;
+        font-size: 3em;
         opacity: 0.6; }
       section.home div.content div.footer a.find {
         float: right; }

@@ -29,22 +29,23 @@ $(document).ready(function() {
 		$(this).css('min-height', $(this).parent().height());
 	});
 
+	if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {	// Do not show the Scroll to top button on mobile devices
+		
+		$(window).scroll(function() {
 
-	$(window).scroll(function() {
+			//************************** 
+			// Show Scroll to top arrow
 
-		//************************** 
-		// Show Scroll to top arrow
+			var scrollTopBtn = $('#scroller-top');
 
-		var scrollTopBtn = $('#scroller-top');
+			if ($(this).scrollTop() > 350) {
+				scrollTopBtn.fadeIn();
+			} else {
+				scrollTopBtn.fadeOut();
+			}
 
-		if ($(this).scrollTop() > 350) {
-			scrollTopBtn.fadeIn();
-		} else {
-			scrollTopBtn.fadeOut();
-		}
+			//**************************
 
-		//**************************
-
-	});
-
+		});
+	}
 });
