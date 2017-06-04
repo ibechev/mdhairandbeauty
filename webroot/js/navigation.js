@@ -222,7 +222,7 @@ var nav = {
 $(document).ready(function() {
 
 	// Run the navigation object
-	//nav.init();
+	nav.init();
 
 
 
