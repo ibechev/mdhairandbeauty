@@ -5,7 +5,10 @@
 <div class="fixed-bar">
 	<div class="sub-fixed-bar">
 		<div id="logo-nav">
-			<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">
+			<!--<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">-->
+			<img onclick="
+				document.querySelector('.fixed-bar').scrollIntoView({ behavior: 'smooth' });
+			" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">
 		</div>
 		<div id="menu-trigger">
 			<span class="bar-1"></span>

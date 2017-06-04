@@ -29,4 +29,22 @@ $(document).ready(function() {
 		$(this).css('min-height', $(this).parent().height());
 	});
 
+
+	$(window).scroll(function() {
+
+		//************************** 
+		// Show Scroll to top arrow
+
+		var scrollTopBtn = $('#scroller-top');
+
+		if ($(this).scrollTop() > 350) {
+			scrollTopBtn.fadeIn();
+		} else {
+			scrollTopBtn.fadeOut();
+		}
+
+		//**************************
+
+	});
+
 });

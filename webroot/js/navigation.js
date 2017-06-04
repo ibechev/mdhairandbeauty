@@ -217,153 +217,36 @@ var nav = {
 	}
 }
 
+// END OF   N A V 
+
 $(document).ready(function() {
 
-	nav.init();
+	// Run the navigation object
+	//nav.init();
 
+
+
+	// Contact page, Scroll on click over the form circle
+	/*$('#form-circle').click(function(event) {
+		event.preventDefault();
+		
+		var target = $('#contact-form').offset();
+		var scroll = target.top - 100;
+		$('html, body').stop().animate({scrollTop: scroll}, 800, 'swing');
+		return false;	
+	}); */
 
 	
+	// Return to top button click/tap
+	var root = $('html, body');
+	$('#scroller-top').click(function() {
 
-/*
+		    root.stop().animate({
+		        scrollTop: 0}, 800, 'swing');
 
-// Navigation menu mobile & desktop aminations 
-
-	var menu = $('.menu-ul');
-	var fixedBar = $('.fixed-bar');
-	var fixedBarHeight = fixedBar.innerHeight();
-	var opened = false;
-
-	// Add 'overflow: scroll' to the menu only if the devise is mobile
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-		menu.css('overflow', 'scroll');
-	}
-
-	// Set the height of the drop menu to the height of the screen 
-	if (window.innerWidth < 769) {
-		menu.css('height', (($(window).innerHeight() - fixedBarHeight) + 'px'));
-	}
-
-	// Center the menu list items vertically when orientation is not landscape. 
-	centerMenuVert = function() {
-		var ww = window.innerWidth;
-		var wh = window.innerHeight;
- 		var countMenuItems = menu.find('li:even').length;
-		var menuItemsHeight = menu.find('li:first').innerHeight() * countMenuItems;
-
-		if (ww < 768 && (wh - fixedBarHeight) > menuItemsHeight) {
-			menu.css('padding', (((wh - fixedBarHeight) - menuItemsHeight) / 2) + 'px 0px');
-		} else {
-			if (ww < 1025) {
-				menu.css('padding', '0 20px 0 0');
-			} else {
-				menu.css('padding', '0 50px 0 0');
-			}
-		}
-	}
-
-	centerMenuVert();
-
-	// Set the height on orientation change 
-	$(window).on('orientationchange', function() {
-		menu.css('height', ((window.innerHeight - fixedBarHeight) + 'px'));
-		console.log(window.innerHeight);
-		//centerMenuVert();
-	})
-
-	// Animate the trigger button
-		var barTop = fixedBar.find('.bar-1');
-		var barMiddle = fixedBar.find('.bar-2');
-		var barBottom = fixedBar.find('.bar-3');
-		var speed = 250;
-		
-		// Menu opened - showing X
-		menuTriggerOpened = function() {
-
-			barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, speed);
-			barMiddle.transition({x: 3, rotate: 45, width: 30}, speed);
-			barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, speed);
-		};
-		// Menu closed - showing 3 horizontal bars
-		menuTriggerClosed = function() {
-			barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, speed);
-			barMiddle.transition({rotate: 0, x: 0, width: 35}, speed);
-			barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, speed);
-		};
-
-	// Menu slide down
-	showMenu = function() {
-		fixedBar.animate({opacity: '1'}, 1);
-		menu.animate({opacity: '0.9'}, 1);
-		menu.animate({top: fixedBarHeight}, 250, function() {
-			menuTriggerOpened();
-		});
-		opened = true;
-	};
-
-	// Menu slide back up
-	hideMenu = function() {
-		menu.animate({top: '-' + menu.innerHeight()}, 250, function() {
-			menu.animate({opacity: '0'}, 1);
-			menuTriggerClosed();
-		});
-		fixedBar.animate({opacity: '0.7'}, 200);
-		opened = false;		
-	};
-
-	$('#menu-trigger').click(function() {
-		// Execute only, if all animations have complete ( queue is empty )
-		if (menu.queue().length == 0 && 
-			fixedBar.queue().length == 0 && 
-			$('.menu-ul li').queue().length == 0) {
-			
-			if (opened === false) {
-				showMenu();
-			} else {
-				hideMenu();
-			}
-		}
-	});
-
-	// Scroll to page menu navigation
-	goToPage = function(sectionName) {
-		if (window.innerWidth < 768) {
-			hideMenu();
-		}
-		var coordinates = $('section.' + sectionName).offset();
-		var distance = coordinates.top;
-		$('html, body').stop().animate({scrollTop: distance}, 800, 'swing');
 		return false;
-	};
-
-	// Call scroll when a menu item is clicked
-	$('.menu-ul li').click(function() {
-		var sectionName = ($(this).attr('id'));
-		goToPage(sectionName);
 	});
 
-	// Set the default top - property of the mobile navigation
-	if (window.innerWidth < 768) {
-		menu.css('top', (menu.innerHeight() * -1) + 'px');
-	}
-
-	// Checks on window resize
-	$(window).resize(function() {
-
-		// Hide / change menu position
-		if (window.innerWidth < 768 && opened === false) {
-			menu.css('top', (menu.innerHeight() * -1) + 'px');
-		} else if (window.innerWidth >= 768) {
-
-			if (opened === false) {
-				menu.css('top', '0px').css('opacity', '1');
-			} else {
-				hideMenu();
-			}
-		}
-
-		// Center the menu vertically
-		centerMenuVert();
-	}); */
 
 })
 
