@@ -10,7 +10,7 @@ class HomeController extends Controller {
 
 	public function index () {
 
-		$this->data['test_content'] = 'here will be a pages list';
+		//$this->data['test_content'] = 'here will be a pages list';
 
 	}
 

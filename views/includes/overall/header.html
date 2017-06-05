@@ -6,7 +6,8 @@
 	<div class="sub-fixed-bar">
 		<div id="logo-nav">
 			<!--<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">-->
-			<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">
+			<!--<img onclick="window.location = '/mdhairandbeauty/home'" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">-->
+			<a href="/mdhairandbeauty/home"><img src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo"></a>
 		</div>
 		<div id="menu-trigger">
 			<span class="bar-1"></span>
@@ -16,12 +17,12 @@
 	</div>
 </div>	
 
-<ul class="menu-ul">
-	<li class="go-to-page" id="services">services</li><li></li>
-	<li class="go-to-page" id="gallery">gallery</li><li></li>
-	<li class="go-to-page" id="partners">partners</li><li></li>
-	<li class="go-to-page" id="find">find us</li><li></li>
-	<li class="go-to-page" id="about">about</li><li></li>
-	<li class="go-to-page" id="contact">contact</li>
+<ul class="menu-ul">				
+	<li id="services"><a href="/mdhairandbeauty/services" class="go-to-page">services</a></li><li></li>
+	<li id="gallery"><a href="/mdhairandbeauty/gallery" class="go-to-page">gallery</a></li><li></li>
+	<li id="partners"><a href="/mdhairandbeauty/partners" class="go-to-page">partners</a></li><li></li>
+	<li id="about"><a href="/mdhairandbeauty/about" class="go-to-page">about</a></li><li></li>
+	<li id="contact"><a href="/mdhairandbeauty/contact" class="go-to-page">contact</a></li>
 </ul>
+
 

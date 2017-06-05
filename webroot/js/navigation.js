@@ -36,17 +36,12 @@ var nav = {
 					}
 				}
 			});
-			$('.go-to-page').click(function () {	//  Going to page
-				nav.btnClick.goToPage($(this).attr('id'));
+			$('.go-to-page').click(function(e) {
+				if (window.innerWidth < 768)	//  Going to page when on mobile menu
+					e.preventDefault();
+					// Close the open menu with argument - the href - destination
+					nav.animation.hideMenu($(this).attr('href'));
 			});
-		},
-		goToPage: function(page) {
-			if (window.innerWidth < 768) {
-				nav.animation.hideMenu();
-			}
-			var target = $('section.' + page);
-			nav.root.stop().animate({scrollTop: $('section.' + page).offset().top}, 800, 'swing');
-			return false;
 		}	
 	},
 	resize: {
@@ -114,10 +109,10 @@ var nav = {
 			});
 			nav.opened = true;
 		},
-		hideMenu: function() {
+		hideMenu: function(href) {
 			nav.menu.animate({top: '-' + nav.menu.innerHeight()}, this.slideSpeed, function() {
 				nav.menu.animate({opacity: '0'}, 1);
-				nav.animation.menuTriggerClosed();
+				nav.animation.menuTriggerClosed(href);
 			});
 			nav.fixedBar.animate({opacity: '0.7'}, 200);
 			nav.opened = false;
@@ -131,10 +126,16 @@ var nav = {
 				nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
 			},
 			// Menu closed - showing 3 horizontal bars
-			menuTriggerClosed: function() {
+			menuTriggerClosed: function(href) {
 				nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
 				nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
+				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed, 
+					// Loading the selected page after the last animation has completed
+					function() {
+						if (href) {
+							window.location = href;
+						}
+					});
 			},
 			// Menu trigger in default position ( no animation )
 			menuTriggerDefault: function() {

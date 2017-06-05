@@ -21,7 +21,7 @@ div.fixed-bar {
       padding: 15px 20px;
       box-sizing: border-box;
       -moz-box-sizing: border-box; }
-      div.fixed-bar div.sub-fixed-bar div#logo-nav img {
+      div.fixed-bar div.sub-fixed-bar div#logo-nav a img {
         height: 100%; }
       @media only screen and (min-width: 1025px) {
         div.fixed-bar div.sub-fixed-bar div#logo-nav {
@@ -67,20 +67,22 @@ ul.menu-ul {
     padding: 20px 20px;
     height: 70px;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.7) !important;
-    font-family: "Julius Sans One", sans-serif;
-    font-size: 25px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    cursor: pointer; }
+    -moz-box-sizing: border-box; }
     ul.menu-ul li:nth-child(even) {
       display: none; }
+    ul.menu-ul li a {
+      display: block;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-family: "Julius Sans One", sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center; }
     @media only screen and (max-width: 768px) and (orientation: landscape) {
       ul.menu-ul li {
-        height: 65px;
-        padding: 15px 20px; } }
+        height: 40px;
+        padding: 10px 20px; } }
   @media only screen and (min-width: 768px) {
     ul.menu-ul {
       display: table;
@@ -321,43 +323,10 @@ section.services p.content {
   width: 100%;
   top: 0; }
 
-.p-top-60 {
-  padding-top: 60px; }
-
-.m-top-60 {
-  margin-top: 60px; }
-
 button:focus {
   outline: 0; }
 button:hover {
   cursor: pointer; }
-
-.flag-red {
-  border: 1px solid #E8959C !important; }
-  .flag-red:hover {
-    border: 1px solid #e63441 !important; }
-  .flag-red:focus {
-    border: 1px solid #e6344a !important; }
-
-.flag-green {
-  border: 1px solid #64EC88 !important; }
-  .flag-green:hover {
-    border: 1px solid #1AC513 !important; }
-  .flag-green:focus {
-    border: 1px solid #1EE426 !important; }
-
-.flag-neutral {
-  border: 1px solid #b3b3b3 !important; }
-  .flag-neutral:hover {
-    border: 1px solid #0087ce !important; }
-  .flag-neutral:focus {
-    border: 1px solid #0087ce !important; }
-
-.valid {
-  color: #4dbd27; }
-
-.not-valid {
-  color: #e26872; }
 
 html {
   height: 100%; }
@@ -369,6 +338,10 @@ body {
 
 h1, h2, h3, h4, h5, p {
   font-family: "Julius Sans One", sans-serif; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
 
 textarea, input, button {
   outline: none; }
