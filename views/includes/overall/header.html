@@ -7,7 +7,7 @@
 		<div id="logo-nav">
 			<!--<img onclick="nav.btnClick.goToPage('home')" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">-->
 			<!--<img onclick="window.location = '/mdhairandbeauty/home'" src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo">-->
-			<a href="/mdhairandbeauty/home"><img src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo"></a>
+			<a href="<?php echo $GLOBALS['environment']; ?>/home"><img src="webroot/images/MDLogoWhite.svg" alt="MD hair & beauty Logo"></a>
 		</div>
 		<div id="menu-trigger">
 			<span class="bar-1"></span>
@@ -19,19 +19,24 @@
 
 <ul class="menu-ul">				
 	<li id="services">
-		<a href="<?php echo $GLOBALS['environment']; ?>/services" class="go-to-page">services</a>
+		<a <?php if (App::getRouter()->getController() == 'services') { ?> class="active" <?php } ?> 
+		href="<?php echo $GLOBALS['environment']; ?>/services" class="go-to-page">services</a>
 	</li><li></li>
 	<li id="gallery">
-		<a href="<?php echo $GLOBALS['environment']; ?>/gallery" class="go-to-page">gallery</a>
+		<a <?php if (App::getRouter()->getController() == 'gallery') { ?> class="active" <?php } ?> 
+		href="<?php echo $GLOBALS['environment']; ?>/gallery" class="go-to-page">gallery</a>
 	</li><li></li>
 	<li id="partners">
-		<a href="<?php echo $GLOBALS['environment']; ?>/partners" class="go-to-page">partners</a>
+		<a <?php if (App::getRouter()->getController() == 'partners') { ?> class="active" <?php } ?>
+		href="<?php echo $GLOBALS['environment']; ?>/partners" class="go-to-page">partners</a>
 	</li><li></li>
 	<li id="about">
-		<a href="<?php echo $GLOBALS['environment']; ?>/about" class="go-to-page">about</a>
+		<a <?php if (App::getRouter()->getController() == 'about') { ?> class="active" <?php } ?>
+		href="<?php echo $GLOBALS['environment']; ?>/about" class="go-to-page">about</a>
 	</li><li></li>
 	<li id="contact">
-		<a href="<?php echo $GLOBALS['environment']; ?>/contact" class="go-to-page">contact</a>
+		<a <?php if (App::getRouter()->getController() == 'contact') { ?> class="active" <?php } ?>
+		href="<?php echo $GLOBALS['environment']; ?>/contact" class="go-to-page">contact</a>
 	</li>
 </ul>
 

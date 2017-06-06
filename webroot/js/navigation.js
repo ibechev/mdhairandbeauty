@@ -40,10 +40,11 @@
 				}
 			});
 			$('.go-to-page').click(function(e) {
-				if (window.innerWidth < 768)	//  Going to page when on mobile menu
+				if (window.innerWidth < 768) {	//  Going to page when on mobile menu
 					e.preventDefault();
 					// Close the open menu with argument - the href - destination
 					nav.animation.hideMenu($(this).attr('href'));
+				}	
 			});
 		}	
 	},

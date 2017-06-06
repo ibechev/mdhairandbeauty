@@ -73,7 +73,7 @@ ul.menu-ul {
     ul.menu-ul li a {
       display: block;
       margin: 0 auto;
-      color: rgba(255, 255, 255, 0.7) !important;
+      color: rgba(255, 255, 255, 0.7);
       font-family: "Julius Sans One", sans-serif;
       font-size: 18px;
       letter-spacing: 2px;
@@ -128,7 +128,7 @@ ul.menu-ul {
           border-right: 1px solid #7E7E7E;
           display: list-item; }
         ul.menu-ul li:hover, ul.menu-ul li:focus {
-          color: rgba(255, 255, 255, 0.85) !important;
+          color: rgba(255, 255, 255, 0.95) !important;
           opacity: 1; } }
   @media only screen and (min-width: 1025px) {
     ul.menu-ul {
@@ -327,6 +327,10 @@ button:focus {
   outline: 0; }
 button:hover {
   cursor: pointer; }
+
+.active {
+  color: white !important;
+  opacity: 1; }
 
 html {
   height: 100%; }
