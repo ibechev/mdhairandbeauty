@@ -1,4 +1,4 @@
-var nav = {
+	var nav = {
 	menu			: $('ul.menu-ul'),
 	fixedBar		: $('div.fixed-bar'),
 	opened			: false, // Whether the menu is opened or closed
@@ -9,22 +9,25 @@ var nav = {
 	barTop		: $('div.fixed-bar').find('.bar-1'),
 	barMiddle	: $('div.fixed-bar').find('.bar-2'),
 	barBottom	: $('div.fixed-bar').find('.bar-3'),
+
 	init: function() {
 		this.btnClick.listen();
 		this.resize.init();
 	},
+
 	screenMode: {	// Sets and checks in what currens style is the menu ( mobile or desktop )
 		get: function() {
 			return nav.screenStyle;
 		}, 
 		set: function(mode) {
 			if ($.inArray(mode, nav.screenModes) != -1) {	// Check if the mode is valid
-				nav.screenStyle = nav.screenModes;
+				nav.screenStyle = mode;
 			} else {
 				console.log('Screen mode is not valid!');
 			}
 		}
 	},
+
 	btnClick: {	// Button click object
 		listen: function() {	// Do something when a button is clicked
 			$('#menu-trigger').click(function() {	// Triggering menu
@@ -44,6 +47,7 @@ var nav = {
 			});
 		}	
 	},
+
 	resize: {
 		listen: function() {	// Listen for any kind of resizing
 			$(window).resize(function() {
@@ -84,11 +88,10 @@ var nav = {
 			}
 		},
 		setInitPosDesk: function() { // Default position for desktop
-			nav.menu	.css('top', 0)
-							.css('height', '60px')
-							.css('opacity', 1);
+			nav.menu.css('top', 0)
+					.css('height', '60px')
+					.css('opacity', 1);
 			nav.fixedBar.css('opacity', 0.7);
-
 			if (nav.getViewportSize().width >= 768 && nav.getViewportSize().width < 1025) {
 				nav.menu.css('padding', '0 20px 0 0');
 			} else if (nav.getViewportSize().width >= 1025) {
@@ -98,6 +101,7 @@ var nav = {
 			nav.screenMode.set('desktop');
 		}
 	},
+
 	animation: {	// Menu and menu button animation
 		slideSpeed: 300,
 		showMenu: function() {
@@ -144,6 +148,7 @@ var nav = {
 				nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
 			}
 	},
+
 	checkAnimQ: function() {	// Check if all animations have complete ( queue is empty )
 		if (this.menu.queue().length == 0 && this.fixedBar.queue().length == 0 && $('.menu-ul li').queue().length == 0) {
 			return true;
@@ -151,6 +156,7 @@ var nav = {
 			return false;
 		}
 	},
+
 	centerVert: function() {
 		// Center the list items vertically	
  		var countMenuItems = this.menu.find('li:even').length;
@@ -164,6 +170,7 @@ var nav = {
 			}
 		}
 	},	
+
 	//	Get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
 	getViewportSize: function(){
 	    if (typeof(window.innerWidth) == 'number') {
@@ -178,7 +185,8 @@ var nav = {
 	    }
 	    return {width: my_width, height: my_height};
 	},
-	getScreenSize: function() {
+
+	getScreenSize: function() { // Get the available screen size - without the browser's address and navigation bars
 		return window.screen.availHeight;
 	}
 }
@@ -189,19 +197,6 @@ $(document).ready(function() {
 
 	// Run the navigation object
 	nav.init();
-
-
-
-	
-	// Return to top button click/tap
-	var root = $('html, body');
-	$('#scroller-top').click(function() {
-
-		    root.stop().animate({
-		        scrollTop: 0}, 800, 'swing');
-
-		return false;
-	});
 
 
 })
