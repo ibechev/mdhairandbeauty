@@ -1,7 +1,7 @@
 footer {
 	width: 100%;
-	padding: 60px 0;
-	background-color: black;
+	padding: 60px 0 0;
+	background-color: #313131;
 
 	$primary_white: rgba(255, 255, 255, 0.90);
 	$secondary_white: rgba(255, 255, 255, 0.75);
@@ -10,6 +10,9 @@ footer {
 		width: 100%;
 
 		li.section { // Common style for all li elements inside ul.footer
+			&:not(:last-of-type) {
+				margin-bottom: 70px;
+			}
 
 			ul.wrap {
 				@include boxSizing(border-box);
@@ -32,10 +35,7 @@ footer {
 		}
 
 		li.location {
-			margin-bottom: 70px;
-
 			ul.wrap {
-
 				width: 100%;
 				padding: 0 20px;
 
@@ -60,7 +60,6 @@ footer {
 			}
 
 			div.link {
-				
 				margin-top: 30px;
 				text-align: center;
 
@@ -76,9 +75,6 @@ footer {
 		}
 
 		li.call {
-			margin-bottom: 70px;
-
-
 			ul.wrap {
 				li.phone {
 					width: 70%;
@@ -111,6 +107,36 @@ footer {
 						i {
 							font-size: 55px;
 						}
+					}
+				}
+			}
+		}
+
+		li.bottom {
+			padding: 30px 0;
+			background-color: #000000;
+
+			ul.wrap {
+				li {
+					float: none;
+					text-align: center;
+				}
+
+				li.logo {
+					margin-bottom: 20px;
+
+					a {
+						img {
+							width: 25%;
+							height: auto;
+							opacity: 0.7;
+						}
+					}
+				}
+
+				li.copy {
+					p {
+						color: $secondary_white;
 					}
 				}
 			}

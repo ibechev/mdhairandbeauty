@@ -136,9 +136,9 @@
 	}
 }
 
-// Select last nth elements
-@mixin last($num) {
-	&:nth-last-child {
+// Select last element
+@mixin last() {
+	&:last-of-type {
 		@content;
 	}
 }
@@ -155,6 +155,12 @@
   }
 }
 
+// Select The Last nth Elements
+@mixin last($num) {
+   &:nth-last-child(-n + #{$num}) {
+    @content;
+  }
+}
 
 
 

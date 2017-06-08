@@ -197,10 +197,12 @@ ul.menu-ul {
 
 footer {
   width: 100%;
-  padding: 60px 0;
-  background-color: black; }
+  padding: 60px 0 0;
+  background-color: #313131; }
   footer ul.footer {
     width: 100%; }
+    footer ul.footer li.section:not(:last-of-type) {
+      margin-bottom: 70px; }
     footer ul.footer li.section ul.wrap {
       box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -217,44 +219,40 @@ footer {
       footer ul.footer li.section ul.wrap li {
         float: left;
         color: rgba(255, 255, 255, 0.75); }
-    footer ul.footer li.location {
-      margin-bottom: 70px; }
-      footer ul.footer li.location ul.wrap {
-        width: 100%;
-        padding: 0 20px; }
-        footer ul.footer li.location ul.wrap li.icon {
-          text-align: right;
-          width: 30%; }
-          footer ul.footer li.location ul.wrap li.icon i {
-            font-size: 55px; }
-        footer ul.footer li.location ul.wrap li.text {
-          width: 70%; }
-          footer ul.footer li.location ul.wrap li.text:after {
-            content: "";
-            display: block;
-            clear: both; }
-          footer ul.footer li.location ul.wrap li.text p {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.75); }
-      footer ul.footer li.location div.link {
-        margin-top: 30px;
-        text-align: center; }
-        footer ul.footer li.location div.link a {
-          text-decoration: underline;
-          color: rgba(255, 255, 255, 0.9); }
-          footer ul.footer li.location div.link a i {
-            font-size: 20px; }
-    footer ul.footer li.call {
-      margin-bottom: 70px; }
-      footer ul.footer li.call ul.wrap li.phone {
-        width: 70%;
-        text-align: center; }
-        footer ul.footer li.call ul.wrap li.phone a {
-          color: rgba(255, 255, 255, 0.75); }
-      footer ul.footer li.call ul.wrap li.icon {
+    footer ul.footer li.location ul.wrap {
+      width: 100%;
+      padding: 0 20px; }
+      footer ul.footer li.location ul.wrap li.icon {
+        text-align: right;
         width: 30%; }
-        footer ul.footer li.call ul.wrap li.icon i {
+        footer ul.footer li.location ul.wrap li.icon i {
           font-size: 55px; }
+      footer ul.footer li.location ul.wrap li.text {
+        width: 70%; }
+        footer ul.footer li.location ul.wrap li.text:after {
+          content: "";
+          display: block;
+          clear: both; }
+        footer ul.footer li.location ul.wrap li.text p {
+          text-align: center;
+          color: rgba(255, 255, 255, 0.75); }
+    footer ul.footer li.location div.link {
+      margin-top: 30px;
+      text-align: center; }
+      footer ul.footer li.location div.link a {
+        text-decoration: underline;
+        color: rgba(255, 255, 255, 0.9); }
+        footer ul.footer li.location div.link a i {
+          font-size: 20px; }
+    footer ul.footer li.call ul.wrap li.phone {
+      width: 70%;
+      text-align: center; }
+      footer ul.footer li.call ul.wrap li.phone a {
+        color: rgba(255, 255, 255, 0.75); }
+    footer ul.footer li.call ul.wrap li.icon {
+      width: 30%; }
+      footer ul.footer li.call ul.wrap li.icon i {
+        font-size: 55px; }
     footer ul.footer li.social ul.wrap li {
       width: 33.33333%;
       text-align: center; }
@@ -262,6 +260,20 @@ footer {
         color: rgba(255, 255, 255, 0.75); }
         footer ul.footer li.social ul.wrap li a i {
           font-size: 55px; }
+    footer ul.footer li.bottom {
+      padding: 30px 0;
+      background-color: #000000; }
+      footer ul.footer li.bottom ul.wrap li {
+        float: none;
+        text-align: center; }
+      footer ul.footer li.bottom ul.wrap li.logo {
+        margin-bottom: 20px; }
+        footer ul.footer li.bottom ul.wrap li.logo a img {
+          width: 25%;
+          height: auto;
+          opacity: 0.7; }
+      footer ul.footer li.bottom ul.wrap li.copy p {
+        color: rgba(255, 255, 255, 0.75); }
 
 section.home {
   overflow: hidden; }
