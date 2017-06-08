@@ -108,7 +108,7 @@ ul.menu-ul {
         border-style: none;
         opacity: 0.80;
         background-color: transparent;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1;
         /* Enable hardware acceleration to fix laggy transitions */
         -webkit-transform: translateZ(0);
@@ -129,7 +129,16 @@ ul.menu-ul {
           display: list-item; }
         ul.menu-ul li:hover, ul.menu-ul li:focus {
           color: rgba(255, 255, 255, 0.95) !important;
-          opacity: 1; } }
+          opacity: 1; }
+        ul.menu-ul li a {
+          display: block;
+          margin: 0 auto;
+          color: rgba(255, 255, 255, 0.7);
+          font-family: "Julius Sans One", sans-serif;
+          font-size: 15px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-align: center; } }
   @media only screen and (min-width: 1025px) {
     ul.menu-ul {
       display: table;
@@ -155,7 +164,6 @@ ul.menu-ul {
         border-style: none;
         opacity: 0.80;
         background-color: transparent;
-        font-size: 20px;
         line-height: 1;
         /* Enable hardware acceleration to fix laggy transitions */
         -webkit-transform: translateZ(0);
@@ -176,12 +184,88 @@ ul.menu-ul {
           display: list-item; }
         ul.menu-ul li:hover, ul.menu-ul li:focus {
           color: rgba(255, 255, 255, 0.85) !important;
-          opacity: 1; } }
+          opacity: 1; }
+        ul.menu-ul li a {
+          display: block;
+          margin: 0 auto;
+          color: rgba(255, 255, 255, 0.7);
+          font-family: "Julius Sans One", sans-serif;
+          font-size: 18px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-align: center; } }
+
+footer {
+  width: 100%;
+  padding: 60px 0;
+  background-color: black; }
+  footer ul.footer {
+    width: 100%; }
+    footer ul.footer li.section ul.wrap {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      width: 100%;
+      padding: 0 20px; }
+      footer ul.footer li.section ul.wrap:after {
+        content: "";
+        display: block;
+        clear: both; }
+      footer ul.footer li.section ul.wrap h2 {
+        margin-bottom: 40px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9); }
+      footer ul.footer li.section ul.wrap li {
+        float: left;
+        color: rgba(255, 255, 255, 0.75); }
+    footer ul.footer li.location {
+      margin-bottom: 70px; }
+      footer ul.footer li.location ul.wrap {
+        width: 100%;
+        padding: 0 20px; }
+        footer ul.footer li.location ul.wrap li.icon {
+          text-align: right;
+          width: 30%; }
+          footer ul.footer li.location ul.wrap li.icon i {
+            font-size: 55px; }
+        footer ul.footer li.location ul.wrap li.text {
+          width: 70%; }
+          footer ul.footer li.location ul.wrap li.text:after {
+            content: "";
+            display: block;
+            clear: both; }
+          footer ul.footer li.location ul.wrap li.text p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.75); }
+      footer ul.footer li.location div.link {
+        margin-top: 30px;
+        text-align: center; }
+        footer ul.footer li.location div.link a {
+          text-decoration: underline;
+          color: rgba(255, 255, 255, 0.9); }
+          footer ul.footer li.location div.link a i {
+            font-size: 20px; }
+    footer ul.footer li.call {
+      margin-bottom: 70px; }
+      footer ul.footer li.call ul.wrap li.phone {
+        width: 70%;
+        text-align: center; }
+        footer ul.footer li.call ul.wrap li.phone a {
+          color: rgba(255, 255, 255, 0.75); }
+      footer ul.footer li.call ul.wrap li.icon {
+        width: 30%; }
+        footer ul.footer li.call ul.wrap li.icon i {
+          font-size: 55px; }
+    footer ul.footer li.social ul.wrap li {
+      width: 33.33333%;
+      text-align: center; }
+      footer ul.footer li.social ul.wrap li a {
+        color: rgba(255, 255, 255, 0.75); }
+        footer ul.footer li.social ul.wrap li a i {
+          font-size: 55px; }
 
 section.home {
   overflow: hidden; }
   section.home div.background {
-    position: fixed;
     width: 100%;
     height: 100%;
     background-image: url("../images/BGImageHome2.jpg");
@@ -190,6 +274,10 @@ section.home {
     background-size: cover;
     filter: brightness(75%);
     -webkit-filter: brightness(75%); }
+    section.home div.background:after {
+      content: "";
+      display: block;
+      clear: both; }
   section.home div.content {
     position: absolute;
     top: 0;
@@ -340,7 +428,7 @@ body {
   padding: 0;
   background-color: white; }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, a {
   font-family: "Julius Sans One", sans-serif; }
 
 a {
