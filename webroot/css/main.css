@@ -213,7 +213,7 @@ footer {
         display: block;
         clear: both; }
       footer ul.footer li.section ul.wrap h2 {
-        margin-bottom: 40px;
+        margin-bottom: 23px;
         text-align: center;
         color: rgba(255, 255, 255, 0.9); }
       footer ul.footer li.section ul.wrap li {
@@ -304,40 +304,55 @@ section.home {
     -webkit-box-align: center;
     align-items: center; }
     section.home div.content div.logo-wrapper {
-      position: absolute;
+      position: relaive;
       width: 100%;
-      height: 70%;
+      height: 83.33333%;
       padding: 0 20px;
       box-sizing: border-box;
       -moz-box-sizing: border-box; }
       section.home div.content div.logo-wrapper div.home-logo {
-        height: 40%; }
-        section.home div.content div.logo-wrapper div.home-logo img {
-          margin: auto;
-          width: auto;
-          height: 100%;
-          max-width: 100%;
-          opacity: 0.9;
-          box-sizing: border-box;
-          -moz-box-sizing: border-box; }
+        position: relative;
+        width: 100%;
+        height: 50%; }
+        section.home div.content div.logo-wrapper div.home-logo div.spacing {
+          width: 60%;
+          position: absolute;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -75%); }
+          section.home div.content div.logo-wrapper div.home-logo div.spacing img {
+            margin: auto;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            opacity: 0.7;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box; }
       section.home div.content div.logo-wrapper div.home-text {
-        padding-top: 10%;
+        position: relative;
+        height: 50%;
         box-sizing: border-box;
         -moz-box-sizing: border-box; }
-        section.home div.content div.logo-wrapper div.home-text p {
-          margin-top: 20px;
-          font-size: 1.2em;
-          line-height: 1;
-          letter-spacing: 3px;
-          color: #FFFFFF;
-          justify-content: center;
-          text-align: center;
-          opacity: 0.9; }
-          @media only screen and (min-width: 768px) {
-            section.home div.content div.logo-wrapper div.home-text p {
-              display: block;
-              margin: 0 auto;
-              font-size: 1.5em; } }
+        section.home div.content div.logo-wrapper div.home-text div {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+          section.home div.content div.logo-wrapper div.home-text div p {
+            font-size: 1.2em;
+            line-height: 1;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.75);
+            justify-content: center;
+            text-align: center;
+            opacity: 0.9; }
+            section.home div.content div.logo-wrapper div.home-text div p:nth-child(-n + 2) {
+              margin-bottom: 55px; }
+            @media only screen and (min-width: 768px) {
+              section.home div.content div.logo-wrapper div.home-text div p {
+                display: block;
+                margin: 0 auto;
+                font-size: 1.5em; } }
       @media only screen and (min-width: 768px) {
         section.home div.content div.logo-wrapper {
           height: 40%; } }
@@ -348,18 +363,27 @@ section.home {
       width: 100%;
       height: 60px;
       padding: 15px 35px;
-      background-color: #000000;
       opacity: 0.7;
       text-align: center;
       box-sizing: border-box;
-      -moz-box-sizing: border-box; }
+      -moz-box-sizing: border-box;
+      			/*a.arrow {
+      				i {
+      					position: relative;
+      					bottom: 10px;
+      					font-size: 3em;
+      					opacity: 0.6;
+      
+      				}
+      			}*/ }
       section.home div.content div.footer:after {
         content: "";
         display: block;
         clear: both; }
       section.home div.content div.footer a {
         width: 50px;
-        text-align: center; }
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6); }
         section.home div.content div.footer a i {
           font-size: 2em;
           color: white; }
@@ -368,11 +392,6 @@ section.home {
         @media only screen and (min-width: 768px) {
           section.home div.content div.footer a.contact {
             display: none; } }
-      section.home div.content div.footer a.arrow i {
-        position: relative;
-        bottom: 10px;
-        font-size: 3em;
-        opacity: 0.6; }
       section.home div.content div.footer a.find {
         float: right; }
         section.home div.content div.footer a.find:after {
@@ -431,6 +450,12 @@ button:hover {
 .active {
   color: white !important;
   opacity: 1; }
+
+.centerVH {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 html {
   height: 100%; }

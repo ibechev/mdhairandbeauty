@@ -3,9 +3,6 @@ footer {
 	padding: 60px 0 0;
 	background-color: #313131;
 
-	$primary_white: rgba(255, 255, 255, 0.90);
-	$secondary_white: rgba(255, 255, 255, 0.75);
-
 	ul.footer {
 		width: 100%;
 
@@ -22,7 +19,7 @@ footer {
 				padding: 0 20px;
 
 				h2 {
-					margin-bottom: 40px;
+					margin-bottom: 23px;
 					text-align: center;
 					color: $primary_white;
 				}
