@@ -1,7 +1,7 @@
-// Set min height for the HOME section
+// Set min height for the HOME - Logo section
 var setHomeHeight = function() {	
 	var docHeight = $(window).height();
-	$('section.home').css('height', docHeight + 'px');
+	$('div.home-face').css('height', docHeight + 'px');
 	$('section.index:not(home)').css('min-height', docHeight + 'px');
 }
 
@@ -12,14 +12,14 @@ var logoCenterVert = function() {
 }
 
 function homeLogoParallax() {
-	$('.home-logo').css({'transform' : 'translateY(0px)', 'opacity' : 0.8});	
+	$('.home-logo').css({'opacity' : 0.9});	
 };
 
 function homeTextParallax() {
-	$('.home-text .centerVH p').each(function(i) {
+	$('.home-text .text-wrap p').each(function(i) {
 		setTimeout(function() {
-			$('.home-text .centerVH p').eq(i).addClass('landing');
-		}, 170 * (i+1));
+			$('.home-text .text-wrap p').eq(i).addClass('landing');
+		}, 40 * ((i+1) * 3));
 	});
 };
 
@@ -27,7 +27,7 @@ function homeTextParallax() {
 $(document).ready(function() {
 
 	setTimeout(homeLogoParallax, 350);
-	setTimeout(homeTextParallax, 550);
+	setTimeout(homeTextParallax, 1100);
 	setHomeHeight();
 
 	// Set min height for the HOME section, when orientation change
@@ -45,6 +45,7 @@ $(document).ready(function() {
 
 	$(window).scroll(function()	{
 		
+		/*
 		var wScroll = $(this).scrollTop();
 
 		$('.home-logo').css({
@@ -56,6 +57,7 @@ $(document).ready(function() {
 			//'transition': 'unset',
 			'transform': 'translate(0px, '+ wScroll / 5.2 +'%)'
 		});
+		*/
 
 
 

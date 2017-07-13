@@ -284,14 +284,10 @@ section.home {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: 1200px;
+    background-size: fill;
     filter: brightness(75%);
     -webkit-filter: brightness(75%); }
-    section.home div.background:after {
-      content: "";
-      display: block;
-      clear: both; }
-  section.home div.content {
+  section.home div.home-face {
     position: absolute;
     top: 0;
     left: 0;
@@ -304,73 +300,79 @@ section.home {
     -webkit-align-items: center;
     -webkit-box-align: center;
     align-items: center; }
-    section.home div.content div.logo-wrapper {
-      position: relaive;
+    section.home div.home-face div.logo-wrapper {
+      position: relative;
+      display: block;
       width: 100%;
       height: 83.33333%;
       padding: 0 20px;
       box-sizing: border-box;
       -moz-box-sizing: border-box; }
-      section.home div.content div.logo-wrapper div.home-logo {
+      section.home div.home-face div.logo-wrapper div.home-logo {
         position: relative;
         width: 100%;
         height: 50%;
         opacity: 0;
-        transform: translateY(50px);
         transition: all 0.5s ease-in-out; }
-        section.home div.content div.logo-wrapper div.home-logo div.spacing {
+        section.home div.home-face div.logo-wrapper div.home-logo div.spacing {
           width: 90%;
           position: absolute;
           top: 75%;
           left: 50%;
           transform: translate(-50%, -75%); }
-          section.home div.content div.logo-wrapper div.home-logo div.spacing img {
+          section.home div.home-face div.logo-wrapper div.home-logo div.spacing img {
             margin: auto;
             width: 100%;
             height: auto;
             max-width: 100%;
             box-sizing: border-box;
             -moz-box-sizing: border-box; }
-      section.home div.content div.logo-wrapper div.home-text {
+      section.home div.home-face div.logo-wrapper div.home-text {
+        display: block;
         position: relative;
+        width: 100%;
         height: 50%;
         box-sizing: border-box;
         -moz-box-sizing: border-box; }
-        section.home div.content div.logo-wrapper div.home-text div {
+        section.home div.home-face div.logo-wrapper div.home-text div {
           position: absolute;
           top: 40%;
           left: 50%;
           transform: translate(-50%, -50%); }
-          section.home div.content div.logo-wrapper div.home-text div p {
-            font-size: 1.2em;
+          section.home div.home-face div.logo-wrapper div.home-text div p {
             line-height: 1;
             letter-spacing: 3px;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.9);
             justify-content: center;
             text-align: center;
             opacity: 0;
-            transition: all 0.6s ease-in-out;
+            transition: all 0.4s ease-in-out;
             transform: translateY(70px); }
-            section.home div.content div.logo-wrapper div.home-text div p:nth-child(-n + 2) {
-              margin-bottom: 35px; }
-            section.home div.content div.logo-wrapper div.home-text div p.landing {
+            section.home div.home-face div.logo-wrapper div.home-text div p:first-child {
+              margin-bottom: 8px; }
+            section.home div.home-face div.logo-wrapper div.home-text div p.landing {
               transform: translateY(0px);
               opacity: 0.9; }
             @media only screen and (min-width: 768px) {
-              section.home div.content div.logo-wrapper div.home-text div p {
+              section.home div.home-face div.logo-wrapper div.home-text div p {
                 display: block;
                 margin: 0 auto;
                 font-size: 1.5em; } }
+          section.home div.home-face div.logo-wrapper div.home-text div p.head {
+            letter-spacing: 4px;
+            font-size: 4em; }
+          section.home div.home-face div.logo-wrapper div.home-text div p.foot {
+            font-size: 20px; }
       @media only screen and (min-width: 768px) {
-        section.home div.content div.logo-wrapper {
+        section.home div.home-face div.logo-wrapper {
           height: 40%; } }
-    section.home div.content div.footer {
+    section.home div.home-face div.footer {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 60px;
-      padding: 15px 35px;
+      padding: 0 35px;
       opacity: 0.7;
       text-align: center;
       box-sizing: border-box;
@@ -384,31 +386,55 @@ section.home {
       
       				}
       			}*/ }
-      section.home div.content div.footer:after {
+      section.home div.home-face div.footer:after {
         content: "";
         display: block;
         clear: both; }
-      section.home div.content div.footer a {
+      section.home div.home-face div.footer a {
         width: 50px;
         text-align: center;
         color: rgba(255, 255, 255, 0.6); }
-        section.home div.content div.footer a i {
+        section.home div.home-face div.footer a i {
           font-size: 2em;
           color: white; }
-      section.home div.content div.footer a.contact {
+      section.home div.home-face div.footer a.contact {
         float: left; }
         @media only screen and (min-width: 768px) {
-          section.home div.content div.footer a.contact {
+          section.home div.home-face div.footer a.contact {
             display: none; } }
-      section.home div.content div.footer a.find {
+      section.home div.home-face div.footer a.find {
         float: right; }
-        section.home div.content div.footer a.find:after {
+        section.home div.home-face div.footer a.find:after {
           content: "";
           display: block;
           clear: both; }
         @media only screen and (min-width: 768px) {
-          section.home div.content div.footer a.find {
+          section.home div.home-face div.footer a.find {
             display: none; } }
+  section.home div.home-content {
+    position: relative;
+    display: inline-block;
+    padding: 60px 0;
+    width: 100%;
+    background-color: white; }
+    section.home div.home-content div.header {
+      margin-bottom: 30px;
+      color: rgba(0, 0, 0, 0.5); }
+      section.home div.home-content div.header h1.luxury {
+        margin-bottom: 5px;
+        padding: 0 20px;
+        text-align: center;
+        font-size: 32px; }
+      section.home div.home-content div.header h1.mallorca {
+        padding: 0 20px;
+        text-align: center;
+        font-size: 55px; }
+    section.home div.home-content div.intro p {
+      padding: 0 20px;
+      text-align: justify;
+      text-justify: inter-word;
+      color: black;
+      font-size: 18px; }
 
 section.services div.line-one {
   height: 120px;
