@@ -277,9 +277,8 @@ footer {
 
 section.home {
   overflow: hidden; }
-  section.home div.background {
+  section.home div.bg-home-face {
     width: 100%;
-    height: 100%;
     background-image: url("../images/BGImageHome2.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -419,22 +418,58 @@ section.home {
     background-color: white; }
     section.home div.home-content div.header {
       margin-bottom: 30px;
-      color: rgba(0, 0, 0, 0.5); }
+      padding: 0 20px;
+      color: rgba(0, 0, 0, 0.35); }
       section.home div.home-content div.header h1.luxury {
         margin-bottom: 5px;
-        padding: 0 20px;
         text-align: center;
         font-size: 32px; }
       section.home div.home-content div.header h1.mallorca {
-        padding: 0 20px;
+        padding: 0 0 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
         text-align: center;
         font-size: 55px; }
-    section.home div.home-content div.intro p {
+    section.home div.home-content div.intro {
+      margin-bottom: 60px; }
+      section.home div.home-content div.intro p {
+        padding: 0 20px;
+        text-align: justify;
+        color: black;
+        font-size: 18px; }
+    section.home div.home-content div.bg-image-1 {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 60px;
+      background-image: url("../images/lightBallsMob.jpg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: cover; }
+    section.home div.home-content div.services-wrapper div.service div.head {
+      margin-bottom: 20px;
       padding: 0 20px;
-      text-align: justify;
-      text-justify: inter-word;
-      color: black;
-      font-size: 18px; }
+      display: flex; }
+      section.home div.home-content div.services-wrapper div.service div.head div.image {
+        display: flex;
+        height: 120px;
+        width: 40%; }
+        section.home div.home-content div.services-wrapper div.service div.head div.image img {
+          margin: auto;
+          height: 120px;
+          width: 120px;
+          border-radius: 50%; }
+      section.home div.home-content div.services-wrapper div.service div.head div.head-text {
+        padding: 0 20px;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    section.home div.home-content div.services-wrapper div.service div.text {
+      padding: 0 20px; }
+      section.home div.home-content div.services-wrapper div.service div.text p {
+        font-size: 18px;
+        text-align: justify;
+        color: black; }
 
 section.services div.line-one {
   height: 120px;
