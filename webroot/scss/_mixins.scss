@@ -34,6 +34,14 @@
    	transition: $var1;
 }
 
+@mixin transition-delay($var1) {
+	-webkit-transition-delay: $var1; /* For Safari 3.1 to 6.0 */
+	-moz-transition-delay: $var1;
+	-ms-transition-delay: $var1;
+	-o-transition-delay: $var1;
+   	transition-delay: $var1;
+}
+
 @mixin transform($var1) {
 	-webkit-transform: $var1;  
     -moz-transform: $var1;  

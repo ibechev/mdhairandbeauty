@@ -312,12 +312,27 @@ section.home {
         width: 100%;
         height: 50%;
         opacity: 0;
-        transition: all 0.5s ease-in-out; }
+        /* Enable hardware acceleration to fix laggy transitions */
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-transition: all 1.2s ease-in-out;
+        /* For Safari 3.1 to 6.0 */
+        -moz-transition: all 1.2s ease-in-out;
+        -ms-transition: all 1.2s ease-in-out;
+        -o-transition: all 1.2s ease-in-out;
+        transition: all 1.2s ease-in-out; }
         section.home div.home-face div.logo-wrapper div.home-logo div.spacing {
           width: 90%;
           position: absolute;
           top: 75%;
           left: 50%;
+          -webkit-transform: translate(-50%, -75%);
+          -moz-transform: translate(-50%, -75%);
+          -ms-transform: translate(-50%, -75%);
+          -o-transform: translate(-50%, -75%);
           transform: translate(-50%, -75%); }
           section.home div.home-face div.logo-wrapper div.home-logo div.spacing img {
             margin: auto;
@@ -337,6 +352,10 @@ section.home {
           position: absolute;
           top: 40%;
           left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
           section.home div.home-face div.logo-wrapper div.home-text div p {
             line-height: 1;
@@ -345,11 +364,30 @@ section.home {
             justify-content: center;
             text-align: center;
             opacity: 0;
+            /* Enable hardware acceleration to fix laggy transitions */
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition: all 0.4s ease-in-out;
+            /* For Safari 3.1 to 6.0 */
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
             transition: all 0.4s ease-in-out;
+            -webkit-transform: translateY(70px);
+            -moz-transform: translateY(70px);
+            -ms-transform: translateY(70px);
+            -o-transform: translateY(70px);
             transform: translateY(70px); }
             section.home div.home-face div.logo-wrapper div.home-text div p:first-child {
               margin-bottom: 8px; }
             section.home div.home-face div.logo-wrapper div.home-text div p.landing {
+              -webkit-transform: translateY(0px);
+              -moz-transform: translateY(0px);
+              -ms-transform: translateY(0px);
+              -o-transform: translateY(0px);
               transform: translateY(0px);
               opacity: 0.9; }
             @media only screen and (min-width: 768px) {
@@ -434,6 +472,8 @@ section.home {
       section.home div.home-content div.intro p {
         padding: 0 20px;
         text-align: justify;
+        word-wrap: break-word;
+        word-spacing: 0.10em;
         color: black;
         font-size: 18px; }
     section.home div.home-content div.bg-image-1 {
@@ -441,10 +481,12 @@ section.home {
       height: 150px;
       margin-bottom: 60px;
       background-image: url("../images/lightBallsMob.jpg");
-      background-attachment: fixed;
+      background-attachment: initial;
       background-repeat: no-repeat;
       background-position: bottom center;
       background-size: cover; }
+    section.home div.home-content div.services-wrapper div.service:not(:last-child) {
+      margin-bottom: 50px; }
     section.home div.home-content div.services-wrapper div.service div.head {
       margin-bottom: 20px;
       padding: 0 20px;
@@ -452,15 +494,14 @@ section.home {
       section.home div.home-content div.services-wrapper div.service div.head div.image {
         display: flex;
         height: 120px;
-        width: 40%; }
+        width: 45%; }
         section.home div.home-content div.services-wrapper div.service div.head div.image img {
           margin: auto;
           height: 120px;
           width: 120px;
           border-radius: 50%; }
       section.home div.home-content div.services-wrapper div.service div.head div.head-text {
-        padding: 0 20px;
-        width: 60%;
+        width: 55%;
         display: flex;
         justify-content: center;
         align-items: center; }
@@ -469,7 +510,12 @@ section.home {
       section.home div.home-content div.services-wrapper div.service div.text p {
         font-size: 18px;
         text-align: justify;
+        word-wrap: break-word;
+        word-spacing: 0.10em;
         color: black; }
+        section.home div.home-content div.services-wrapper div.service div.text p a {
+          text-decoration: underline;
+          color: rgba(0, 0, 0, 0.35); }
 
 section.services div.line-one {
   height: 120px;

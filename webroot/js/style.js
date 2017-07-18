@@ -30,8 +30,9 @@ function homeTextParallax() {
 
 $(document).ready(function() {
 
-	setTimeout(homeLogoParallax, 350);
-	setTimeout(homeTextParallax, 1100);
+	setTimeout(homeLogoParallax, 400);
+	setTimeout(homeTextParallax, 1800);
+
 	setHomeHeight();
 
 	// Set min height for the HOME section, when orientation change
