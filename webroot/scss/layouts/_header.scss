@@ -100,7 +100,7 @@
 			}
 
 			padding: 20px 20px;
-			height: 70px;
+			min-height: 70px;
 
 			@include boxSizing(border-box);
 			
@@ -114,6 +114,12 @@
 				letter-spacing: 2px;
 				text-transform: uppercase;
 				text-align: center;
+
+				img.la-biostethique {
+					width: 50%;
+					height: auto;
+					opacity: 0.7;
+				}
 			}
 
 			// For mobile and tablet in landscape orientation
@@ -184,6 +190,10 @@
 					letter-spacing: 2px;
 					text-transform: uppercase;
 					text-align: center;
+
+					img.la-biostethique {
+
+					}
 				}
 			}
 		}
