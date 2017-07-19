@@ -481,41 +481,43 @@ section.home {
       height: 150px;
       margin-bottom: 60px;
       background-image: url("../images/lightBallsMob.jpg");
-      background-attachment: initial;
+      background-attachment: fixed;
       background-repeat: no-repeat;
-      background-position: bottom center;
+      background-position: center;
       background-size: cover; }
-    section.home div.home-content div.services-wrapper div.service:not(:last-child) {
-      margin-bottom: 50px; }
-    section.home div.home-content div.services-wrapper div.service div.head {
-      margin-bottom: 20px;
-      padding: 0 20px;
-      display: flex; }
-      section.home div.home-content div.services-wrapper div.service div.head div.image {
-        display: flex;
-        height: 120px;
-        width: 45%; }
-        section.home div.home-content div.services-wrapper div.service div.head div.image img {
-          margin: auto;
-          height: 120px;
-          width: 120px;
-          border-radius: 50%; }
-      section.home div.home-content div.services-wrapper div.service div.head div.head-text {
-        width: 55%;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-    section.home div.home-content div.services-wrapper div.service div.text {
-      padding: 0 20px; }
-      section.home div.home-content div.services-wrapper div.service div.text p {
-        font-size: 18px;
-        text-align: justify;
-        word-wrap: break-word;
-        word-spacing: 0.10em;
-        color: black; }
-        section.home div.home-content div.services-wrapper div.service div.text p a {
-          text-decoration: underline;
-          color: rgba(0, 0, 0, 0.35); }
+    section.home div.home-content div.services-wrapper {
+      width: 100%; }
+      section.home div.home-content div.services-wrapper div.service {
+        margin: 0 10%;
+        text-align: center; }
+        section.home div.home-content div.services-wrapper div.service:not(:last-child) {
+          padding-bottom: 50px;
+          margin-bottom: 50px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+        section.home div.home-content div.services-wrapper div.service h1 {
+          width: 100%;
+          margin-bottom: 30px; }
+        section.home div.home-content div.services-wrapper div.service img {
+          margin: 0 auto;
+          margin-bottom: 10px; }
+        section.home div.home-content div.services-wrapper div.service p {
+          width: 270px;
+          margin-bottom: 70px;
+          display: inline-block; }
+        section.home div.home-content div.services-wrapper div.service a {
+          margin: 0 auto;
+          padding: 15px 50px;
+          display: inline-block;
+          border: 1px solid rgba(0, 0, 0, 0.35);
+          color: black;
+          font-size: 18px;
+          text-decoration: none;
+          font-weight: bold;
+          cursor: pointer; }
+          section.home div.home-content div.services-wrapper div.service a:active {
+            background-color: black;
+            border: 1px solid black;
+            color: white; }
 
 section.services div.line-one {
   height: 120px;
@@ -537,6 +539,37 @@ section.services p.content {
   padding: 20px 0px;
   border-top: 1px solid #b5b5b5;
   font-size: 2em; }
+section.services div.services-wrapper div.service:not(:last-child) {
+  margin-bottom: 50px; }
+section.services div.services-wrapper div.service div.head {
+  margin-bottom: 20px;
+  padding: 0 20px;
+  display: flex; }
+  section.services div.services-wrapper div.service div.head div.image {
+    display: flex;
+    height: 120px;
+    width: 45%; }
+    section.services div.services-wrapper div.service div.head div.image img {
+      margin: auto;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%; }
+  section.services div.services-wrapper div.service div.head div.head-text {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+section.services div.services-wrapper div.service div.text {
+  padding: 0 20px; }
+  section.services div.services-wrapper div.service div.text p {
+    font-size: 18px;
+    text-align: justify;
+    word-wrap: break-word;
+    word-spacing: 0.10em;
+    color: black; }
+    section.services div.services-wrapper div.service div.text p a {
+      text-decoration: underline;
+      color: rgba(0, 0, 0, 0.35); }
 
 .wrapper {
   max-width: 960px;
@@ -582,6 +615,9 @@ body {
 
 h1, h2, h3, h4, h5, p, a {
   font-family: "Julius Sans One", sans-serif; }
+
+p {
+  line-height: 1.5; }
 
 a {
   text-decoration: none;
