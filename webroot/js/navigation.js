@@ -1,4 +1,4 @@
-	var nav = {
+var nav = {
 	menu			: $('ul.menu-ul'),
 	fixedBar		: $('div.fixed-bar'),
 	opened			: false, // Whether the menu is opened or closed

@@ -217,14 +217,13 @@ section.home {
 		}	
 
 		div.bg-image-1 {
-			width: 100%;
+			width: auto;
 			height: 150px;
-			margin-bottom: 60px;
-			background-image: url('../images/lightBallsMob.jpg');
-			background-attachment: fixed;
+			margin: 0 20px 60px 20px;
+			background-image: url('../images/ModelHairDryerMob.png');
 			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
+			background-position: center left;
+			background-size: 100% auto;
 		}
 
 		div.services-wrapper {
@@ -262,6 +261,7 @@ section.home {
 					display: inline-block;
 					
 					border: 1px solid $ternary_black;
+					border-radius: 5px;
 					color: black;
 					font-size: 18px;
 					text-decoration: none;

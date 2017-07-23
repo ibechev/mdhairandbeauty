@@ -1,0 +1,70 @@
+section.about {
+	position: relative;
+	margin-top: 60px;
+	
+	div.founder {
+		
+
+		h1.header {
+			margin-bottom: 30px;
+			padding-top: 30px;
+			text-align: center;
+			font-size: 40px;
+			letter-spacing: 3px;
+			opacity: 0.4;
+		}
+
+		div.image {
+			height: 175px;
+			width: auto;	
+			margin: 0 20px 30px 20px;		
+			background-image: url("../images/DesiPortraitMob.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 100% auto;
+		}	
+		
+		div.founder-text {
+			position: relative;
+
+			h1 {
+				text-align: center;
+				color: $ternary-black;
+			}
+	
+			p {
+				padding: 15px 20px 30px 20px;
+				text-align: justify;
+				word-wrap: break-word;
+				word-spacing: 0.10em;
+				font-size: 18px;
+
+			}
+		}
+	}
+
+	div.story {
+		background-color: #5a5a5a;
+
+		h1 {
+			margin-bottom: 30px;
+			padding-top: 30px;
+			text-align: center;
+			font-size: 40px;
+			letter-spacing: 3px;
+			color: white;
+			opacity: 0.4;
+		}
+
+		p {
+			padding: 0 20px 30px 20px;
+			text-align: justify;
+			word-wrap: break-word;
+			word-spacing: 0.10em;
+			color: $primary_black;
+			font-size: 18px;
+			color: #dadada;
+		}
+	}
+
+}

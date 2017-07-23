@@ -481,14 +481,13 @@ section.home {
         color: black;
         font-size: 18px; }
     section.home div.home-content div.bg-image-1 {
-      width: 100%;
+      width: auto;
       height: 150px;
-      margin-bottom: 60px;
-      background-image: url("../images/lightBallsMob.jpg");
-      background-attachment: fixed;
+      margin: 0 20px 60px 20px;
+      background-image: url("../images/ModelHairDryerMob.png");
       background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover; }
+      background-position: center left;
+      background-size: 100% auto; }
     section.home div.home-content div.services-wrapper {
       width: 100%; }
       section.home div.home-content div.services-wrapper div.service {
@@ -513,6 +512,7 @@ section.home {
           padding: 15px 50px;
           display: inline-block;
           border: 1px solid rgba(0, 0, 0, 0.35);
+          border-radius: 5px;
           color: black;
           font-size: 18px;
           text-decoration: none;
@@ -574,6 +574,54 @@ section.services div.services-wrapper div.service div.text {
     section.services div.services-wrapper div.service div.text p a {
       text-decoration: underline;
       color: rgba(0, 0, 0, 0.35); }
+
+section.about {
+  position: relative;
+  margin-top: 60px; }
+  section.about div.founder h1.header {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 3px;
+    opacity: 0.4; }
+  section.about div.founder div.image {
+    height: 175px;
+    width: auto;
+    margin: 0 20px 30px 20px;
+    background-image: url("../images/DesiPortraitMob.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; }
+  section.about div.founder div.founder-text {
+    position: relative; }
+    section.about div.founder div.founder-text h1 {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.35); }
+    section.about div.founder div.founder-text p {
+      padding: 15px 20px 30px 20px;
+      text-align: justify;
+      word-wrap: break-word;
+      word-spacing: 0.10em;
+      font-size: 18px; }
+  section.about div.story {
+    background-color: #5a5a5a; }
+    section.about div.story h1 {
+      margin-bottom: 30px;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 40px;
+      letter-spacing: 3px;
+      color: white;
+      opacity: 0.4; }
+    section.about div.story p {
+      padding: 0 20px 30px 20px;
+      text-align: justify;
+      word-wrap: break-word;
+      word-spacing: 0.10em;
+      color: black;
+      font-size: 18px;
+      color: #dadada; }
 
 .wrapper {
   max-width: 960px;

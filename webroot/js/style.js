@@ -23,7 +23,7 @@ function homeTextParallax() {
 	$('.home-text .text-wrap p').each(function(i) {
 		setTimeout(function() {
 			$('.home-text .text-wrap p').eq(i).addClass('landing');
-		}, 40 * ((i+1) * 3));
+		}, 40 * ((i+1) * 5));
 	});
 };
 
