@@ -1,20 +1,31 @@
-// Set min height for the HOME - Logo section
-var setHomeHeight = function() {	
+
+//============================================
+// Set min height for the Home - Logo and Loading div section
+//============================================
+var setHeight = function() {	
 	var docHeight = $(window).height();
 
 	$('div.home-face').css('height', docHeight + 'px');
 	$('section.index:not(home)').css('min-height', docHeight + 'px');
 
-	// Set background of the hme page - fase to inherit full heigth from the parent element
+	// Set background of the home page - fase to inherit full heigth from the parent element
 	$('.bg-home-face').css('height', docHeight + 'px');
+
+	// Set height for the Loading div element
+	$('.loader').css('height', docHeight + 'px');
 }
 
+//==========================================================
 //  Set the Logo on the Home page to be vertically centered
+//==========================================================
 var logoCenterVert = function() {
 	var logoHome = $('section.home').find('div.logo-wrapper');
 	logoHome.css('margin', ($(window).height() / 2) - ((logoHome.height() + 30) / 2) + 'px 0px');
 }
 
+//==========================================================
+//  Set Landing for Logo and Text on the home page 
+//==========================================================
 function homeLogoParallax() {
 	$('.home-logo').css({'opacity' : 0.9});	
 };
@@ -28,17 +39,29 @@ function homeTextParallax() {
 };
 
 
+
+
 $(document).ready(function() {
 
 	setTimeout(homeLogoParallax, 400);
-	setTimeout(homeTextParallax, 1800);
+	setTimeout(homeTextParallax, 1400);
 
-	setHomeHeight();
+	setHeight();
 
+	//=============================================================
 	// Set min height for the HOME section, when orientation change
+	//=============================================================
 	$(window).on('orientationchange', function() {
 		setHomeHeight();
 		logoCenterVert();
+	});
+
+	//============
+	// Back to top
+	//============
+	$('#scroller-top').on('click', function(){
+		$('html, body').animate({scrollTop: '0px'}, 800);
+		return false;
 	});
 
 
@@ -61,15 +84,20 @@ $(document).ready(function() {
 
 
 		// Check if the device is a mobile devices
-		if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {	
+		//if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {	
 
-			// Show Scroll to top arrow
-			var scrollTopBtn = $('#scroller-top');
-			if ($(this).scrollTop() > 350) {
-				scrollTopBtn.fadeIn();
+			//============
+			// Back to top
+			//============
+			if ($(this).scrollTop() > 100) {
+				$('#scroller-top').css({
+					'bottom': '25px'
+				});
 			} else {
-				scrollTopBtn.fadeOut();
+				$('#scroller-top').css({
+					'bottom': '-100px'
+				});
 			}
-		};
+		//};
 	});
 });

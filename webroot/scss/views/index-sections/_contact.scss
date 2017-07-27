@@ -1,0 +1,45 @@
+section.contact {
+	padding-top: 60px;
+	background-color: $secondary-black;
+	
+	h1 {
+		margin: 30px 0;
+		padding: 0 20px;
+		font-size: 25px;
+		text-align: center;
+		color: $ternary-white;
+		letter-spacing: 4px;
+		line-height: 1.5;
+
+	}
+
+	div.address {
+		padding: 0 20%;
+		margin-bottom: 40px;
+
+		@include display-flex;
+		@include justify-content-space-between;
+		@include align-items-center;
+
+		div.icon {
+			i {
+				font-size: 60px;
+				color: $ternary-white;
+			}
+		}
+
+		div.text {
+			p {
+				line-height: 1.5;
+				color: white;
+				text-align: center;
+				font-family: $sans-serif;
+			}
+		
+		}
+	}
+
+	div.map {
+		height: 400px;
+	}
+}

@@ -1,3 +1,9 @@
+.loader {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: black; }
+
 div.fixed-bar {
   position: fixed;
   height: 60px;
@@ -202,6 +208,7 @@ ul.menu-ul {
 footer {
   width: 100%;
   padding: 60px 0 0;
+  position: relative;
   background-color: #313131; }
   footer ul.footer {
     width: 100%; }
@@ -623,6 +630,40 @@ section.about {
       font-size: 18px;
       color: #dadada; }
 
+section.contact {
+  padding-top: 60px;
+  background-color: rgba(0, 0, 0, 0.75); }
+  section.contact h1 {
+    margin: 30px 0;
+    padding: 0 20px;
+    font-size: 25px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 4px;
+    line-height: 1.5; }
+  section.contact div.address {
+    padding: 0 20%;
+    margin-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    section.contact div.address div.icon i {
+      font-size: 60px;
+      color: rgba(255, 255, 255, 0.6); }
+    section.contact div.address div.text p {
+      line-height: 1.5;
+      color: white;
+      text-align: center;
+      font-family: "Julius Sans One", sans-serif; }
+  section.contact div.map {
+    height: 400px; }
+
 .wrapper {
   max-width: 960px;
   width: 100%;
@@ -661,6 +702,7 @@ html {
   height: 100%; }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   background-color: white; }
@@ -678,19 +720,15 @@ a {
 textarea, input, button {
   outline: none; }
 
-span#scroller-top {
+div#scroller-top {
   position: fixed;
-  top: 85%;
-  left: 92%;
-  font-size: 4em;
-  color: rgba(73, 176, 230, 0.39);
-  display: none; }
-  span#scroller-top:hover {
-    -webkit-transform: scale(1.1) !important;
-    -moz-transform: scale(1.1) !important;
-    -ms-transform: scale(1.1) !important;
-    -o-transform: scale(1.1) !important;
-    transform: scale(1.1) !important; }
+  bottom: -100px;
+  right: 25px;
+  font-size: 3em;
+  color: #942323;
+  display: block;
+  z-index: 9998;
+  transition: all 0.6s ease-in-out; }
 
 section.index {
   position: relative; }

@@ -1,5 +1,15 @@
+.loader {
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+	background-color: black;
+}
+
+// IMPORTS
+
 @import "variables";		
 @import "mixins";
+@import "mixins-flex";
 @import "layouts";
 @import "views";
 
@@ -65,6 +75,7 @@ html {
 }
 
 body {
+	position: relative;
 	margin: 0;
 	padding: 0;
 	background-color: white;
@@ -85,18 +96,15 @@ a {
 
 textarea, input, button { outline: none; }
 
-span#scroller-top {
+div#scroller-top {
 	position: fixed;
-	top: 85%;
-	left: 92%;
-	font-size: 4em;
-	color: rgba(73, 176, 230, 0.39);
-	display: none;
-
-	&:hover {
-		@include transform(scale(1.1) !important);
-	}
-
+	bottom: -100px;
+	right: 25px;
+	font-size: 3em;
+	color: rgba(148, 35, 35, 1.0);
+	display: block;
+	z-index: 9998;
+	transition: all 0.6s ease-in-out;
 }		
 
 //=======================================================================
