@@ -1,3 +1,12 @@
+//=======================================================
+// Loading DIV manipulation
+//=======================================================
+
+
+	$(window).on('load', function () {
+	    $('.spinner-wrap').addClass('scale-spinner-down');
+	    $('.loader').fadeOut(1000);
+	});
 
 //============================================
 // Set min height for the Home - Logo and Loading div section

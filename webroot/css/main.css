@@ -2,8 +2,53 @@
   width: 100%;
   position: fixed;
   z-index: 9999;
-  background-color: black; }
-
+  background-color: black;
+  /*@include display-flex;
+  @include justify-content-center;
+  @include align-items-center;*/ }
+  .loader .spinner-wrap {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -75px;
+    transition: all 0.5s linear;
+    opacity: 0;
+    animation: appear 0.4s linear forwards;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .loader .spinner-wrap .spinner {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: rgba(255, 255, 255, 0.7);
+      border-bottom-color: rgba(255, 255, 255, 0.7);
+      animation: spinner 2s linear infinite; }
+    .loader .spinner-wrap .text {
+      position: fixed;
+      color: rgba(255, 255, 255, 0.7); }
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 div.fixed-bar {
   position: fixed;
   height: 60px;
@@ -583,34 +628,35 @@ section.services div.services-wrapper div.service div.text {
       color: rgba(0, 0, 0, 0.35); }
 
 section.about {
-  position: relative;
-  margin-top: 60px; }
-  section.about div.founder h1.header {
-    margin-bottom: 30px;
-    padding-top: 30px;
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: 3px;
-    opacity: 0.4; }
-  section.about div.founder div.image {
-    height: 175px;
-    width: auto;
-    margin: 0 20px 30px 20px;
-    background-image: url("../images/DesiPortraitMob.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% auto; }
-  section.about div.founder div.founder-text {
-    position: relative; }
-    section.about div.founder div.founder-text h1 {
+  position: relative; }
+  section.about div.founder {
+    padding-top: 60px; }
+    section.about div.founder h1.header {
+      margin-bottom: 30px;
+      padding-top: 30px;
       text-align: center;
-      color: rgba(0, 0, 0, 0.35); }
-    section.about div.founder div.founder-text p {
-      padding: 15px 20px 30px 20px;
-      text-align: justify;
-      word-wrap: break-word;
-      word-spacing: 0.10em;
-      font-size: 18px; }
+      font-size: 40px;
+      letter-spacing: 3px;
+      opacity: 0.4; }
+    section.about div.founder div.image {
+      height: 175px;
+      width: auto;
+      margin: 0 20px 30px 20px;
+      background-image: url("../images/DesiPortraitMob.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto; }
+    section.about div.founder div.founder-text {
+      position: relative; }
+      section.about div.founder div.founder-text h1 {
+        text-align: center;
+        color: rgba(0, 0, 0, 0.35); }
+      section.about div.founder div.founder-text p {
+        padding: 15px 20px 30px 20px;
+        text-align: justify;
+        word-wrap: break-word;
+        word-spacing: 0.10em;
+        font-size: 18px; }
   section.about div.story {
     background-color: #5a5a5a; }
     section.about div.story h1 {
@@ -663,6 +709,10 @@ section.contact {
       font-family: "Julius Sans One", sans-serif; }
   section.contact div.map {
     height: 400px; }
+
+.scale-spinner-down {
+  transform: scale(0);
+  opacity: 0; }
 
 .wrapper {
   max-width: 960px;
