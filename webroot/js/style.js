@@ -1,17 +1,23 @@
-//=======================================================
-// Loading DIV manipulation
-//=======================================================
+//=================================
+// Loading Screen
+//=================================
 
+$(window).on('load', function(){
+	setTimeout(function removeLoader(){
+		
+		
+		// fadeOut complete. Remove the loading div
+		$('.loader').fadeOut(400, function() {
+			$( ".loader" ).remove(); //makes page more lightweight
+		}); 
+	}, 400); //wait for page load PLUS two seconds.
+});
 
-	$(window).on('load', function () {
-	    $('.spinner-wrap').addClass('scale-spinner-down');
-	    $('.loader').fadeOut(1000);
-	});
 
 //============================================
 // Set min height for the Home - Logo and Loading div section
 //============================================
-var setHeight = function() {	
+var setHomeHeight = function() {	
 	var docHeight = $(window).height();
 
 	$('div.home-face').css('height', docHeight + 'px');
@@ -52,10 +58,10 @@ function homeTextParallax() {
 
 $(document).ready(function() {
 
-	setTimeout(homeLogoParallax, 400);
-	setTimeout(homeTextParallax, 1400);
+	setTimeout(homeLogoParallax, 1000);
+	setTimeout(homeTextParallax, 2000);
 
-	setHeight();
+	setHomeHeight();
 
 	//=============================================================
 	// Set min height for the HOME section, when orientation change

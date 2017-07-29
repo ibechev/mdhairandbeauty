@@ -1,3 +1,7 @@
+//=======================
+// Menu - Navigation code
+//=======================
+
 var nav = {
 	menu			: $('ul.menu-ul'),
 	fixedBar		: $('div.fixed-bar'),
@@ -192,15 +196,20 @@ var nav = {
 	}
 }
 
-// END OF   N A V 
+
 
 $(document).ready(function() {
 
-	// Run the navigation object
+	//=============================
+	// Initialize navigation object
+	//=============================
+
 	nav.init();
 
+});
 
-})
+
+
 
 
 
