@@ -3,11 +3,11 @@ section.home {
 
 	div.bg-home-face {
 		width: 100%;	
-		background-image: url('../images/BGImageHome2.jpg');
+		background-image: url('../images/BGhomeScreen.jpg');
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-position: top left;
-		background-size: cover;
+		background-size: auto 100%;
 
 		filter: brightness(75%);
 		-webkit-filter: brightness(75%);
