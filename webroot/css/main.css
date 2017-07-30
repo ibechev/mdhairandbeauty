@@ -350,7 +350,7 @@ section.home {
     background-image: url("../images/BGhomeScreen.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: center left;
     background-size: auto 100%;
     filter: brightness(75%);
     -webkit-filter: brightness(75%); }
