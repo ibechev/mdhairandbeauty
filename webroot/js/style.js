@@ -1,7 +1,7 @@
 //=================================
 // Loading Screen
 //=================================
-
+/*
 $(window).on('load', function(){
 	setTimeout(function removeLoader(){
 		
@@ -12,7 +12,7 @@ $(window).on('load', function(){
 		}); 
 	}, 400); //wait for page load PLUS two seconds.
 });
-
+*/
 
 //============================================
 // Set min height for the Home - Logo and Loading div section

@@ -1,13 +1,17 @@
 section.home {
 	overflow: hidden;
 
-	div.bg-home-face {
-		width: 100%;	
+	.bg-home-face {
+		height: 100%;
+		width: auto;
+
+		/*	
 		background-image: url('../images/BGhomeScreen.jpg');
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		background-position: center left;
-		background-size: auto 100%;
+		background-size: cover;
+		*/
 
 		filter: brightness(75%);
 		-webkit-filter: brightness(75%);

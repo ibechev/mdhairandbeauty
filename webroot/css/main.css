@@ -49,7 +49,12 @@
       border-bottom-color: rgba(0, 0, 0, 0.7);
       animation: spinner 2s linear infinite; }
     .loader .spinner-wrap .text {
-      position: fixed;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -48px;
+      line-height: 20px;
       color: rgba(0, 0, 0, 0.7); }
 @keyframes spinner {
   0% {
@@ -345,13 +350,16 @@ footer {
 
 section.home {
   overflow: hidden; }
-  section.home div.bg-home-face {
-    width: 100%;
-    background-image: url("../images/BGhomeScreen.jpg");
+  section.home .bg-home-face {
+    height: 100%;
+    width: auto;
+    /*	
+    background-image: url('../images/BGhomeScreen.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center left;
-    background-size: auto 100%;
+    background-size: cover;
+    */
     filter: brightness(75%);
     -webkit-filter: brightness(75%); }
   section.home div.home-face {
