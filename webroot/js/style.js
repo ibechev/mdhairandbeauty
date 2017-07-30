@@ -1,23 +1,47 @@
+
+/*
+//=================================
+// Find spesific page section
+//=================================
+// not in use
+function findPageSection(url) {
+	var path = url.split('/')[url.split('/').length - 1];
+	var pageSection = path.indexOf('#') > 0 ? path.substring(path.indexOf('#') + 1, path.length) : false;
+	return pageSection ? jumpTo(pageSection) : false;
+}
+
+
+//=================================
+// Go to spesific page section
+//=================================
+// not in use 
+function jumpTo(pageSection) {
+	var section = $('.' + pageSection);
+	//$('html, body').animate({scrollTop: section.offset().top}, 800);
+
+	return false;	
+}
+*/
+
+
 //=================================
 // Loading Screen
 //=================================
 
 $(window).on('load', function(){
 	setTimeout(function removeLoader(){
-		
-		
 		// fadeOut complete. Remove the loading div
 		$('.loader').fadeOut(400, function() {
 			$( ".loader" ).remove(); //makes page more lightweight
 		}); 
-	}, 400); //wait for page load PLUS two seconds.
+	}, 400); //wait for page load PLUS 0.4s.
 });
 
 
 //============================================
 // Set min height for the Home - Logo and Loading div section
 //============================================
-var setHomeHeight = function() {	
+function setHomeHeight() {	
 	var docHeight = $(window).height();
 
 	$('div.home-face').css('height', docHeight + 'px');
@@ -33,7 +57,7 @@ var setHomeHeight = function() {
 //==========================================================
 //  Set the Logo on the Home page to be vertically centered
 //==========================================================
-var logoCenterVert = function() {
+function logoCenterVert() {
 	var logoHome = $('section.home').find('div.logo-wrapper');
 	logoHome.css('margin', ($(window).height() / 2) - ((logoHome.height() + 30) / 2) + 'px 0px');
 }
@@ -63,6 +87,7 @@ $(document).ready(function() {
 
 	setHomeHeight();
 
+
 	//=============================================================
 	// Set min height for the HOME section, when orientation change
 	//=============================================================
@@ -81,7 +106,7 @@ $(document).ready(function() {
 
 
 	$(window).scroll(function()	{
-		
+
 		/*
 		var wScroll = $(this).scrollTop();
 
