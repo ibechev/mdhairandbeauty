@@ -1,143 +1,136 @@
 footer {
 	width: 100%;
-	padding: 60px 0 0;
 	position: relative;
-	background-color: #313131;
+	background-color: #e4e2e2;
 
-	ul.footer {
-		width: 100%;
+	
 
-		li.section { // Common style for all li elements inside ul.footer
-			&:not(:last-of-type) {
-				margin-bottom: 70px;
+	.content {
+		
+		.section {
+
+			.head {
+				font-size: 20px;
+				text-align: center;
+				margin-bottom: 10px;
+				font-family: $heading;
 			}
 
-			ul.wrap {
-				@include boxSizing(border-box);
-				@include clearFix();
+			.body, a {
+				font-size: 16px;
+				text-align: center;
+				color: $secondary_black;
+				line-height: 22px;
+			}
+				
+			.icons {
+				font-size: 30px;
+				text-align: center;
+				margin-bottom: 5px;
+			}
+		}
+		
+		.email-call {	
+			@include display-flex;
+			@include flex-direction-row;
+			@include justify-content-space-around;
+			
+			.email, .call {
+				padding: 20px;
+				width: 50%;
+				@include display-flex;
+				@include flex-direction-column;
+				@include justify-content-flex-start;
+				
+			}
+	
+			.email {
 
-				width: 100%;
-				padding: 0 20px;
+			}
 
-				h2 {
-					margin-bottom: 23px;
-					text-align: center;
-					color: $primary_white;
-				}
-
-				li {
-					float: left;
-					color: $secondary_white;
-				}
+			.call {
+				
 			}
 		}
 
-		li.location {
-			ul.wrap {
-				width: 100%;
-				padding: 0 20px;
+		.location-social {
+			@include display-flex;
+			@include flex-direction-row;
+			@include justify-content-space-around;
 
-				li.icon {
-					text-align: right;
-					width: 30%;
+			.location, .open-hours {
+				padding: 20px;
+				width: 50%;
+				@include display-flex;
+				@include flex-direction-column;
+				@include justify-content-flex-start;
+			}
 
-					i {
-						font-size: 55px;
-					}
+
+			
+
+			.location {
+
+				a.map-link {
+					margin-top: 30px;
 				}
+			}
 
-				li.text {
-					@include clearFix();
-					width: 70%;	
+			.open-hours {
+				@include display-flex;
+				@include flex-direction-column;
+				@include align-items-center;
 
+				ul.days {
 					p {
 						text-align: center;
-						color: $secondary_white;
-					}
-				}
-			}
-
-			div.link {
-				margin-top: 30px;
-				text-align: center;
-
-				a {
-					text-decoration: underline;
-					color: $primary_white;
-
-					i {
-						font-size: 20px;
+						line-height: 20px;
 					}
 				}
 			}
 		}
 
-		li.call {
-			ul.wrap {
-				li.phone {
-					width: 70%;
-					text-align: center;
+		.social {
+			padding-bottom: 20px;
+			@include display-flex;
+			@include flex-direction-column;
+			@include align-items-center;
 
-					a {
-						color: $secondary_white;
-					}
-				}
+			p.head {
+				margin-bottom: 15px;
+			}
 
-				li.icon {
-					width: 30%;
-
-					i {
-						font-size: 55px;
-					}
+			.icons-wrap {
+				height: 100%;
+				width: 45%;
+				@include display-flex;
+				@include justify-content-space-around;
+				
+				a.icons-social {
+					font-size: 50px;
 				}
 			}
 		}
 
-		li.social {
-			ul.wrap {
-				li {
-					width: (100% / 3);
-					text-align: center;
+		
+	}
 
-					a {
-						color: $secondary_white;
 
-						i {
-							font-size: 55px;
-						}
-					}
-				}
-			}
-		}
 
-		li.bottom {
-			padding: 30px 0;
-			background-color: #000000;
+	.bottom {
+		width: 100%;
+		padding: 10px 0;
+		background-color: #383838;
 
-			ul.wrap {
-				li {
-					float: none;
-					text-align: center;
-				}
-
-				li.logo {
-					margin-bottom: 20px;
-
-					a {
-						img {
-							width: 25%;
-							height: auto;
-							opacity: 0.7;
-						}
-					}
-				}
-
-				li.copy {
-					p {
-						color: $secondary_white;
-					}
-				}
-			}
+		@include display-flex;
+		@include align-items-center;
+		@include justify-content-center;
+		
+		p {
+			font-size: 18px;
+			text-align: center;
+			color: $secondary-white;
 		}
 	}
+
 }

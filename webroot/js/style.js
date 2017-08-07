@@ -34,7 +34,7 @@ $(window).on('load', function(){
 		$('.loader').fadeOut(400, function() {
 			$( ".loader" ).remove(); //makes page more lightweight
 		}); 
-	}, 400); //wait for page load PLUS 0.4s.
+	}, 800); //wait for page load PLUS 0.6s.
 });
 
 
@@ -131,7 +131,7 @@ $(document).ready(function() {
 			//============
 			if ($(this).scrollTop() > 100) {
 				$('#scroller-top').css({
-					'bottom': '25px'
+					'bottom': '30px'
 				});
 			} else {
 				$('#scroller-top').css({
