@@ -69,24 +69,11 @@ function homeLogoParallax() {
 	$('.home-logo').css({'opacity' : 0.9});	
 };
 
-function homeTextParallax() {
-	$('.home-text .text-wrap p').each(function(i) {
-		setTimeout(function() {
-			$('.home-text .text-wrap p').eq(i).addClass('landing');
-		}, 40 * ((i+1) * 5));
-	});
-};
-
-
-
-
 $(document).ready(function() {
 
 	setTimeout(homeLogoParallax, 1000);
-	setTimeout(homeTextParallax, 2000);
 
 	setHomeHeight();
-
 
 	//=============================================================
 	// Set min height for the HOME section, when orientation change

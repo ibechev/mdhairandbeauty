@@ -8,13 +8,7 @@ footer {
 	.content {
 		
 		.section {
-
-			.head {
-				font-size: 20px;
-				text-align: center;
-				margin-bottom: 10px;
-				font-family: $heading;
-			}
+			padding: 20px;
 
 			.body, a {
 				font-size: 16px;
@@ -27,6 +21,7 @@ footer {
 				font-size: 30px;
 				text-align: center;
 				margin-bottom: 5px;
+				color: $secondary_black;
 			}
 		}
 		
@@ -59,7 +54,6 @@ footer {
 			@include justify-content-space-around;
 
 			.location, .open-hours {
-				padding: 20px;
 				width: 50%;
 				@include display-flex;
 				@include flex-direction-column;
@@ -72,7 +66,8 @@ footer {
 			.location {
 
 				a.map-link {
-					margin-top: 30px;
+					margin-top: 8px;
+					color: $primary_black;
 				}
 			}
 
@@ -96,10 +91,6 @@ footer {
 			@include flex-direction-column;
 			@include align-items-center;
 
-			p.head {
-				margin-bottom: 15px;
-			}
-
 			.icons-wrap {
 				height: 100%;
 				width: 45%;
@@ -107,7 +98,7 @@ footer {
 				@include justify-content-space-around;
 				
 				a.icons-social {
-					font-size: 50px;
+					font-size: 40px;
 				}
 			}
 		}
@@ -118,18 +109,20 @@ footer {
 
 
 	.bottom {
+		height: 60px;
 		width: 100%;
-		padding: 10px 0;
+		@include boxSizing(border-box);
+		padding: 8px 0;
 		background-color: #383838;
 
 		@include display-flex;
 		@include align-items-center;
 		@include justify-content-center;
 		
-		p {
-			font-size: 18px;
+		h3 {
 			text-align: center;
 			color: $secondary-white;
+			line-height: 1.3;
 		}
 	}
 
