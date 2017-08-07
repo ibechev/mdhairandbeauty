@@ -6,9 +6,10 @@ footer {
 	
 
 	.content {
+		padding: 20px 0;
 		
 		.section {
-			padding: 20px;
+			width: 50%;
 
 			.body, a {
 				font-size: 16px;
@@ -27,15 +28,14 @@ footer {
 		
 		.email-call {	
 			@include display-flex;
-			@include flex-direction-row;
-			@include justify-content-space-around;
+			@include flex-direction-column;
+			@include align-items-center;
 			
 			.email, .call {
-				padding: 20px;
-				width: 50%;
 				@include display-flex;
 				@include flex-direction-column;
 				@include justify-content-flex-start;
+				padding-bottom: 30px;
 				
 			}
 	
@@ -54,14 +54,11 @@ footer {
 			@include justify-content-space-around;
 
 			.location, .open-hours {
-				width: 50%;
 				@include display-flex;
 				@include flex-direction-column;
 				@include justify-content-flex-start;
+				padding-bottom: 30px;
 			}
-
-
-			
 
 			.location {
 
@@ -86,10 +83,11 @@ footer {
 		}
 
 		.social {
-			padding-bottom: 20px;
+			height: 40px;
+			width: 100%;
 			@include display-flex;
-			@include flex-direction-column;
-			@include align-items-center;
+			@include flex-direction-row;
+			@include justify-content-center;
 
 			.icons-wrap {
 				height: 100%;
@@ -105,8 +103,6 @@ footer {
 
 		
 	}
-
-
 
 	.bottom {
 		height: 60px;

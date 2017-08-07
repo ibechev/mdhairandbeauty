@@ -271,67 +271,21 @@ footer {
   width: 100%;
   position: relative;
   background-color: #e4e2e2; }
-  footer .content .section {
-    padding: 20px; }
-    footer .content .section .body, footer .content .section a {
-      font-size: 16px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.75);
-      line-height: 22px; }
-    footer .content .section .icons {
-      font-size: 30px;
-      text-align: center;
-      margin-bottom: 5px;
-      color: rgba(0, 0, 0, 0.75); }
-  footer .content .email-call {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
-    footer .content .email-call .email, footer .content .email-call .call {
-      padding: 20px;
-      width: 50%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start; }
-  footer .content .location-social {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
-    footer .content .location-social .location, footer .content .location-social .open-hours {
-      width: 50%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start; }
-    footer .content .location-social .location a.map-link {
-      margin-top: 8px;
-      color: black; }
-    footer .content .location-social .open-hours {
+  footer .content {
+    padding: 20px 0; }
+    footer .content .section {
+      width: 50%; }
+      footer .content .section .body, footer .content .section a {
+        font-size: 16px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.75);
+        line-height: 22px; }
+      footer .content .section .icons {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 5px;
+        color: rgba(0, 0, 0, 0.75); }
+    footer .content .email-call {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -342,31 +296,80 @@ footer {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
-      footer .content .location-social .open-hours ul.days p {
-        text-align: center;
-        line-height: 20px; }
-  footer .content .social {
-    padding-bottom: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    footer .content .social .icons-wrap {
-      height: 100%;
-      width: 45%;
+      footer .content .email-call .email, footer .content .email-call .call {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding-bottom: 30px; }
+    footer .content .location-social {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
       -ms-flex-pack: distribute;
       justify-content: space-around; }
-      footer .content .social .icons-wrap a.icons-social {
-        font-size: 40px; }
+      footer .content .location-social .location, footer .content .location-social .open-hours {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding-bottom: 30px; }
+      footer .content .location-social .location a.map-link {
+        margin-top: 8px;
+        color: black; }
+      footer .content .location-social .open-hours {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        footer .content .location-social .open-hours ul.days p {
+          text-align: center;
+          line-height: 20px; }
+    footer .content .social {
+      height: 40px;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      footer .content .social .icons-wrap {
+        height: 100%;
+        width: 45%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around; }
+        footer .content .social .icons-wrap a.icons-social {
+          font-size: 40px; }
   footer .bottom {
     height: 60px;
     width: 100%;
