@@ -23,7 +23,6 @@ function jumpTo(pageSection) {
 }
 */
 
-
 //=================================
 // Loading Screen
 //=================================
@@ -34,7 +33,7 @@ $(window).on('load', function(){
 		$('.loader').fadeOut(400, function() {
 			$( ".loader" ).remove(); //makes page more lightweight
 		}); 
-	}, 800); //wait for page load PLUS 0.6s.
+	}, 800); //wait for page load PLUS 0.8s.
 });
 
 
@@ -71,7 +70,7 @@ function homeLogoParallax() {
 
 $(document).ready(function() {
 
-	setTimeout(homeLogoParallax, 1000);
+	setTimeout(homeLogoParallax, 1500);
 
 	setHomeHeight();
 
@@ -118,7 +117,7 @@ $(document).ready(function() {
 			//============
 			if ($(this).scrollTop() > 100) {
 				$('#scroller-top').css({
-					'bottom': '30px'
+					'bottom': '65px'
 				});
 			} else {
 				$('#scroller-top').css({

@@ -9,7 +9,7 @@ var nav = {
 	screenStyle		: null, // The current style of device 
 	root			: $('html, body'),
 	screenModes		: ['mobile', 'desktop'], // possible values of screen mode
-	// Manu button element
+	// Menu button element
 	barTop		: $('div.fixed-bar').find('.bar-1'),
 	barMiddle	: $('div.fixed-bar').find('.bar-2'),
 	barBottom	: $('div.fixed-bar').find('.bar-3'),
@@ -108,7 +108,7 @@ var nav = {
 	},
 
 	animation: {	// Menu and menu button animation
-		slideSpeed: 300,
+		slideSpeed: 200,
 		showMenu: function() {
 			nav.resize.setInitPosMob();
 			nav.fixedBar.animate({opacity: '1'}, 1);

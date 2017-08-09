@@ -331,7 +331,7 @@ footer {
         justify-content: flex-start;
         padding-bottom: 30px; }
       footer .content .location-social .location a.map-link {
-        margin-top: 8px;
+        margin-top: 12px;
         color: black; }
       footer .content .location-social .open-hours {
         display: -webkit-box;
@@ -411,12 +411,11 @@ section.home {
     left: 0;
     height: 100%;
     width: 100%;
+    display: -webkit-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
     -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center; }
     section.home div.home-face div.logo-wrapper {
       position: relative;
@@ -428,6 +427,7 @@ section.home {
       -moz-box-sizing: border-box; }
       section.home div.home-face div.logo-wrapper div.home-logo {
         position: relative;
+        margin-top: 250px;
         width: 100%;
         height: 50%;
         opacity: 0;
@@ -460,65 +460,6 @@ section.home {
             max-width: 100%;
             box-sizing: border-box;
             -moz-box-sizing: border-box; }
-      section.home div.home-face div.logo-wrapper div.home-text {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 50%;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box; }
-        section.home div.home-face div.logo-wrapper div.home-text div {
-          position: absolute;
-          top: 40%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          -moz-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
-          section.home div.home-face div.logo-wrapper div.home-text div p {
-            line-height: 1;
-            letter-spacing: 3px;
-            color: rgba(255, 255, 255, 0.9);
-            justify-content: center;
-            text-align: center;
-            opacity: 0;
-            /* Enable hardware acceleration to fix laggy transitions */
-            -webkit-transform: translateZ(0);
-            -moz-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            -o-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-transition: all 0.4s ease-in-out;
-            /* For Safari 3.1 to 6.0 */
-            -moz-transition: all 0.4s ease-in-out;
-            -ms-transition: all 0.4s ease-in-out;
-            -o-transition: all 0.4s ease-in-out;
-            transition: all 0.4s ease-in-out;
-            -webkit-transform: translateY(70px);
-            -moz-transform: translateY(70px);
-            -ms-transform: translateY(70px);
-            -o-transform: translateY(70px);
-            transform: translateY(70px); }
-            section.home div.home-face div.logo-wrapper div.home-text div p:first-child {
-              margin-bottom: 8px; }
-            section.home div.home-face div.logo-wrapper div.home-text div p.landing {
-              -webkit-transform: translateY(0px);
-              -moz-transform: translateY(0px);
-              -ms-transform: translateY(0px);
-              -o-transform: translateY(0px);
-              transform: translateY(0px);
-              opacity: 0.9; }
-            @media only screen and (min-width: 768px) {
-              section.home div.home-face div.logo-wrapper div.home-text div p {
-                display: block;
-                margin: 0 auto;
-                font-size: 1.5em; } }
-          section.home div.home-face div.logo-wrapper div.home-text div p.head {
-            letter-spacing: 4px;
-            font-size: 4em; }
-          section.home div.home-face div.logo-wrapper div.home-text div p.foot {
-            font-size: 20px; }
       @media only screen and (min-width: 768px) {
         section.home div.home-face div.logo-wrapper {
           height: 40%; } }
