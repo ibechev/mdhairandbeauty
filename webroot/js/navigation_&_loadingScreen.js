@@ -108,7 +108,7 @@ var nav = {
 	},
 
 	animation: {	// Menu and menu button animation
-		slideSpeed: 200,
+		slideSpeed: 250,
 		showMenu: function() {
 			nav.resize.setInitPosMob();
 			nav.fixedBar.animate({opacity: '1'}, 1);

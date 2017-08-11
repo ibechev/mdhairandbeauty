@@ -22,40 +22,37 @@
 	</div>
 </div>	
 
-<ul class="menu-ul">	
+<ul class="menu-ul">
 
-	<li id="services">
+	<li>
+		<a <?php if (App::getRouter()->getController() == 'partners') { ?> class="active" <?php } ?>
+			href="<?php echo $GLOBALS['environment']; ?>/home" class="go-to-page">home</a>
+	</li>
+
+	<li></li>	
+
+	<li>
 		<a <?php if (App::getRouter()->getController() == 'services') { ?> class="active" <?php } ?> 
 		href="<?php echo $GLOBALS['environment']; ?>/services" class="go-to-page">services</a>
 	</li>
 
 	<li></li>
 
-	<li id="gallery">
+	<li>
 		<a <?php if (App::getRouter()->getController() == 'gallery') { ?> class="active" <?php } ?> 
 		href="<?php echo $GLOBALS['environment']; ?>/gallery" class="go-to-page">gallery</a>
 	</li>
 
 	<li></li>
 
-	<li id="partners">
-		<a <?php if (App::getRouter()->getController() == 'partners') { ?> class="active" <?php } ?>
-			href="<?php echo $GLOBALS['environment']; ?>/partners" class="go-to-page">
-
-			<img class="la-biostethique" src="webroot/images/LaBioParisWhite.png" alt="La Biostethique">
-		</a>
-	</li>
-
-	<li></li>
-
-	<li id="about">
+	<li>
 		<a <?php if (App::getRouter()->getController() == 'about') { ?> class="active" <?php } ?>
 		href="<?php echo $GLOBALS['environment']; ?>/about" class="go-to-page">about</a>
 	</li>
 
 	<li></li>
 
-	<li id="contact">
+	<li>
 		<a <?php if (App::getRouter()->getController() == 'contact') { ?> class="active" <?php } ?>
 		href="<?php echo $GLOBALS['environment']; ?>/contact" class="go-to-page">contact</a>
 	</li>
