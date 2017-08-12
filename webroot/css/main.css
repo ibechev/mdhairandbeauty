@@ -76,7 +76,7 @@ div.fixed-bar {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   opacity: 0.7;
-  background-color: #000000;
+  background-color: #e4e2e2;
   color: white; }
   div.fixed-bar div.sub-fixed-bar {
     display: inline-block;
@@ -113,7 +113,7 @@ div.fixed-bar {
         -webkit-border-radius: 5px;
         -o-border-radius: 5px;
         border-radius: 5px;
-        background-color: white; }
+        background-color: black; }
       div.fixed-bar div.sub-fixed-bar div#menu-trigger span.bar-2 {
         top: 9px; }
       div.fixed-bar div.sub-fixed-bar div#menu-trigger span.bar-3 {
@@ -393,21 +393,22 @@ footer {
 
 section.home {
   overflow: hidden; }
-  section.home .slanted-bg-home-top {
+  section.home .slanted-container {
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0; }
-    section.home .slanted-bg-home-top .slanted-bg-top-1 {
+    section.home .slanted-container .landing-top {
       height: 150px;
       width: 100%;
       position: absolute;
       top: 0;
       left: 0;
       z-index: -1;
-      background-color: #c3c3c3;
+      background-color: #e4e2e2;
       opacity: 1; }
-      section.home .slanted-bg-home-top .slanted-bg-top-1:after {
+      section.home .slanted-container .landing-top:after {
         height: inherit;
         width: 100%;
         position: absolute;
@@ -416,16 +417,16 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit; }
-    section.home .slanted-bg-home-top .slanted-bg-bottom-1 {
+    section.home .slanted-container .landing-bottom {
       height: 200px;
       width: 100%;
       position: absolute;
       top: 450px;
       left: 0;
       z-index: -1;
-      background-color: #c3c3c3;
+      background-color: #e4e2e2;
       opacity: 1; }
-      section.home .slanted-bg-home-top .slanted-bg-bottom-1:before {
+      section.home .slanted-container .landing-bottom:before {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -434,11 +435,38 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit; }
-      section.home .slanted-bg-home-top .slanted-bg-bottom-1:after {
+      section.home .slanted-container .landing-bottom:after {
         height: 100%;
         width: 100%;
         position: absolute;
         transform-origin: top right;
+        transform: skewY(7deg);
+        content: '';
+        background-color: inherit;
+        opacity: inherit; }
+    section.home .slanted-container .middle-1 {
+      height: 500px;
+      width: 100%;
+      position: absolute;
+      top: 48%;
+      left: 0;
+      z-index: -1;
+      background-color: #e4e2e2;
+      opacity: 1; }
+      section.home .slanted-container .middle-1:before {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transform-origin: bottom left;
+        transform: skewY(-7deg);
+        content: '';
+        background-color: inherit;
+        opacity: inherit; }
+      section.home .slanted-container .middle-1:after {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transform-origin: top left;
         transform: skewY(7deg);
         content: '';
         background-color: inherit;
@@ -551,7 +579,7 @@ section.home {
     section.home div.home-content div.header {
       margin: 0 auto 33px;
       padding: 0 20px;
-      color: white;
+      color: #7b7b7b;
       text-align: center; }
       section.home div.home-content div.header h1.luxury {
         display: inline-block;
@@ -561,7 +589,7 @@ section.home {
       section.home div.home-content div.header h1.mallorca {
         display: inline-block;
         padding: 0 0 10px;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid #7b7b7b;
         text-align: center;
         font-size: 41px; }
     section.home div.home-content div.intro {
@@ -605,6 +633,7 @@ section.home {
           margin: 0 auto;
           padding: 15px 50px;
           display: inline-block;
+          background-color: white;
           border: 1px solid rgba(0, 0, 0, 0.35);
           border-radius: 5px;
           color: black;

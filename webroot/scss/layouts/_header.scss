@@ -9,7 +9,7 @@ div.fixed-bar {
 	@include boxSizing(border-box);
 
 	opacity: 0.7;
-	background-color: #000000;
+	background-color: #e4e2e2;
 	color: white;
 
 	div.sub-fixed-bar {
@@ -58,7 +58,7 @@ div.fixed-bar {
 
 				@include borderRadius(5px);
 
-				background-color: white;
+				background-color: black;
 			}
 
 			span.bar-1 {
