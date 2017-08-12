@@ -53,7 +53,7 @@ function setHomeHeight() {
 	$('.loader').css('height', docHeight + 'px');
 
 	// Set height for the Home top slanter background element
-	$('.slanted-bg-home-top').css('height', docHeight + 'px');
+	//$('.slanted-bg-home-top').css('height', docHeight + 'px');
 }
 
 /*

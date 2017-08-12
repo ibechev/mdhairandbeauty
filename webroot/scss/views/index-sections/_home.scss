@@ -8,7 +8,7 @@ section.home {
 		left: 0;
 
 		.slanted-bg-top-1 {
-			height: 180px;
+			height: 150px;
 			width: 100%;
 			position: absolute;
 			top: 0;
@@ -32,15 +32,27 @@ section.home {
 		}
 
 		.slanted-bg-bottom-1 {
-			height: 180px;
+			height: 200px;
 			width: 100%;
 			position: absolute;
-			bottom: 0;
+			top: 450px;
 			left: 0;
 			z-index: -1;
 
 			background-color: #c3c3c3;
 			opacity: 1;
+	
+			&:before {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				transform-origin: bottom left;
+				transform: skewY(7deg);
+
+				content: '';
+				background-color: inherit;
+				opacity: inherit;
+			}
 
 			&:after {
 				height: 100%;
@@ -68,9 +80,16 @@ section.home {
 			display: block;
 			height: auto;
 			width: 100%;
+		}
 
-			//filter: brightness(75%);
-			//-webkit-filter: brightness(75%);
+		.brighten {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			background-color: rgba(255, 255, 255, .3);
 		}
 	}	
 
@@ -80,7 +99,7 @@ section.home {
 		position: relative;
 		top: 0;
 		left: 0;
-		margin: 108px 0 30px;
+		margin: -40px 0 70px;
 
   		@include display-flex;
   		@include align-items-center;
