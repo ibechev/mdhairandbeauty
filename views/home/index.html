@@ -3,12 +3,9 @@
 		<div class="landing-top"></div>
 		<div class="landing-bottom"></div>
 		<div class="middle-1"></div>
-		<div class="middle-2"></div>
+		<div class="bottom"></div>
 	</div>
-	<div class="home-img">
-		<img src='webroot/images/Home-Img-1x.jpg' alt='Home page background'/>
-		<div class="brighten"></div>
-	</div>
+
 	<div class="home-logo">
 		<div class="logo">
 			<img src="webroot/images/MDLogoBlack.svg" alt="MD Logo">
@@ -18,6 +15,12 @@
 			<a href="<?php echo $GLOBALS['environment']; ?>/contact" class="find"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 		</div>-->
 	</div>
+	
+	<div class="home-img">
+		<img src='webroot/images/home/Home-Img-1x.jpg' alt='Home page background'/>
+		<div class="brighten"></div>
+	</div>
+	
 	<div class="home-content">
 
 		<div class="header">
@@ -34,27 +37,31 @@
 		<div class="services-wrapper">
 			<div class="service hair">
 				<h1>Hair Care</h1>
-				<img src="http://via.placeholder.com/270x100" alt="Hair Care">
+				<ul class="bxslider">
+					<li><img src="webroot/images/home/services/hair/img_1@1x.png" alt="Hair drying"></li>
+					<li><img src="webroot/images/home/services/hair/img_2@1x.jpg" alt="Hand holding hair"></li>
+					<li><img src="webroot/images/home/services/hair/img_3@1x.jpg" alt="Hair cutting"></li>
+				</ul>
 				<p>Not only five centuries, but also the leap into electronic.</p>
-				<a href="<?php echo $GLOBALS['environment']; ?>/services#hair">Read More</a>
+				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#hair">Read More</a>
 			</div>
 			<div class="service face">
 				<h1>Face Care</h1>
 				<img src="http://via.placeholder.com/270x100" alt="Face Care">
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				<a href="<?php echo $GLOBALS['environment']; ?>/services#face">Read More</a>
+				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#face">Read More</a>
 			</div>
 			<div class="service nails">
 				<h1>Nails Care</h1>
 				<img src="http://via.placeholder.com/270x100" alt="Nails Care">
 				<p>It has survived not only five centuries, but also the leap into electronic</p>
-				<a href="<?php echo $GLOBALS['environment']; ?>/services#nails">Read More</a>
+				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#nails">Read More</a>
 			</div>
 			<div class="service body">
 				<h1>Body Care</h1>
 				<img src="http://via.placeholder.com/270x100" alt="Body Care">
 				<p>When an unknown printer took a galley of type and scrambled it.</p>
-				<a href="<?php echo $GLOBALS['environment']; ?>/services#body">Read More</a>
+				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#body">Read More</a>
 			</div>
 		</div>
 	</div>

@@ -8,11 +8,12 @@ section.home {
 		top: 0;
 		left: 0;
 
+
 		.landing-top {
-			height: 150px;
+			height: 60px;
 			width: 100%;
 			position: absolute;
-			top: 0;
+			top: -45px;
 			left: 0;
 			z-index: -1;
 
@@ -29,6 +30,11 @@ section.home {
 				content: '';
 				background-color: inherit;
 				opacity: inherit;
+				border-bottom: 1px solid rgba(167, 82, 82, .4);
+			}
+
+			@media screen and(orientation: landscape) {
+				height: 72px;
 			}
 		}
 
@@ -36,7 +42,7 @@ section.home {
 			height: 200px;
 			width: 100%;
 			position: absolute;
-			top: 450px;
+			top: 335px;
 			left: 0;
 			z-index: -1;
 
@@ -65,14 +71,15 @@ section.home {
 				content: '';
 				background-color: inherit;
 				opacity: inherit;
+				border-top: 1px solid rgba(167, 82, 82, .4);
 			}
 		}
 
 		.middle-1 {
-			height: 500px;
+			height: 650px;
 			width: 100%;
 			position: absolute;
-			top: 48%;
+			top: 51%;
 			left: 0;
 			z-index: -1;
 
@@ -103,15 +110,63 @@ section.home {
 				opacity: inherit;
 			}
 		}
+
+		.bottom	{
+			height: 150px;
+			width: 100%;
+			position: absolute;
+			bottom: -150px;
+			left: 0;
+			z-index: -1;
+
+			transform-origin: top left;
+			transform: skewY(-7deg);
+			background-color: #e4e2e2;
+		}
+	}
+
+	.home-logo {
+		height: 100%;
+  		width: 100%;
+		position: relative;
+		top: 0;
+		left: 0;
+		margin: 355px 0 70px;
+
+  		@include display-flex;
+  		@include align-items-center;
+
+		div.logo {
+			width: 70%;
+			position: relative;
+			margin: 0 auto;
+			opacity: 0;
+			@include transition(all 1s ease-in-out);
+
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 100%;
+			}
+
+			@media screen and(orientation: landscape) {
+				width: 50%;
+				
+			}
+		}
+
+		// Desktop
+		@media only screen and(min-width: 768px) {
+			height: 40%;
+		}
 	}
 
 	.home-img {
-		width: 83%;
-		margin: 105px auto 20px;
-		position: relative;
-
-		border: 1px solid rgba(0, 0, 0, .1);
-		box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, .7);
+		width: 150%;
+		margin: 0px auto 20px;
+		position: absolute;
+		top: 15px;
+		z-index: -2;
 
 		img {
 			display: block;
@@ -126,90 +181,20 @@ section.home {
 			top: 0;
 			left: 0;
 
-			background-color: rgba(255, 255, 255, .3);
+			//background-color: rgba(255, 255, 255, .1);
+		}
+
+		@media screen and(orientation: landscape) {
+			width: 67%;
+			margin: 82px auto 20px;
 		}
 	}	
 
-	.home-logo {
-		height: 100%;
-  		width: 100%;
-		position: relative;
-		top: 0;
-		left: 0;
-		margin: -40px 0 70px;
-
-  		@include display-flex;
-  		@include align-items-center;
-
-		div.logo {
-			width: 76%;
-			position: relative;
-			margin: 0 auto;
-			opacity: 0;
-			@include transition(all 1s ease-in-out);
-
-			img {
-				width: 100%;
-				height: auto;
-				max-width: 100%;
-			}
-		}
-
-		// Desktop
-		@media only screen and(min-width: 768px) {
-			height: 40%;
-		}
-
-/*
-		// FOOTER OF THE HOME SCREEN
-		div.footer {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 60px;
-			padding: 0 35px;
-			
-			opacity: 0.7;
-			text-align: center;
-
-			@include clearFix();
-			@include boxSizing(border-box);
-			
-			a {
-				width: 50px;
-				text-align: center;
-				color: rgba(255, 255, 255, 0.6);
-
-				i {
-					font-size: 2em;
-					color: white;
-				}
-			}
-
-			a.contact {
-				float: left;
-
-				@media only screen and(min-width: 768px) {
-					display: none;
-				}
-			}	
-
-			a.find {
-				float: right;
-				@include clearFix();
-
-				@media only screen and(min-width: 768px) {
-					display: none;
-				}
-			}
-		}
-*/
-	}
+	
 
 	div.home-content {
 		width: 100%;
-		margin-bottom: 50px;
+		margin: 0px 0 50px;
 		position: relative;
 		display: inline-block;
 		background-color: transparent;
@@ -255,7 +240,7 @@ section.home {
 			width: auto;
 			height: 150px;
 			margin: 0 20px 60px 20px;
-			background-image: url('../images/ModelHairDryerMob.png');
+			background-image: url('../images/home/ModelHairDryerMob.png');
 			background-repeat: no-repeat;
 			background-position: center left;
 			background-size: 100% auto;
@@ -290,15 +275,16 @@ section.home {
 					display: inline-block;
 				}
 
-				a {
+				a.see-more {
 					margin: 0 auto;
 					padding: 15px 50px;
 					display: inline-block;
+					box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
 					
-					background-color: white;
-					border: 1px solid $ternary_black;
+					background-color: #af6060;
+					border: 1px solid rgba(255, 255, 255, .9);
 					border-radius: 5px;
-					color: black;
+					color: rgba(255, 255, 255, .85);;
 					font-size: 18px;
 					text-decoration: none;
 					font-weight: bold;

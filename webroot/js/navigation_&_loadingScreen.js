@@ -38,17 +38,12 @@ var nav = {
 				if (nav.checkAnimQ() === true) {	
 					if (nav.opened === false) {
 						nav.animation.showMenu();
+						$('html, body').css({'overflow': 'hidden'});
 					} else {
 						nav.animation.hideMenu();
+						$('html, body').css({'overflow': 'auto'});
 					}
 				}
-			});
-			$('.go-to-page').click(function(e) {
-				if (window.innerWidth < 768) {	//  Going to page when on mobile menu
-					e.preventDefault();
-					// Close the open menu with argument - the href - destination
-					nav.animation.hideMenu($(this).attr('href'));
-				}	
 			});
 		}	
 	},
@@ -69,6 +64,7 @@ var nav = {
 				nav.centerVert();
 			})
 		},
+
 		init: function() {
 			if (nav.getViewportSize().width < 768) {
 				this.setInitPosMob();
@@ -77,9 +73,11 @@ var nav = {
 			}
 			this.listen();
 		},
+
 		orientationChange: function() {
 				nav.menu.css('height', (nav.getViewportSize().height - nav.fixedBar.innerHeight()) + 'px');
 		},
+
 		setInitPosMob: function() {	// Set the default position and and dimentions on page load
 			// Set the height and position of the drop menu to the height of the screen minus height of the fixed bar 
 			if (nav.getViewportSize().width < 768) {	// For screen width 768 or less
@@ -92,6 +90,7 @@ var nav = {
 				nav.screenMode.set('mobile');
 			}
 		},
+
 		setInitPosDesk: function() { // Default position for desktop
 			nav.menu.css('top', 0)
 					.css('height', '60px')
@@ -111,7 +110,7 @@ var nav = {
 		slideSpeed: 250,
 		showMenu: function() {
 			nav.resize.setInitPosMob();
-			nav.fixedBar.animate({opacity: '1'}, 1);
+			//nav.fixedBar.animate({opacity: '1'}, 1);
 			nav.menu.animate({opacity: '0.9'}, 1);
 			nav.menu.animate({top: nav.fixedBar.innerHeight()}, this.slideSpeed, function() {
 				nav.animation.menuTriggerOpened();
@@ -123,7 +122,7 @@ var nav = {
 				nav.menu.animate({opacity: '0'}, 1);
 				nav.animation.menuTriggerClosed(href);
 			});
-			nav.fixedBar.animate({opacity: '0.7'}, 200);
+			//nav.fixedBar.animate({opacity: '0.7'}, 200);
 			nav.opened = false;
 		},
 		// Animate the trigger button

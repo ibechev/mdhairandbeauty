@@ -67,16 +67,16 @@
   100% {
     opacity: 1; } }
 div.fixed-bar {
-  position: fixed;
+  position: relative;
   height: 60px;
   width: 100%;
   top: 0px;
   left: 0px;
+  opacity: 1;
   z-index: 100;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  opacity: 0.7;
-  background-color: #e4e2e2;
+  background-color: #e2e2e2;
   color: white; }
   div.fixed-bar div.sub-fixed-bar {
     display: inline-block;
@@ -400,10 +400,10 @@ section.home {
     top: 0;
     left: 0; }
     section.home .slanted-container .landing-top {
-      height: 150px;
+      height: 60px;
       width: 100%;
       position: absolute;
-      top: 0;
+      top: -45px;
       left: 0;
       z-index: -1;
       background-color: #e4e2e2;
@@ -416,12 +416,16 @@ section.home {
         transform: skewY(7deg);
         content: '';
         background-color: inherit;
-        opacity: inherit; }
+        opacity: inherit;
+        border-bottom: 1px solid rgba(167, 82, 82, 0.4); }
+      @media screen and (orientation: landscape) {
+        section.home .slanted-container .landing-top {
+          height: 72px; } }
     section.home .slanted-container .landing-bottom {
       height: 200px;
       width: 100%;
       position: absolute;
-      top: 450px;
+      top: 335px;
       left: 0;
       z-index: -1;
       background-color: #e4e2e2;
@@ -443,12 +447,13 @@ section.home {
         transform: skewY(7deg);
         content: '';
         background-color: inherit;
-        opacity: inherit; }
+        opacity: inherit;
+        border-top: 1px solid rgba(167, 82, 82, 0.4); }
     section.home .slanted-container .middle-1 {
-      height: 500px;
+      height: 650px;
       width: 100%;
       position: absolute;
-      top: 48%;
+      top: 51%;
       left: 0;
       z-index: -1;
       background-color: #e4e2e2;
@@ -471,83 +476,31 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit; }
-  section.home .home-img {
-    width: 83%;
-    margin: 105px auto 20px;
-    position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.7); }
-    section.home .home-img img {
-      display: block;
-      height: auto;
-      width: 100%; }
-    section.home .home-img .brighten {
-      height: 100%;
+    section.home .slanted-container .bottom {
+      height: 150px;
       width: 100%;
       position: absolute;
-      top: 0;
+      bottom: -150px;
       left: 0;
-      background-color: rgba(255, 255, 255, 0.3); }
+      z-index: -1;
+      transform-origin: top left;
+      transform: skewY(-7deg);
+      background-color: #e4e2e2; }
   section.home .home-logo {
     height: 100%;
     width: 100%;
     position: relative;
     top: 0;
     left: 0;
-    margin: -40px 0 70px;
+    margin: 355px 0 70px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
-    /*
-    		// FOOTER OF THE HOME SCREEN
-    		div.footer {
-    			position: absolute;
-    			bottom: 0;
-    			left: 0;
-    			width: 100%;
-    			height: 60px;
-    			padding: 0 35px;
-    			
-    			opacity: 0.7;
-    			text-align: center;
-    
-    			@include clearFix();
-    			@include boxSizing(border-box);
-    			
-    			a {
-    				width: 50px;
-    				text-align: center;
-    				color: rgba(255, 255, 255, 0.6);
-    
-    				i {
-    					font-size: 2em;
-    					color: white;
-    				}
-    			}
-    
-    			a.contact {
-    				float: left;
-    
-    				@media only screen and(min-width: 768px) {
-    					display: none;
-    				}
-    			}	
-    
-    			a.find {
-    				float: right;
-    				@include clearFix();
-    
-    				@media only screen and(min-width: 768px) {
-    					display: none;
-    				}
-    			}
-    		}
-    */ }
+    align-items: center; }
     section.home .home-logo div.logo {
-      width: 76%;
+      width: 70%;
       position: relative;
       margin: 0 auto;
       opacity: 0;
@@ -567,12 +520,35 @@ section.home {
         width: 100%;
         height: auto;
         max-width: 100%; }
+      @media screen and (orientation: landscape) {
+        section.home .home-logo div.logo {
+          width: 50%; } }
     @media only screen and (min-width: 768px) {
       section.home .home-logo {
         height: 40%; } }
+  section.home .home-img {
+    width: 150%;
+    margin: 0px auto 20px;
+    position: absolute;
+    top: 15px;
+    z-index: -2; }
+    section.home .home-img img {
+      display: block;
+      height: auto;
+      width: 100%; }
+    section.home .home-img .brighten {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    @media screen and (orientation: landscape) {
+      section.home .home-img {
+        width: 67%;
+        margin: 82px auto 20px; } }
   section.home div.home-content {
     width: 100%;
-    margin-bottom: 50px;
+    margin: 0px 0 50px;
     position: relative;
     display: inline-block;
     background-color: transparent; }
@@ -606,7 +582,7 @@ section.home {
       width: auto;
       height: 150px;
       margin: 0 20px 60px 20px;
-      background-image: url("../images/ModelHairDryerMob.png");
+      background-image: url("../images/home/ModelHairDryerMob.png");
       background-repeat: no-repeat;
       background-position: center left;
       background-size: 100% auto; }
@@ -629,19 +605,20 @@ section.home {
           width: 270px;
           margin-bottom: 70px;
           display: inline-block; }
-        section.home div.home-content div.services-wrapper div.service a {
+        section.home div.home-content div.services-wrapper div.service a.see-more {
           margin: 0 auto;
           padding: 15px 50px;
           display: inline-block;
-          background-color: white;
-          border: 1px solid rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+          background-color: #af6060;
+          border: 1px solid rgba(255, 255, 255, 0.9);
           border-radius: 5px;
-          color: black;
+          color: rgba(255, 255, 255, 0.85);
           font-size: 18px;
           text-decoration: none;
           font-weight: bold;
           cursor: pointer; }
-          section.home div.home-content div.services-wrapper div.service a:active {
+          section.home div.home-content div.services-wrapper div.service a.see-more:active {
             background-color: black;
             border: 1px solid black;
             color: white; }

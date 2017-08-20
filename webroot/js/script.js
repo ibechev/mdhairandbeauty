@@ -75,7 +75,7 @@ function homeLogoParallax() {
 
 $(document).ready(function() {
 
-	setTimeout(homeLogoParallax, 1500);
+	setTimeout(homeLogoParallax, 2000);
 
 	setHomeHeight();
 
