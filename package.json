@@ -1,0 +1,19 @@
+{
+  "name": "mdhairandbeauty",
+  "version": "1.0.0",
+  "description": "A hair & beauty commercial web site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibechev/mdhair-beauty.git"
+  },
+  "author": "Ivan Bechev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibechev/mdhair-beauty/issues"
+  },
+  "homepage": "https://github.com/ibechev/mdhair-beauty#readme"
+}

@@ -17,7 +17,7 @@ section.home {
 			left: 0;
 			z-index: -1;
 
-			background-color: #e4e2e2;
+			background-color: #ecf0f1;
 			opacity: 1;
 
 			&:after {
@@ -30,31 +30,31 @@ section.home {
 				content: '';
 				background-color: inherit;
 				opacity: inherit;
-				border-bottom: 1px solid rgba(167, 82, 82, .4);
+				border-bottom: 1px solid #bdc3c7;
 			}
 
 			@media screen and(orientation: landscape) {
-				height: 72px;
+				height: 125px;
 			}
 		}
 
 		.landing-bottom {
-			height: 200px;
+			height: 560px;
 			width: 100%;
 			position: absolute;
 			top: 335px;
 			left: 0;
 			z-index: -1;
 
-			background-color: #e4e2e2;
+			background-color: #ecf0f1;
 			opacity: 1;
 	
 			&:before {
 				height: 100%;
 				width: 100%;
 				position: absolute;
-				transform-origin: bottom left;
-				transform: skewY(7deg);
+				transform-origin: bottom right;
+				transform: skewY(-7deg);
 
 				content: '';
 				background-color: inherit;
@@ -71,7 +71,12 @@ section.home {
 				content: '';
 				background-color: inherit;
 				opacity: inherit;
-				border-top: 1px solid rgba(167, 82, 82, .4);
+				border-top: 1px solid #bdc3c7;
+			}
+
+			@media screen and(orientation: landscape) {
+				height: 270px;
+				top: 390px;
 			}
 		}
 
@@ -83,7 +88,7 @@ section.home {
 			left: 0;
 			z-index: -1;
 
-			background-color: #e4e2e2;
+			background-color: #ecf0f1;
 			opacity: 1;
 		
 			&:before {
@@ -110,19 +115,6 @@ section.home {
 				opacity: inherit;
 			}
 		}
-
-		.bottom	{
-			height: 150px;
-			width: 100%;
-			position: absolute;
-			bottom: -150px;
-			left: 0;
-			z-index: -1;
-
-			transform-origin: top left;
-			transform: skewY(-7deg);
-			background-color: #e4e2e2;
-		}
 	}
 
 	.home-logo {
@@ -131,28 +123,33 @@ section.home {
 		position: relative;
 		top: 0;
 		left: 0;
-		margin: 355px 0 70px;
+		margin: 340px 0 27px;
 
   		@include display-flex;
   		@include align-items-center;
 
 		div.logo {
-			width: 70%;
+			width: 55%;
 			position: relative;
 			margin: 0 auto;
 			opacity: 0;
-			@include transition(all 1s ease-in-out);
+			@include transition(opacity 1s ease-in-out);
 
 			img {
 				width: 100%;
 				height: auto;
 				max-width: 100%;
 			}
+		
+		}
 
-			@media screen and(orientation: landscape) {
-				width: 50%;
-				
+		@media screen and(orientation: landscape) {
+			margin: 0 0 240px;
+
+			div.logo {
+				width: 60%;
 			}
+			
 		}
 
 		// Desktop
@@ -185,8 +182,8 @@ section.home {
 		}
 
 		@media screen and(orientation: landscape) {
-			width: 67%;
-			margin: 82px auto 20px;
+			width: 100%;
+			margin: 10px auto 20px;
 		}
 	}	
 
@@ -206,24 +203,20 @@ section.home {
 
 			text-align: center;
 
-			h1.luxury {
-				display: inline-block;
-				margin-bottom: 5px;
+			h1.luxury {	
+				margin-bottom: 2px;
 				text-align: center;
-				font-size: 25px;
+				font-size: 18px;
 			}
 
 			h1.mallorca {
-				display: inline-block;
-				padding: 0 0 10px;
-				border-bottom: 1px solid #7b7b7b;
 				text-align: center;
-				font-size: 41px;
+				font-size: 30px;
 			}
 		}	
 
 		div.intro {
-			margin: 0 auto 60px;
+			margin: 0 auto 95px;
 			padding: 0 20px;
 			width: 76%;
 
@@ -239,7 +232,7 @@ section.home {
 		div.bg-image-1 {
 			width: auto;
 			height: 150px;
-			margin: 0 20px 60px 20px;
+			margin-bottom: 60px;
 			background-image: url('../images/home/ModelHairDryerMob.png');
 			background-repeat: no-repeat;
 			background-position: center left;
@@ -248,6 +241,8 @@ section.home {
 
 		div.services-wrapper {
 			width: 100%;
+			@include display-flex;
+			@include flex-direction-column;
 
 			div.service {
 				margin: 0 10%;
@@ -270,9 +265,10 @@ section.home {
 				}
 
 				p {
-					width: 270px;
-					margin-bottom: 70px;
-					display: inline-block;
+					width: 60%;
+					margin: 0 auto 70px;
+					text-align: justify;
+					color: rgba(0, 0, 0, .6);
 				}
 
 				a.see-more {
@@ -281,7 +277,7 @@ section.home {
 					display: inline-block;
 					box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
 					
-					background-color: #af6060;
+					background-color: #7f8c8d;
 					border: 1px solid rgba(255, 255, 255, .9);
 					border-radius: 5px;
 					color: rgba(255, 255, 255, .85);;

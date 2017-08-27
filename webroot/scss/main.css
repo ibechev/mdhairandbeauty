@@ -1,3 +1,125 @@
+html, body, ul, ol, li, form, fieldset, legend {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
+
+fieldset, img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+/* FORM RESET */
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial; }
+
+/* Remove the stupid outer glow in Webkit */
+input:focus {
+  outline: 0; }
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px; }
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box; }
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none; }
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto; }
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none; }
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto; }
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top; }
+
+/* // END OF FORM RESET */
+/*# sourceMappingURL=reset.css.map */
 .loader {
   width: 100%;
   position: fixed;
@@ -76,7 +198,7 @@ div.fixed-bar {
   z-index: 100;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background-color: #e2e2e2;
+  background-color: #ecf0f1;
   color: white; }
   div.fixed-bar div.sub-fixed-bar {
     display: inline-block;
@@ -89,8 +211,9 @@ div.fixed-bar {
       padding: 15px 20px;
       box-sizing: border-box;
       -moz-box-sizing: border-box; }
-      div.fixed-bar div.sub-fixed-bar div#logo-nav a img {
-        height: 100%; }
+      div.fixed-bar div.sub-fixed-bar div#logo-nav a i {
+        height: 100%;
+        color: black; }
       @media only screen and (min-width: 1025px) {
         div.fixed-bar div.sub-fixed-bar div#logo-nav {
           padding: 15px 50px; } }
@@ -270,22 +393,17 @@ ul.menu-ul {
 footer {
   width: 100%;
   position: relative;
-  background-color: #e4e2e2; }
+  background-color: #ecf0f1; }
   footer .content {
-    padding: 20px 0; }
-    footer .content .section {
-      width: 50%; }
-      footer .content .section .body, footer .content .section a {
-        font-size: 16px;
-        text-align: center;
-        color: rgba(0, 0, 0, 0.75);
-        line-height: 22px; }
-      footer .content .section .icons {
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 5px;
-        color: rgba(0, 0, 0, 0.75); }
-    footer .content .email-call {
+    padding: 20px 0 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    footer .content .email-call, footer .content .location-openHours {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -295,8 +413,14 @@ footer {
       flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
-      footer .content .email-call .email, footer .content .email-call .call {
+      align-items: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+      footer .content .email-call .section, footer .content .location-openHours .section {
+        height: 100%;
+        width: 50%;
+        padding-bottom: 30px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -306,47 +430,36 @@ footer {
         flex-direction: column;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
-        justify-content: flex-start;
-        padding-bottom: 30px; }
-    footer .content .location-social {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -ms-flex-pack: distribute;
-      justify-content: space-around; }
-      footer .content .location-social .location, footer .content .location-social .open-hours {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        padding-bottom: 30px; }
-      footer .content .location-social .location a.map-link {
-        margin-top: 12px;
-        color: black; }
-      footer .content .location-social .open-hours {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center; }
-        footer .content .location-social .open-hours ul.days p {
-          text-align: center;
-          line-height: 20px; }
+        justify-content: flex-start; }
+        footer .content .email-call .section div.icon .icons, footer .content .location-openHours .section div.icon .icons {
+          font-size: 30px;
+          color: rgba(0, 0, 0, 0.75); }
+        footer .content .email-call .section div.body p.body, footer .content .email-call .section div.body a, footer .content .location-openHours .section div.body p.body, footer .content .location-openHours .section div.body a {
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.75);
+          line-height: 22px; }
+    @media screen and (orientation: landscape) {
+      footer .content {
+        padding: 20px 10% 40px; }
+        footer .content .email-call, footer .content .location-openHours {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -ms-flex-pack: distribute;
+          justify-content: space-around;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: start;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+          footer .content .email-call .section, footer .content .location-openHours .section {
+            width: 30%; } }
+    footer .content .location-openHours .location a.map-link {
+      margin-top: 12px;
+      color: black; }
+    footer .content .location-openHours .open-hours ul.days p {
+      line-height: 20px; }
     footer .content .social {
       height: 40px;
       width: 100%;
@@ -363,19 +476,19 @@ footer {
       footer .content .social .icons-wrap {
         height: 100%;
         width: 45%;
+        margin-bottom: 20px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: distribute;
         justify-content: space-around; }
         footer .content .social .icons-wrap a.icons-social {
-          font-size: 40px; }
+          font-size: 40px;
+          color: rgba(0, 0, 0, 0.75); }
   footer .bottom {
     height: 60px;
     width: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 8px 0;
+    padding: 15px 0;
     background-color: #383838;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -406,7 +519,7 @@ section.home {
       top: -45px;
       left: 0;
       z-index: -1;
-      background-color: #e4e2e2;
+      background-color: #ecf0f1;
       opacity: 1; }
       section.home .slanted-container .landing-top:after {
         height: inherit;
@@ -417,25 +530,25 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit;
-        border-bottom: 1px solid rgba(167, 82, 82, 0.4); }
+        border-bottom: 1px solid #bdc3c7; }
       @media screen and (orientation: landscape) {
         section.home .slanted-container .landing-top {
-          height: 72px; } }
+          height: 125px; } }
     section.home .slanted-container .landing-bottom {
-      height: 200px;
+      height: 560px;
       width: 100%;
       position: absolute;
       top: 335px;
       left: 0;
       z-index: -1;
-      background-color: #e4e2e2;
+      background-color: #ecf0f1;
       opacity: 1; }
       section.home .slanted-container .landing-bottom:before {
         height: 100%;
         width: 100%;
         position: absolute;
-        transform-origin: bottom left;
-        transform: skewY(7deg);
+        transform-origin: bottom right;
+        transform: skewY(-7deg);
         content: '';
         background-color: inherit;
         opacity: inherit; }
@@ -448,7 +561,11 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit;
-        border-top: 1px solid rgba(167, 82, 82, 0.4); }
+        border-top: 1px solid #bdc3c7; }
+      @media screen and (orientation: landscape) {
+        section.home .slanted-container .landing-bottom {
+          height: 270px;
+          top: 390px; } }
     section.home .slanted-container .middle-1 {
       height: 650px;
       width: 100%;
@@ -456,7 +573,7 @@ section.home {
       top: 51%;
       left: 0;
       z-index: -1;
-      background-color: #e4e2e2;
+      background-color: #ecf0f1;
       opacity: 1; }
       section.home .slanted-container .middle-1:before {
         height: 100%;
@@ -476,23 +593,13 @@ section.home {
         content: '';
         background-color: inherit;
         opacity: inherit; }
-    section.home .slanted-container .bottom {
-      height: 150px;
-      width: 100%;
-      position: absolute;
-      bottom: -150px;
-      left: 0;
-      z-index: -1;
-      transform-origin: top left;
-      transform: skewY(-7deg);
-      background-color: #e4e2e2; }
   section.home .home-logo {
     height: 100%;
     width: 100%;
     position: relative;
     top: 0;
     left: 0;
-    margin: 355px 0 70px;
+    margin: 340px 0 27px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -500,7 +607,7 @@ section.home {
     -ms-flex-align: center;
     align-items: center; }
     section.home .home-logo div.logo {
-      width: 70%;
+      width: 55%;
       position: relative;
       margin: 0 auto;
       opacity: 0;
@@ -510,19 +617,21 @@ section.home {
       -ms-transform: translateZ(0);
       -o-transform: translateZ(0);
       transform: translateZ(0);
-      -webkit-transition: all 1s ease-in-out;
+      -webkit-transition: opacity 1s ease-in-out;
       /* For Safari 3.1 to 6.0 */
-      -moz-transition: all 1s ease-in-out;
-      -ms-transition: all 1s ease-in-out;
-      -o-transition: all 1s ease-in-out;
-      transition: all 1s ease-in-out; }
+      -moz-transition: opacity 1s ease-in-out;
+      -ms-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out; }
       section.home .home-logo div.logo img {
         width: 100%;
         height: auto;
         max-width: 100%; }
-      @media screen and (orientation: landscape) {
+    @media screen and (orientation: landscape) {
+      section.home .home-logo {
+        margin: 0 0 240px; }
         section.home .home-logo div.logo {
-          width: 50%; } }
+          width: 60%; } }
     @media only screen and (min-width: 768px) {
       section.home .home-logo {
         height: 40%; } }
@@ -544,8 +653,8 @@ section.home {
       left: 0; }
     @media screen and (orientation: landscape) {
       section.home .home-img {
-        width: 67%;
-        margin: 82px auto 20px; } }
+        width: 100%;
+        margin: 10px auto 20px; } }
   section.home div.home-content {
     width: 100%;
     margin: 0px 0 50px;
@@ -558,18 +667,14 @@ section.home {
       color: #7b7b7b;
       text-align: center; }
       section.home div.home-content div.header h1.luxury {
-        display: inline-block;
-        margin-bottom: 5px;
+        margin-bottom: 2px;
         text-align: center;
-        font-size: 25px; }
+        font-size: 18px; }
       section.home div.home-content div.header h1.mallorca {
-        display: inline-block;
-        padding: 0 0 10px;
-        border-bottom: 1px solid #7b7b7b;
         text-align: center;
-        font-size: 41px; }
+        font-size: 30px; }
     section.home div.home-content div.intro {
-      margin: 0 auto 60px;
+      margin: 0 auto 95px;
       padding: 0 20px;
       width: 76%; }
       section.home div.home-content div.intro p {
@@ -581,13 +686,20 @@ section.home {
     section.home div.home-content div.bg-image-1 {
       width: auto;
       height: 150px;
-      margin: 0 20px 60px 20px;
+      margin-bottom: 60px;
       background-image: url("../images/home/ModelHairDryerMob.png");
       background-repeat: no-repeat;
       background-position: center left;
       background-size: 100% auto; }
     section.home div.home-content div.services-wrapper {
-      width: 100%; }
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
       section.home div.home-content div.services-wrapper div.service {
         margin: 0 10%;
         text-align: center; }
@@ -602,15 +714,16 @@ section.home {
           margin: 0 auto;
           margin-bottom: 10px; }
         section.home div.home-content div.services-wrapper div.service p {
-          width: 270px;
-          margin-bottom: 70px;
-          display: inline-block; }
+          width: 60%;
+          margin: 0 auto 70px;
+          text-align: justify;
+          color: rgba(0, 0, 0, 0.6); }
         section.home div.home-content div.services-wrapper div.service a.see-more {
           margin: 0 auto;
           padding: 15px 50px;
           display: inline-block;
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
-          background-color: #af6060;
+          background-color: #7f8c8d;
           border: 1px solid rgba(255, 255, 255, 0.9);
           border-radius: 5px;
           color: rgba(255, 255, 255, 0.85);
@@ -758,7 +871,6 @@ section.contact {
   width: 100%;
   margin: 0px auto;
   padding: 0px;
-  box-sizing: border-box;
   position: relative; }
 
 .center {

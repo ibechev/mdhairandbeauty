@@ -86,7 +86,6 @@ $(document).ready(function() {
 	//=============================================================
 	$(window).on('orientationchange', function() {
 		setHomeHeight();
-		logoCenterVert();
 	});
 
 	//============
