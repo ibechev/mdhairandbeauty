@@ -1,64 +1,64 @@
 footer {
 	width: 100%;
 	position: relative;
-	background-color: #e4e2e2;
-
-	
+	background-color: #ecf0f1;
 
 	.content {
-		padding: 20px 0;
-		
-		.section {
-			width: 50%;
+		padding: 20px 0 40px;
+		@include display-flex;
+		@include flex-direction-column;
 
-			.body, a {
-				font-size: 16px;
-				text-align: center;
-				color: $secondary_black;
-				line-height: 22px;
-			}
-				
-			.icons {
-				font-size: 30px;
-				text-align: center;
-				margin-bottom: 5px;
-				color: $secondary_black;
-			}
-		}
-		
-		.email-call {	
+		.email-call, .location-openHours {
 			@include display-flex;
 			@include flex-direction-column;
 			@include align-items-center;
-			
-			.email, .call {
+			@include justify-content-flex-start;
+
+			.section {
+				height: 100%;
+				width: 50%;
+				padding-bottom: 30px;
+
 				@include display-flex;
 				@include flex-direction-column;
 				@include justify-content-flex-start;
-				padding-bottom: 30px;
-				
-			}
-	
-			.email {
 
-			}
 
-			.call {
-				
+				div.icon {
+					.icons {
+						font-size: 30px;
+						color: $secondary_black;
+					}
+				}
+
+				div.body {
+					p.body, a {
+						font-size: 16px;
+						color: $secondary_black;
+						line-height: 22px;
+					}
+				}
 			}
 		}
 
-		.location-social {
-			@include display-flex;
-			@include flex-direction-row;
-			@include justify-content-space-around;
+		@media screen and(orientation: landscape) {
+			padding: 20px 10% 40px;
 
-			.location, .open-hours {
-				@include display-flex;
-				@include flex-direction-column;
-				@include justify-content-flex-start;
-				padding-bottom: 30px;
+			.email-call, .location-openHours {
+				@include flex-direction-row;
+				@include justify-content-space-around;
+				@include align-items-flex-start;
+				@include flex-wrap-wrap;
+
+				.section {
+					width: 30%;
+				}
 			}
+			
+		}
+		
+
+		.location-openHours {
 
 			.location {
 
@@ -69,13 +69,8 @@ footer {
 			}
 
 			.open-hours {
-				@include display-flex;
-				@include flex-direction-column;
-				@include align-items-center;
-
 				ul.days {
 					p {
-						text-align: center;
 						line-height: 20px;
 					}
 				}
@@ -92,11 +87,13 @@ footer {
 			.icons-wrap {
 				height: 100%;
 				width: 45%;
+				margin-bottom: 20px;
 				@include display-flex;
 				@include justify-content-space-around;
 				
 				a.icons-social {
 					font-size: 40px;
+					color: $secondary_black;
 				}
 			}
 		}
@@ -107,8 +104,7 @@ footer {
 	.bottom {
 		height: 60px;
 		width: 100%;
-		@include boxSizing(border-box);
-		padding: 8px 0;
+		padding: 15px 0;
 		background-color: #383838;
 
 		@include display-flex;
