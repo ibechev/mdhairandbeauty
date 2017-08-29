@@ -433,10 +433,10 @@ footer {
         justify-content: flex-start; }
         footer .content .email-call .section div.icon .icons, footer .content .location-openHours .section div.icon .icons {
           font-size: 30px;
-          color: rgba(0, 0, 0, 0.75); }
+          color: rgba(255, 255, 255, 0.75); }
         footer .content .email-call .section div.body p.body, footer .content .email-call .section div.body a, footer .content .location-openHours .section div.body p.body, footer .content .location-openHours .section div.body a {
           font-size: 16px;
-          color: rgba(0, 0, 0, 0.75);
+          color: rgba(255, 255, 255, 0.7);
           line-height: 22px; }
       footer .content .email-call .email, footer .content .email-call .call, footer .content .location-openHours .email, footer .content .location-openHours .call {
         min-height: 100px; }
@@ -465,7 +465,6 @@ footer {
     footer .content .location-openHours .open-hours ul.days p {
       line-height: 20px; }
     footer .content .social {
-      height: 40px;
       width: 100%;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -480,15 +479,13 @@ footer {
       footer .content .social .icons-wrap {
         height: 100%;
         width: 45%;
-        margin-bottom: 20px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: distribute;
         justify-content: space-around; }
         footer .content .social .icons-wrap a.icons-social {
-          font-size: 40px;
-          color: rgba(0, 0, 0, 0.75); }
+          color: rgba(255, 255, 255, 0.75); }
   footer .bottom {
     height: 60px;
     width: 100%;
