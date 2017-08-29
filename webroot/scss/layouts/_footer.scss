@@ -8,16 +8,14 @@ footer {
 		@include display-flex;
 		@include flex-direction-column;
 
-		.email-call, .location-openHours {
+		.email-call, .location-open-hours {
 			@include display-flex;
 			@include flex-direction-column;
 			@include align-items-center;
 			@include justify-content-flex-start;
 
 			.section {
-				height: 100%;
 				width: 50%;
-				padding-bottom: 30px;
 
 				@include display-flex;
 				@include flex-direction-column;
@@ -44,7 +42,7 @@ footer {
 				min-height: 100px;
 			}
 
-			.location, .openHours {
+			.location, .open-hours {
 				min-height: 190px;
 			}
 		}
@@ -52,7 +50,7 @@ footer {
 		@media screen and(orientation: landscape) {
 			padding: 20px 14% 40px;
 
-			.email-call, .location-openHours {
+			.email-call, .location-open-hours {
 				@include flex-direction-row;
 				@include justify-content-space-around;
 				@include align-items-flex-start;
@@ -61,6 +59,10 @@ footer {
 				.section {
 					width: 30%;
 				}
+			}
+
+			.location-open-hours {
+				padding-bottom: 30px;
 			}
 			
 		}
@@ -86,6 +88,7 @@ footer {
 		}
 
 		.social {
+			min-height: 50px;
 			width: 100%;
 			@include display-flex;
 			@include flex-direction-row;

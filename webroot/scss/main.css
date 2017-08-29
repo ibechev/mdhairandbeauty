@@ -403,7 +403,7 @@ footer {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-    footer .content .email-call, footer .content .location-openHours {
+    footer .content .email-call, footer .content .location-open-hours {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -417,10 +417,8 @@ footer {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: flex-start; }
-      footer .content .email-call .section, footer .content .location-openHours .section {
-        height: 100%;
+      footer .content .email-call .section, footer .content .location-open-hours .section {
         width: 50%;
-        padding-bottom: 30px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -431,21 +429,21 @@ footer {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start; }
-        footer .content .email-call .section div.icon .icons, footer .content .location-openHours .section div.icon .icons {
+        footer .content .email-call .section div.icon .icons, footer .content .location-open-hours .section div.icon .icons {
           font-size: 30px;
           color: rgba(255, 255, 255, 0.75); }
-        footer .content .email-call .section div.body p.body, footer .content .email-call .section div.body a, footer .content .location-openHours .section div.body p.body, footer .content .location-openHours .section div.body a {
+        footer .content .email-call .section div.body p.body, footer .content .email-call .section div.body a, footer .content .location-open-hours .section div.body p.body, footer .content .location-open-hours .section div.body a {
           font-size: 16px;
           color: rgba(255, 255, 255, 0.7);
           line-height: 22px; }
-      footer .content .email-call .email, footer .content .email-call .call, footer .content .location-openHours .email, footer .content .location-openHours .call {
+      footer .content .email-call .email, footer .content .email-call .call, footer .content .location-open-hours .email, footer .content .location-open-hours .call {
         min-height: 100px; }
-      footer .content .email-call .location, footer .content .email-call .openHours, footer .content .location-openHours .location, footer .content .location-openHours .openHours {
+      footer .content .email-call .location, footer .content .email-call .open-hours, footer .content .location-open-hours .location, footer .content .location-open-hours .open-hours {
         min-height: 190px; }
     @media screen and (orientation: landscape) {
       footer .content {
         padding: 20px 14% 40px; }
-        footer .content .email-call, footer .content .location-openHours {
+        footer .content .email-call, footer .content .location-open-hours {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
           -ms-flex-direction: row;
@@ -457,14 +455,17 @@ footer {
           align-items: start;
           -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
-          footer .content .email-call .section, footer .content .location-openHours .section {
-            width: 30%; } }
+          footer .content .email-call .section, footer .content .location-open-hours .section {
+            width: 30%; }
+        footer .content .location-open-hours {
+          padding-bottom: 30px; } }
     footer .content .location-openHours .location a.map-link {
       margin-top: 12px;
       color: black; }
     footer .content .location-openHours .open-hours ul.days p {
       line-height: 20px; }
     footer .content .social {
+      min-height: 50px;
       width: 100%;
       display: -webkit-box;
       display: -ms-flexbox;
