@@ -91,14 +91,17 @@ ul.menu-ul {
 	background-color: #0e0e0e;
 
 	@include boxSizing(border-box);
+	@include display-flex;
+	@include flex-direction-column;
+	@include justify-content-center;
 
 	li {
 		@include even() {
 			display: none;
 		}
 
-		padding: 20px 20px;
-		min-height: 70px;
+		padding: 10px 20px;
+		min-height: 50px;
 
 		@include boxSizing(border-box);
 		
