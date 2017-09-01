@@ -37,7 +37,7 @@ textarea
 	white-space:normal;
 	background:none;
 	line-height:1;
-	
+
 	/* Browsers have different default form fonts */
 	font-size:13px;
 	font-family:Arial;
@@ -144,7 +144,7 @@ input[type="submit"]
 
 /* IE8 and FF freak out if this rule is within another selector */
 ::-webkit-file-upload-button
-{	
+{
 	padding:0;
 	border:0;
 	background:none;
@@ -153,11 +153,11 @@ input[type="submit"]
 /* Textarea
 -----------------------------------------------*/
 
-textarea 
+textarea
 {
 	/* Move the label to the top */
 	vertical-align:top;
-	
+
 	/* Turn off scroll bars in IE unless needed */
 	overflow:auto;
 }
@@ -170,7 +170,7 @@ select
 
 }
 
-select[multiple] 
+select[multiple]
 {
 	/* Move the label to the top */
 	vertical-align:top;

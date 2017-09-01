@@ -3,27 +3,27 @@
 //=======================
 
 var nav = {
-	menu				: $('ul.menu-ul'),
-	fixedBar		: $('div.fixed-bar'),
-	opened			: false, // Whether the menu is opened or closed
-	screenStyle	: null, // The current style of device 
-	root				: $('html, body'),
-	screenModes	: ['mobile', 'desktop'], // possible values of screen mode
-	// Menu button/trigger element
-	barTop			: $('div.fixed-bar').find('.bar-1'),
-	barMiddle		: $('div.fixed-bar').find('.bar-2'),
-	barBottom		: $('div.fixed-bar').find('.bar-3'),
+	menu			: $('ul.menu-ul'),
+	fixedBar		: $('header'),
+	opened		    : false, // Whether the menu is opened or closed
+	screenStyle		: null, // The current style of device
+	root			: $('html, body'),
+	screenModes		: ['mobile', 'desktop'], // possible values of screen mode
+	// Menu button element
+	barTop		: $('header').find('.bar-1'),
+	barMiddle	: $('header').find('.bar-2'),
+	barBottom	: $('header').find('.bar-3'),
 
-	init() {
+	init: function() {
 		this.btnClick.listen();
 		this.resize.init();
 	},
 
 	screenMode: {	// Sets and checks in what currens style is the menu ( mobile or desktop )
-		get() {
+		get: function() {
 			return nav.screenStyle;
-		}, 
-		set (mode) {
+		},
+		set: function(mode) {
 			if ($.inArray(mode, nav.screenModes) != -1) {	// Check if the mode is valid
 				nav.screenStyle = mode;
 			} else {
@@ -33,9 +33,12 @@ var nav = {
 	},
 
 	btnClick: {	// Button click object
-		listen () {	// Do something when a button is clicked
-			$('#menu-trigger').click(function() {	// Triggering menu
-				if (nav.checkAnimQ() === true) {	
+
+		// Do something when a button is clicked
+		listen: function() {
+			$('#menu-trigger').click(function() {
+				// Triggering menu
+				if (nav.checkAnimQ() === true) {
 					if (nav.opened === false) {
 						nav.animation.showMenu();
 						$('html, body').css({'overflow': 'hidden'});
@@ -45,27 +48,34 @@ var nav = {
 					}
 				}
 			});
-		}	
+		}
 	},
 
 	resize: {
-		listen () {	// Listen for any kind of resizing
-			$(window).resize(function() {
-				if (nav.getViewportSize().width < 768 && nav.screenMode.get() === 'desktop') {  
-					// create function to check the current device and store it in var
-					nav.resize.setInitPosMob();
-					nav.animation.menuTriggerDefault();
+		listen: function() {	// Listen for any kind of resizing
+			$(window).on('resize', function() {
+				if (nav.getViewportSize().width < 768) {
+
+					if (nav.screenMode.get() === 'desktop') {
+
+						nav.resize.setInitPosMob();
+						nav.animation.menuTriggerDefault();
+					} else {
+						
+						nav.resize.height();
+						nav.opened === false && nav.resize.init();
+					}
+					
 				} else if (window.innerWidth >= 768) {
+
 					nav.resize.setInitPosDesk();
 				}
+
+				// Apply on mobole menu (for orientation change)	
 			});
-			$(window).on('orientationchange', () => {
-				nav.resize.height();
-				//nav.centerVert();
-			})
 		},
 
-		init () {
+		init: function() {
 			if (nav.getViewportSize().width < 768) {
 				this.setInitPosMob();
 			} else {
@@ -74,14 +84,18 @@ var nav = {
 			this.listen();
 		},
 
-		height () {
-				nav.menu.css('height', (nav.getViewportSize().width - nav.fixedBar.innerHeight()) + 'px');
+		height: function() {
+			//console.log(document.body.clientHeight);
+				nav.menu.css('height', (window.innerHeight - nav.fixedBar.innerHeight()) + 'px');
 		},
 
-		setInitPosMob () {	// Set the default position and and dimentions on page load
-			// Set the height and position of the drop menu to the height of the screen minus height of the fixed bar 
-			if (nav.getViewportSize().width < 768) {	// For screen width 768 or less
+		setInitPosMob: function() {	// Set the default position and and dimentions on page load
+			// Set the height and position of the drop menu to the height of the screen minus height of the fixed bar
+
+			// For screen width 768 or less
+			if (nav.getViewportSize().width < 768) {
 				nav.menu.css('height', (nav.getScreenSize() - nav.fixedBar.innerHeight()) + 'px').css('top', (nav.menu.innerHeight() * -1) + 'px');
+
 				// Add 'overflow: scroll' to the menu only if the devise is mobile
 				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 					nav.menu.css('overflow-y', 'scroll');
@@ -91,13 +105,11 @@ var nav = {
 			}
 		},
 
-		setInitPosDesk () { // Default position for desktop
-			nav.menu.css('top', 0)
-					.css('height', '60px')
-					.css('opacity', 1);
-			nav.fixedBar.css('opacity', 0.7);
+		setInitPosDesk: function() { // Default position for desktop
+			nav.menu.css('opacity', 1).css('height', 'unset').css('top', 'unset').css('overflow', 'hidden');
+			//nav.fixedBar.css('opacity', 1);
 			if (nav.getViewportSize().width >= 768 && nav.getViewportSize().width < 1025) {
-				nav.menu.css('padding', '0 20px 0 0');
+			//	nav.menu.css('padding', '0 20px 0 0');
 			} else if (nav.getViewportSize().width >= 1025) {
 				nav.menu.css('padding', '0 50px 0 0');
 			}
@@ -108,16 +120,16 @@ var nav = {
 
 	animation: {	// Menu and menu button animation
 		slideSpeed: 250,
-		showMenu () {
+		showMenu: function() {
 			nav.resize.setInitPosMob();
 			//nav.fixedBar.animate({opacity: '1'}, 1);
-			nav.menu.animate({opacity: '0.9'}, 1);
+			nav.menu.animate({opacity: '0.95'}, 1);
 			nav.menu.animate({top: nav.fixedBar.innerHeight()}, this.slideSpeed, function() {
 				nav.animation.menuTriggerOpened();
 			});
 			nav.opened = true;
 		},
-		hideMenu (href) {
+		hideMenu: function(href) {
 			nav.menu.animate({top: '-' + nav.menu.innerHeight()}, this.slideSpeed, function() {
 				nav.menu.animate({opacity: '0'}, 1);
 				nav.animation.menuTriggerClosed(href);
@@ -126,18 +138,18 @@ var nav = {
 			nav.opened = false;
 		},
 		// Animate the trigger button
-			btnSpeed: 250,	
+			btnSpeed: 250,
 			// Menu opened - showing X
-			menuTriggerOpened () {
+			menuTriggerOpened: function() {
 				nav.barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, this.btnSpeed);
 				nav.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
 				nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
 			},
 			// Menu closed - showing 3 horizontal bars
-			menuTriggerClosed (href) {
+			menuTriggerClosed: function(href) {
 				nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
 				nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed, 
+				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed,
 					// Loading the selected page after the last animation has completed
 					function() {
 						if (href) {
@@ -146,14 +158,14 @@ var nav = {
 					});
 			},
 			// Menu trigger in default position ( no animation )
-			menuTriggerDefault () {
+			menuTriggerDefault: function() {
 				nav.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
 				nav.barMiddle.css({x: 0, width: 35, rotate: 0});
 				nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
 			}
 	},
 
-	checkAnimQ () {	// Check if all animations have complete ( queue is empty )
+	checkAnimQ: function() {	// Check if all animations have complete ( queue is empty )
 		if (this.menu.queue().length == 0 && this.fixedBar.queue().length == 0 && $('.menu-ul li').queue().length == 0) {
 			return true;
 		} else {
@@ -161,22 +173,8 @@ var nav = {
 		}
 	},
 
-	centerVert () {
-		// Center the list items vertically	
- 		var countMenuItems = this.menu.find('li:even').length;
-		var menuItemsHeight = this.menu.find('li:first').innerHeight() * countMenuItems;
-		if (nav.getViewportSize().width < 768) {
-			if ((nav.getViewportSize().height - this.fixedBar.innerHeight()) > menuItemsHeight) {
-				nav.menu.css('padding', (((nav.getViewportSize().height - this.fixedBar.innerHeight()) - menuItemsHeight) / 2) + 'px 0px');
-			} else {
-				nav.menu.css('overflow', 'scroll');
-				nav.menu.css('padding', '20px 0');
-			}
-		}
-	},	
-
 	//	Get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
-	getViewportSize (){
+	getViewportSize: function(){
 	    if (typeof(window.innerWidth) == 'number') {
 	        my_width = window.innerWidth;
 	        my_height = window.innerHeight;
@@ -190,14 +188,14 @@ var nav = {
 	    return {width: my_width, height: my_height};
 	},
 
-	getScreenSize () { // Get the available screen size - without the browser's address and navigation bars
+	getScreenSize: function() { // Get the available screen size - without the browser's address and navigation bars
 		return window.screen.availHeight;
 	}
 }
 
 
 
-$(document).ready(() => {
+$(document).ready(function() {
 
 	//=============================
 	// Initialize navigation object
@@ -205,10 +203,5 @@ $(document).ready(() => {
 
 	nav.init();
 
+
 });
-
-
-
-
-
-

@@ -1,11 +1,11 @@
 footer {
 	width: 100%;
 	position: relative;
-	background-color: #34495e;
+	background-color: $blueShade;
 
 	.content {
 		padding: 20px 0 40px;
-		border-bottom: 5px solid #c0392b;
+		border-bottom: 2px solid rgba($redShade, .5);
 		@include display-flex;
 		@include flex-direction-column;
 
@@ -17,23 +17,24 @@ footer {
 
 			.section {
 				width: 50%;
+				text-align: center;
 
 				@include display-flex;
 				@include flex-direction-column;
-				@include justify-content-flex-start;
+				@include justify-content-center;
 
 
 				div.icon {
 					.icons {
 						font-size: 30px;
-						color: $secondary_white;
+						color: rgba($cianShade, .85);
 					}
 				}
 
 				div.body {
 					p.body, a {
-						font-size: 16px;
-						color: $ternary_white;
+						font-size: 14px;
+						color: rgba($cianShade, .7);
 						line-height: 22px;
 					}
 				}
@@ -51,6 +52,7 @@ footer {
 		@media screen and(orientation: landscape) {
 			padding: 20px 14% 40px;
 
+
 			.email-call, .location-open-hours {
 				@include flex-direction-row;
 				@include justify-content-space-around;
@@ -58,16 +60,18 @@ footer {
 				@include flex-wrap-wrap;
 
 				.section {
-					width: 30%;
+					width: 45%;
+					
+					@include justify-content-flex-start;
 				}
 			}
 
 			.location-open-hours {
 				padding-bottom: 30px;
 			}
-			
+
 		}
-		
+
 
 		.location-openHours {
 
@@ -100,29 +104,29 @@ footer {
 				width: 45%;
 				@include display-flex;
 				@include justify-content-space-around;
-				
+
 				a.icons-social {
-					color: $secondary_white;
+					color: rgba($cianShade, .85);
 				}
 			}
 		}
 
-		
+
 	}
 
 	.bottom {
 		height: 60px;
 		width: 100%;
 		padding: 15px 0;
-		background-color: #101010;
+		background-color: transparent;
 
 		@include display-flex;
 		@include align-items-center;
 		@include justify-content-center;
-		
+
 		h3 {
 			text-align: center;
-			color: $ternary-white;
+			color: rgba($cianShade, .70);
 			line-height: 1.3;
 		}
 	}

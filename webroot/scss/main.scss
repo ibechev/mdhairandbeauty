@@ -1,15 +1,15 @@
-// IMPORTS
+	// IMPORTS
 @import "reset";
-@import "variables";		
+@import "variables";
 @import "mixins";
 @import "mixins-flex";
 
 .loader {
 	width: 100%;
 	position: fixed;
-	z-index: 9999;	
+	z-index: 9999;
 	background-color: white;
-	
+
 	/*@include display-flex;
 	@include justify-content-center;
 	@include align-items-center;*/
@@ -36,11 +36,11 @@
 
 			width: 100%;
 			height: 100%;
-			
+
 			border-radius: 50%;
 			border: 1px solid transparent;
-			border-top-color: rgba(0, 0, 0, 0.7); 
-			border-bottom-color: rgba(0, 0, 0, 0.7); 
+			border-top-color: rgba(0, 0, 0, 0.7);
+			border-bottom-color: rgba(0, 0, 0, 0.7);
 			animation: spinner 2s linear infinite;
 
 		}
@@ -51,7 +51,7 @@
 			left: 50%;
 			margin-top: -10px;
 			margin-left: -48px;
-			line-height: 20px;  
+			line-height: 20px;
 			color: rgba(0, 0, 0, 0.7);
 		}
 	}
@@ -96,13 +96,13 @@
 	animation: hide 0.4s linear forwards;
 }
 
-.wrapper {	
+.wrapper960s {
 	max-width: 960px;
 	width: 100%;
 	margin: 0px auto;
 	padding: 0px;
 	position: relative;
-}	
+}
 
 .center { /* Centering the element inside */
 	display: table; /* Allow the centering to work */
@@ -111,24 +111,29 @@
 
 .nav-fixed {
 	position: fixed;
-	width: 100%;	
+	width: 100%;
 	top: 0;
 }
 
 button {
-	&:focus {			
+	&:focus {
 		outline: 0;
 	}
 
 	&:hover {
 		cursor: pointer;
-		}		
+		}
 }
 
 // For active active menu-navigation names
 .active {
-	color: rgba(255, 255, 255, 1) !important;
+	color: #e74c3c !important;
 	opacity: 1;
+
+	@media only screen and(min-width: 768px) {
+		color: #e74c3c !important;
+		opacity: 1;
+	}
 }
 
 // Center div in another div. Code is for the inner. The outher must be with relative position
@@ -156,7 +161,7 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: $heading;
-}	
+}
 
 p, a {
 	font-family: $text;
@@ -182,10 +187,10 @@ textarea, input, button { outline: none; }
 	display: block;
 	z-index: 9998;
 	transition: all 0.6s ease-in-out;
-}		
+}
 
 //=======================================================================
-		
+
 
 // Sections General
 section.index {
@@ -193,8 +198,7 @@ section.index {
 
 }
 
-	position: relative;	
+	position: relative;
 	//background-color: white;
 	//	@include boxSizing(border-box);
 }
-
