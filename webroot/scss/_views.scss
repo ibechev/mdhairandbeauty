@@ -1,7 +1,9 @@
+@import "header/header";
 
-// Home Sections
-@import "views/index-sections/home";
-@import "views/index-sections/services";
-@import "views/index-sections/gallery";
-@import "views/index-sections/about";
-@import "views/index-sections/contact";
+@import "pages/home/home";
+@import "pages/services/services";
+@import "pages/gallery/gallery";
+@import "pages/about/about";
+@import "pages/contact/contact";
+
+@import "footer/footer";

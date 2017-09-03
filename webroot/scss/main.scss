@@ -5,6 +5,7 @@
 @import "mixins-flex";
 
 .loader {
+	height: 100vh;
 	width: 100%;
 	position: fixed;
 	z-index: 9999;
@@ -79,7 +80,6 @@
 
 // IMPORTS
 
-@import "layouts";
 @import "views";
 
 // pointer-events: none; Disables events
@@ -125,7 +125,7 @@ button {
 		}
 }
 
-// For active active menu-navigation names
+// For active menu-navigation names
 .active {
 	color: #e74c3c !important;
 	opacity: 1;
@@ -193,12 +193,7 @@ textarea, input, button { outline: none; }
 
 
 // Sections General
-section.index {
-&:not(.home) {
-
-}
-
+.index {
 	position: relative;
-	//background-color: white;
-	//	@include boxSizing(border-box);
+	min-height: 100vh;
 }

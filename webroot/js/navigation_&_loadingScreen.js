@@ -3,16 +3,17 @@
 //=======================
 
 var nav = {
-	menu			: $('ul.menu-ul'),
-	fixedBar		: $('header'),
+	menu					: $('.menu-ul'),
+	fixedBar			: $('header'),
 	opened		    : false, // Whether the menu is opened or closed
 	screenStyle		: null, // The current style of device
-	root			: $('html, body'),
+	root					: $('html, body'),
 	screenModes		: ['mobile', 'desktop'], // possible values of screen mode
+
 	// Menu button element
-	barTop		: $('header').find('.bar-1'),
-	barMiddle	: $('header').find('.bar-2'),
-	barBottom	: $('header').find('.bar-3'),
+	barTop				: $('header').find('.bar-1'),
+	barMiddle			: $('header').find('.bar-2'),
+	barBottom			: $('header').find('.bar-3'),
 
 	init: function() {
 		this.btnClick.listen();
@@ -39,9 +40,11 @@ var nav = {
 			$('#menu-trigger').click(function() {
 				// Triggering menu
 				if (nav.checkAnimQ() === true) {
+
 					if (nav.opened === false) {
 						nav.animation.showMenu();
 						$('html, body').css({'overflow': 'hidden'});
+
 					} else {
 						nav.animation.hideMenu();
 						$('html, body').css({'overflow': 'auto'});
@@ -54,24 +57,21 @@ var nav = {
 	resize: {
 		listen: function() {	// Listen for any kind of resizing
 			$(window).on('resize', function() {
-				if (nav.getViewportSize().width < 768) {
 
-					if (nav.screenMode.get() === 'desktop') {
+				switch(window.innerWidth < 768) {
+					// Mobile menu
+					case true:
+						if (nav.screenMode.get() === 'desktop') {
+							nav.resize.setInitPosMob();
+							nav.animation.menuTriggerDefault();
+						}
+					break;
 
-						nav.resize.setInitPosMob();
-						nav.animation.menuTriggerDefault();
-					} else {
-						
-						nav.resize.height();
-						nav.opened === false && nav.resize.init();
-					}
-					
-				} else if (window.innerWidth >= 768) {
-
-					nav.resize.setInitPosDesk();
+					// Desktop menu
+					case false:
+						nav.resize.setInitPosDesk();
+					break;
 				}
-
-				// Apply on mobole menu (for orientation change)	
 			});
 		},
 
@@ -81,38 +81,25 @@ var nav = {
 			} else {
 				this.setInitPosDesk();
 			}
+
 			this.listen();
 		},
 
-		height: function() {
-			//console.log(document.body.clientHeight);
-				nav.menu.css('height', (window.innerHeight - nav.fixedBar.innerHeight()) + 'px');
-		},
+		setInitPosMob: function() {	
+		// Set the default position and dimentions of the mobile menu (when closed)
 
-		setInitPosMob: function() {	// Set the default position and and dimentions on page load
-			// Set the height and position of the drop menu to the height of the screen minus height of the fixed bar
+			nav.menu.css('top', (window.innerHeight * -1) + 'px').css('height', '100vh');
 
-			// For screen width 768 or less
-			if (nav.getViewportSize().width < 768) {
-				nav.menu.css('height', (nav.getScreenSize() - nav.fixedBar.innerHeight()) + 'px').css('top', (nav.menu.innerHeight() * -1) + 'px');
-
-				// Add 'overflow: scroll' to the menu only if the devise is mobile
-				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-					nav.menu.css('overflow-y', 'scroll');
-				}
-				//nav.centerVert();
-				nav.screenMode.set('mobile');
+			// Add 'overflow: scroll' to the menu only if the devise is mobile
+			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+				nav.menu.css('overflow-y', 'scroll');
 			}
+
+			nav.screenMode.set('mobile');
 		},
 
 		setInitPosDesk: function() { // Default position for desktop
-			nav.menu.css('opacity', 1).css('height', 'unset').css('top', 'unset').css('overflow', 'hidden');
-			//nav.fixedBar.css('opacity', 1);
-			if (nav.getViewportSize().width >= 768 && nav.getViewportSize().width < 1025) {
-			//	nav.menu.css('padding', '0 20px 0 0');
-			} else if (nav.getViewportSize().width >= 1025) {
-				nav.menu.css('padding', '0 50px 0 0');
-			}
+			nav.menu.css('opacity', 1).css('height', 'unset').css('top', 'unset');
 			nav.opened = false;
 			nav.screenMode.set('desktop');
 		}
@@ -120,23 +107,25 @@ var nav = {
 
 	animation: {	// Menu and menu button animation
 		slideSpeed: 250,
+
 		showMenu: function() {
 			nav.resize.setInitPosMob();
 			//nav.fixedBar.animate({opacity: '1'}, 1);
 			nav.menu.animate({opacity: '0.95'}, 1);
-			nav.menu.animate({top: nav.fixedBar.innerHeight()}, this.slideSpeed, function() {
+			nav.menu.animate({top: (nav.fixedBar.innerHeight() / 2)}, this.slideSpeed, function() {
 				nav.animation.menuTriggerOpened();
 			});
 			nav.opened = true;
 		},
+
 		hideMenu: function(href) {
 			nav.menu.animate({top: '-' + nav.menu.innerHeight()}, this.slideSpeed, function() {
 				nav.menu.animate({opacity: '0'}, 1);
 				nav.animation.menuTriggerClosed(href);
 			});
-			//nav.fixedBar.animate({opacity: '0.7'}, 200);
 			nav.opened = false;
 		},
+
 		// Animate the trigger button
 			btnSpeed: 250,
 			// Menu opened - showing X
@@ -145,18 +134,18 @@ var nav = {
 				nav.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
 				nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
 			},
+
 			// Menu closed - showing 3 horizontal bars
 			menuTriggerClosed: function(href) {
 				nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
 				nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
 				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed,
 					// Loading the selected page after the last animation has completed
-					function() {
-						if (href) {
-							window.location = href;
-						}
+					function(href) {
+						if (href) {window.location = href;}
 					});
 			},
+
 			// Menu trigger in default position ( no animation )
 			menuTriggerDefault: function() {
 				nav.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
@@ -186,10 +175,6 @@ var nav = {
 	        my_height = document.body.clientHeight;
 	    }
 	    return {width: my_width, height: my_height};
-	},
-
-	getScreenSize: function() { // Get the available screen size - without the browser's address and navigation bars
-		return window.screen.availHeight;
 	}
 }
 

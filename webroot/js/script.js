@@ -38,33 +38,18 @@ $(window).on('load', function(){
 
 
 //============================================
-// Set min height for the Home - Logo and Loading div, Home-slanter backgrounds
+// Set min height for the Home - Logo and Loading div, Home-slanted backgrounds
 //============================================
 function setHomeHeight() {	
 	var docHeight = $(window).height();
 
-	$('div.home-face').css('height', docHeight + 'px');
+
 	$('section.index:not(home)').css('min-height', docHeight + 'px');
 
-	// Set background of the home page - fase to inherit full heigth from the parent element
-	//$('.bg-home-face').css('height', docHeight + 'px');
 
 	// Set height for the Loading div element
 	$('.loader').css('height', docHeight + 'px');
-
-	// Set height for the Home top slanter background element
-	//$('.slanted-bg-home-top').css('height', docHeight + 'px');
 }
-
-/*
-//==========================================================
-//  Set the Logo on the Home page to be vertically centered
-//==========================================================
-function logoCenterVert() {
-	var logoHome = $('section.home').find('div.logo-wrapper');
-	logoHome.css('margin', ($(window).height() / 2) - ((logoHome.height() + 30) / 2) + 'px 0px');
-}
-*/
 
 //==========================================================
 //  Set Landing for Logo and Text on the home page 

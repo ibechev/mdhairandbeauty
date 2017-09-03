@@ -1,0 +1,144 @@
+@media only screen and(orientation: landscape) {
+	header {
+		.menu-ul {
+			li {
+				@media only screen and(max-width: 768px) {
+					height: 40px;
+					padding: 10px 20px;
+				}
+			}
+		}
+	}
+}
+
+// For desltop ans hd tablets
+@media only screen and (min-width: 768px) {
+	header {
+		@include display-flex;
+
+		.sub-header {
+			#home-btn, #menu-trigger {
+				// Remove menu trigger btn and home btn wnen not mobiles 
+				visibility: hidden;
+			}
+
+		}
+
+		.menu-ul {
+			height: unset;
+			position: relative;
+			top: 0;
+			padding: 0;
+			padding-right: 20px;
+			z-index: 101;
+
+			opacity: 1;
+			background-color: $cianShade;
+
+			@include flex-direction-row;
+			@include align-items-center;
+			@include boxSizing(border-box);
+
+			li {
+				@include boxSizing(border-box);
+				@include even() {
+					padding-right: 10px;
+					margin-right: 10px;
+					border-right: 1px solid #7E7E7E;
+					display: list-item;
+				}
+
+				width: auto;
+				padding: 0;
+				height: 15px;
+				min-height: unset;
+				border-style: none;
+
+				background-color: transparent;
+				font-size: 13px;
+				line-height: 1;
+
+
+
+				@include transition(all 0.3s ease);
+
+				&:hover, &:focus {
+					color: rgba(255, 255, 255, 0.95) !important;
+					opacity: 1;
+				}
+
+				a {
+					display: block;
+					margin: 0 auto;
+
+					color: rgba(0, 0, 0, 0.70);
+					font-family: $heading;
+					font-size: 15px;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+// For Desktop
+@media only screen and (min-width: 1024px) {
+	header {
+
+		.menu-ul {
+			width: unset;
+			padding: 0;
+			height: 60px;
+			padding-right: 50px;
+			z-index: 101;
+
+			opacity: 1;
+			background-color: $cianShade;
+
+			@include boxSizing(border-box);
+
+			li {
+				@include boxSizing(border-box);
+				@include even() {
+					padding-right: 16px;
+					margin-right: 16px;
+					border-right: 1px solid #7E7E7E;
+					display: list-item;
+				}
+
+				width: auto;
+				padding: 0;
+				height: 20px;
+				min-height: unset;
+				border-style: none;
+
+				opacity: 0.80;
+				background-color: transparent;
+				line-height: 1;
+
+
+				@include transition(all 0.3s ease);
+
+				&:hover, &:focus {
+					color: rgba(255, 255, 255, 0.85) !important;
+					opacity: 1;
+				}
+
+				a {
+					margin: 0 auto;
+
+					color: rgba(0, 0, 0, 0.70);
+					font-family: $heading;
+					font-size: 18px;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+		}
+		
+	}
+	
+}
