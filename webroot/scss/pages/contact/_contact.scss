@@ -1,49 +1,139 @@
-section.contact {
-	padding-top: 60px;
-	background-color: $secondary-black;
-	
-	h1 {
-		margin: 30px 0;
-		padding: 0 20px;
-		font-size: 25px;
-		text-align: center;
-		color: $ternary-white;
-		letter-spacing: 4px;
-		line-height: 1.5;
+.contact {
+	padding-top: 30px;
+	background-color: $cianShade;
 
+	.form {
+		margin:0 auto 75px;
+
+		h1 {
+			margin-bottom: 30px;
+			padding: 0 20px;
+			font-size: 25px;
+			text-align: center;
+			color: $blueShade;
+			letter-spacing: 4px;
+			line-height: 1.5;
+
+		}
+
+		.underheader {
+			width: 80%;
+			margin: 0 auto 30px;
+			text-align: justify;
+		}
+
+		form {
+			@include display-flex;
+			@include flex-direction-column;
+			@include align-items-center;
+
+			.inputs, .submit {
+				width: 100%;
+			}
+
+			.inputs {
+				margin-bottom: 20px;
+
+				.box {
+					width: 100%;
+					padding: 0 10px;
+					@include boxSizing(border-box);
+					@include display-flex;
+					@include flex-direction-column;
+
+					&:first-child {
+						margin-bottom: 5px;
+					}
+
+					input {
+						&:first-child {
+							margin-bottom: 5px;
+						}
+					}
+
+					input, textarea {
+						padding: 15px 10px;
+						resize: vertical;
+						border: 1px solid $blueShade;
+						color: $blueShade;
+						font-size: 16px;
+					}
+				}
+			}
+
+			.submit {
+				padding: 0 10px;
+				@include boxSizing(border-box);
+
+				input {
+					width: 100%;
+					padding: 15px 10px;
+					background-color: $blueShade;
+					color: $white;
+					font-size: 16px;
+				}
+			}
+		}
 	}
 
-	div.address {
-		padding: 0 20%;
+	.address {
 		margin-bottom: 40px;
 
 		@include display-flex;
-		@include justify-content-space-between;
-		@include align-items-center;
+		@include flex-direction-column;
 
-		div.icon {
-			i {
-				font-size: 60px;
-				color: $ternary-white;
-			}
+		h1 {
+			margin-bottom: 30px;
+			padding: 0 20px;
+			font-size: 25px;
+			text-align: center;
+			color: $blueShade;
+			letter-spacing: 4px;
+			line-height: 1.5;
 		}
 
-		div.text {
-			p {
-				line-height: 1.5;
-				color: white;
-				text-align: center;
-				font-family: $heading;
+		.underheader {
+			width: 70%;
+			margin: 0 auto 30px;
+			text-align: justify;
+		}
+
+		.content {
+			width: 60%;
+			margin: 0 auto;
+			@include display-flex;
+			@include justify-content-space-between;
+			@include align-items-center;
+
+			.icon {
+				i {
+					font-size: 60px;
+					color: $blueShade;
+				}
 			}
-		
+
+			.text {
+				p {
+					line-height: 1.5;
+					color: rgba($blueShade, .7);
+					text-align: center;
+					font-family: $heading;
+				}
+			}
 		}
 	}
 
-	div.map {
+	.map {
 		height: 400px;
+		width: 100;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
 @import "contact-media";

@@ -1,0 +1,60 @@
+@media only screen and(orientation: landscape) {
+    footer {
+        .content {
+            padding: 40px 0;
+
+            .main {
+                width: 75%;
+                margin: 0 auto;
+
+                @include display-flex;
+                @include flex-direction-row;
+                @include justify-content-space-around;
+                @include align-items-flex-start;
+
+                .call-location, .email-open-hours {
+    				@include flex-direction-column;
+    			}
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 768px) {
+    footer {
+        .content {
+            width: 70%;
+
+            .main {
+                @include flex-direction-row;
+                @include justify-content-space-around;
+
+                .call-location, .email-open-hours {
+                    @include flex-direction-column;
+                    @include justify-content-space-around;
+                }
+            }
+
+           
+        }
+    }
+
+    @media only screen and(orientation: landscape) {
+        footer {
+            .content {
+                .main {
+                    .call-location, .email-open-hours {
+                        width: 50%;
+                        @include flex-direction-row;
+                        @include justify-content-space-around;
+                        @include align-items-flex-start;
+
+                        .open-hours {
+                            @include order(-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

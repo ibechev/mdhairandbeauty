@@ -1,3 +1,4 @@
+var bxSlider = require('bxSlider');
 
 /*
 //=================================
@@ -14,12 +15,12 @@ function findPageSection(url) {
 //=================================
 // Go to spesific page section
 //=================================
-// not in use 
+// not in use
 function jumpTo(pageSection) {
 	var section = $('.' + pageSection);
 	//$('html, body').animate({scrollTop: section.offset().top}, 800);
 
-	return false;	
+	return false;
 }
 */
 
@@ -32,7 +33,7 @@ $(window).on('load', function(){
 		// fadeOut complete. Remove the loading div
 		$('.loader').fadeOut(400, function() {
 			$( ".loader" ).remove(); //makes page more lightweight
-		}); 
+		});
 	}, 800); //wait for page load PLUS 0.8s.
 });
 
@@ -40,7 +41,7 @@ $(window).on('load', function(){
 //============================================
 // Set min height for the Home - Logo and Loading div, Home-slanted backgrounds
 //============================================
-function setHomeHeight() {	
+function setHomeHeight() {
 	var docHeight = $(window).height();
 
 
@@ -52,10 +53,10 @@ function setHomeHeight() {
 }
 
 //==========================================================
-//  Set Landing for Logo and Text on the home page 
+//  Set Landing for Logo and Text on the home page
 //==========================================================
 function homeLogoParallax() {
-	$('.logo').css({'opacity' : 1});	
+	$('.logo').css({'opacity' : 1});
 };
 
 $(document).ready(function() {
@@ -101,7 +102,7 @@ $(document).ready(function() {
 
 
 		// Check if the device is a mobile devices
-		//if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {	
+		//if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 
 			//============
 			// Back to top

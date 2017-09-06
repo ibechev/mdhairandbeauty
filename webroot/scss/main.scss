@@ -1,8 +1,11 @@
-	// IMPORTS
-@import "reset";
-@import "variables";
-@import "mixins";
-@import "mixins-flex";
+	// IMPORTS	
+@import "partials/reset";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/mixins-flex";
+@import "partials/bxSlider";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
 
 .loader {
 	height: 100vh;
@@ -80,7 +83,7 @@
 
 // IMPORTS
 
-@import "views";
+@import "partials/views";
 
 // pointer-events: none; Disables events
 

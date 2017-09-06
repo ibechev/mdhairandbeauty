@@ -1,6 +1,6 @@
 header {
 	position: relative;
-	height: 60px;
+	height: 50px;
 	width: 100%;
 	opacity: 1;
 	z-index: 100;
@@ -79,6 +79,7 @@ header {
 	width: 100%;
 	z-index: 99;
 	position: fixed;
+	top: -100vh;
 	opacity: 0;
 
 	background-color: #0e0e0e;
@@ -90,7 +91,7 @@ header {
 	@include boxSizing(border-box);
 
 	li {
-		min-height: 40px;
+		min-height: 50px;
 		padding: 20px 0;
 
 		@include even() {
@@ -120,6 +121,6 @@ header {
 	}
 }
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
 
 @import "header-media";

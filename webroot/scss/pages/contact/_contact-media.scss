@@ -1,0 +1,13 @@
+@media only screen and(orientation: landscape) {
+    .contact {
+        .form {
+            width: 70%;
+        }
+
+        .address {
+            .content {
+                @include justify-content-space-around;
+            }
+        }
+    }
+}

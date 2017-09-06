@@ -1,0 +1,28 @@
+
+// === COLORS ===
+$white: #ffffff;
+$primary_white: rgba(255, 255, 255, 0.90);
+$secondary_white: rgba(255, 255, 255, 0.75);
+$ternary_white: rgba(255, 255, 255, 0.70);
+
+$primary_black: rgba(0, 0, 0, 1);
+$secondary_black: rgba(0, 0, 0, 0.75);
+$ternary_black: rgba(0, 0, 0, 0.35);
+
+$redShade: #c0392b;
+$greenShade: #E7EDEA;
+$orangeShade: #FFC52C;
+$blueShade: #2c3e50;
+$cianShade: #e5fdff;
+
+// === FONTS ===
+// Import Google fonts
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Saira);
+
+$text: 'Saira', sans-serif;
+$heading: 'Julius Sans One', sans-serif;
+
+
+// === SIZES ===
+$doc-width: 960px;
+$window-padding: 20px;
