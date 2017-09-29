@@ -8,7 +8,6 @@
 		h1 {
 			margin-bottom: 30px;
 			padding: 0 20px;
-			font-size: 25px;
 			text-align: center;
 			color: $blueShade;
 			letter-spacing: 4px;
@@ -19,7 +18,7 @@
 		.underheader {
 			width: 80%;
 			margin: 0 auto 30px;
-			text-align: justify;
+			text-align: center;
 		}
 
 		form {
@@ -29,6 +28,10 @@
 
 			.inputs, .submit {
 				width: 100%;
+			}
+
+			input, textarea {
+				border-radius: 0;
 			}
 
 			.inputs {
@@ -82,10 +85,9 @@
 		@include display-flex;
 		@include flex-direction-column;
 
-		h1 {
+		h2 {
 			margin-bottom: 30px;
 			padding: 0 20px;
-			font-size: 25px;
 			text-align: center;
 			color: $blueShade;
 			letter-spacing: 4px;
@@ -95,7 +97,7 @@
 		.underheader {
 			width: 70%;
 			margin: 0 auto 30px;
-			text-align: justify;
+			text-align: center;
 		}
 
 		.content {
@@ -126,6 +128,9 @@
 	.map {
 		height: 400px;
 		width: 100;
+		padding: 0 10px 50px;
+
+		@include boxSizing(border-box);
 
 		iframe {
 			width: 100%;
