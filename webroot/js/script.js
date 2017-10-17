@@ -56,7 +56,8 @@ function setHomeHeight() {
 //  Set Landing for Logo and Text on the home page
 //==========================================================
 function homeLogoParallax() {
-	$('.logo').css({'opacity' : 1});
+
+	$('.home-logo .logo').removeClass('hide').addClass('show');
 };
 
 $(document).ready(function() {
@@ -109,7 +110,7 @@ $(document).ready(function() {
 			//============
 			if ($(this).scrollTop() > 100) {
 				$('#scroller-top').css({
-					'bottom': '30px'
+					'bottom': '25px'
 				});
 			} else {
 				$('#scroller-top').css({

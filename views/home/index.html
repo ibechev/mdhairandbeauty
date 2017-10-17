@@ -5,13 +5,13 @@
 			src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/Home-Img-1x.jpg"
 			srcset="
 				<?php echo $GLOBALS['environment']; ?>/webroot/images/home/Home-Img-1x.jpg, 1x,
-				<?php echo $GLOBALS['environment']; ?>/webroot/images/home/Home-Img-2x.jpg 2x"
-			alt="Home page background"/>
+				<?php echo $GLOBALS['environment']; ?>/webroot/images/home/Home-Img-2x.jpg, 2x"
+			alt="Home page background" />
 		<div class="brighten"></div>
 	</div>
 
 	<div class="home-logo">
-		<div class="logo">
+		<div class="logo hide">
 			<img
 				src="<?php echo $GLOBALS['environment']; ?>/webroot/images/MDLogoBlack.svg" alt="MD Logo">
 		</div>
@@ -29,37 +29,50 @@
 		</div>
 
 		<div class="la-bios">
-			<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/la_bios@1x.png" alt="La Biosthetique Paris" />
-			<div class="info">
-				<p>We are the only salon in Mallorca which works exclusively with the luxury La Biosthetique products for hair, makeup, and beauty treatments together.
+			<img class="img-one" src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/la_bios1@1x.png" alt="La Biosthetique Paris" />
+			<div class="info-one">
+				<p>We are the only salon in Mallorca which works exclusively with the luxury LA BIOSTHETIQUE products for hair, makeup, and beauty treatments together.
 				</p>
+			</div>
+			<div class="img-two"></div>
+			<div class="info-two">
+				<p>LA BIOSTHETIQUE has been creating natural skin and hair care solutions since the 1950s supported with nurturing rituals and amazing results.
+				</p>
+				<ul>
+					<h4>Ranges include:</h4>
+					<li>Customised scalp and hair care treatments</li>
+					<li>Aromatherapy based skin and body treatments</li>
+					<li>Hair loss treatments</li>
+					<li>Professional colour</li>
+					<li>Premium skincare</li>
+					<li>Make-up</li>
+				</ul>
 			</div>
 		</div>
 
-		<div class="bg-image-1"></div>
-
 		<div class="services-wrapper">
+			<h1 class="main-header">What do we do?</h1>
 			<div class="service hair">
-				<h1>Hair care</h1>
-				<img src="http://via.placeholder.com/300x120" alt="Nails Care">
+				<h2>Hair care</h2>
+				<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_hair@1x.png" alt="Hair care">
 				<p>Relax in our comfortable beauty-salon atmosphere, and let us take care of making you look your absolute best!</p>
 				<a class="see-more" href="<?php echo $GLOBALS['environment'];?>/services#hair">Read More</a>
 			</div>
 			<div class="service face">
-				<h1>Skin care</h1>
-				<img src="http://via.placeholder.com/300x120" alt="Face Care">
+				<h2>Skin care</h2>
+				<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_skin@1x.png" alt="Skin care">
 				<p>Enjoy your session of facial treatment which is in a very relaxing and at the same time professional way.</p>
 				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#face">Read More</a>
 			</div>
 			<div class="service nails">
-				<h1>Nail bar</h1>
-				<img src="http://via.placeholder.com/300x120" alt="Nails Care">
+				<h2>Nail bar</h2>
+				<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_nail@1x.png" alt="Nail bar">
 				<p>Come and get your hands and feet done and enjoy our treat for the client - Exfoliation and massage.</p>
 				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#nails">Read More</a>
 			</div>
 			<div class="service body">
-				<h1>Body massage</h1>
-				<img src="http://via.placeholder.com/300x120" alt="Body Care">
+				<h2>Body massage</h2>
+				<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_body@1x.png" alt="Body massage">
 				<p>In stressful days what we need in an hour relaxing music, candles and professional hands to release every tense muscle of our body.</p>
 				<a class="see-more" href="<?php echo $GLOBALS['environment']; ?>/services#body">Read More</a>
 			</div>

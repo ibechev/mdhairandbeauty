@@ -3,12 +3,12 @@ section.home {
 
 	.home-img {
 		width: 90%;
-		margin: 20px auto 0;
+		margin: 45px auto 0;
 		position: relative;
 		z-index: -2;
 		background-color: $slantedContainers;
-		-webkit-box-shadow: 0 0 30px 0 rgba(black, .55);
-		        box-shadow: 0 0 30px 0 rgba(black, .55);
+		-webkit-box-shadow: 0 0 10px 0 rgba(black, .7);
+		        box-shadow: 0 0 10px 0 rgba(black, .7);
 
 		img {
 			display: block;
@@ -40,7 +40,6 @@ section.home {
 			width: 70%;
 			position: relative;
 			margin: 0 auto;
-			opacity: 0;
 			@include transition(opacity 1s ease-in-out);
 
 			img {
@@ -49,20 +48,6 @@ section.home {
 				max-width: 100%;
 			}
 
-		}
-
-		@media screen and(orientation: landscape) {
-			margin: 0 0 240px;
-
-			div.logo {
-				width: 60%;
-			}
-
-		}
-
-		// Desktop
-		@media only screen and(min-width: 768px) {
-			height: 40%;
 		}
 	}
 
@@ -94,9 +79,10 @@ section.home {
 
 		.intro {
 			margin: 0 auto 50px;
-			padding: 0 20px;
 
 			p {
+				width: 90%;
+				margin: 0 auto;
 				text-align: justify;
 				word-wrap: break-word;
 				color: $secondary_black;
@@ -106,45 +92,84 @@ section.home {
 		.la-bios {
 			width: 100%;
 			position: relative;
+			margin-bottom: 80px;
 
-			img {
+			.img-one {
 				width: 55%;
 				height: auto;
 				margin: 0 auto 20px;
-				padding: 30px;
+				padding: 12px 55px;
 				display: block;
 				border: 1px solid rgba(black, .25);
-				box-shadow: 0 0 30px 0 rgba(black, .3);
+				-webkit-box-shadow: 0 0 15px 0 rgba(black, .7);
+				        box-shadow: 0 0 15px 0 rgba(black, .7);
 			}
 
-			.info {
+			.info-one {
 				width: 100%;
-				padding: 0 20px;
-				margin-bottom: 50px;
+				margin-bottom: 30px;
 				@include boxSizing(border-box);
 
 				p {
+					width: 75%;
+					margin: 0 auto;
 					text-align: justify;
 					word-wrap: break-word;
 					color: $secondary_black;
 				}
 			}
-		}
 
-		.bg-image-1 {
-			width: 100%;
-			height: 150px;
-			margin: 0 auto 60px;
-			background-image: url('../images/home/ModelHairDryerMob.png');
-			background-repeat: no-repeat;
-			background-position: center left;
-			background-size: 100% auto;
+			.img-two {
+				width: 100%;
+				height: 215px;
+				margin: 0 auto 30px;
+				background-image: url('../images/home/la-bios2@1x.jpg');
+				background-repeat: no-repeat;
+				background-position: center left;
+				background-size: 100% auto;
+			}
+
+			.info-two {
+				p {
+					width: 75%;
+					margin: 0 auto 20px;
+					text-align: justify;
+					word-wrap: break-word;
+					color: $secondary_black;
+				}
+
+				ul {
+					width: 85%;
+					padding: 30px;
+					margin: 0 auto;
+					background-color: rgba(black, .04);
+
+					@include boxSizing(border-box);
+
+					h4 {
+						text-align: center;
+						margin-bottom: 10px;
+					}
+
+					li {
+						list-style: initial;
+						list-style-type: disc;
+						list-style-position: inside;
+						color: rgba(black, .8);
+					}
+				}
+			}
 		}
 
 		.services-wrapper {
 			width: 100%;
 			@include display-flex;
 			@include flex-direction-column;
+
+			.main-header {
+				text-align: center;
+				margin-bottom: 40px;
+			}
 
 			.service {
 				margin: 0 10%;
@@ -156,7 +181,7 @@ section.home {
 					border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 				}
 
-				h1 {
+				h2 {
 					width: 100%;
 					margin-bottom: 30px;
 				}
@@ -164,6 +189,8 @@ section.home {
 				img {
 					margin: 0 auto;
 					margin-bottom: 20px;
+					height: auto;
+					width: 100%;
 				}
 
 				p {
