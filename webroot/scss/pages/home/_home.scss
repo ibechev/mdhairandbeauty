@@ -1,135 +1,43 @@
 section.home {
 	overflow: hidden;
 
-	.slanted-container {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
+	.home-img {
+		width: 90%;
+		margin: 20px auto 0;
+		position: relative;
+		z-index: -2;
+		background-color: $slantedContainers;
+		-webkit-box-shadow: 0 0 30px 0 rgba(black, .55);
+		        box-shadow: 0 0 30px 0 rgba(black, .55);
 
-
-		.landing-top {
-			height: 60px;
+		img {
+			display: block;
+			height: auto;
 			width: 100%;
-			position: absolute;
-			top: -45px;
-			left: 0;
-			z-index: -1;
-
-			background-color: $cianShade;
-			opacity: 1;
-
-			&:after {
-				height: inherit;
-				width: 100%;
-				position: absolute;
-				transform-origin: top left;
-				transform: skewY(7deg);
-
-				content: '';
-				background-color: inherit;
-				opacity: inherit;
-				border-bottom: 1px solid #bdc3c7;
-			}
-
-			@media screen and(orientation: landscape) {
-				height: 125px;
-			}
 		}
 
-		.landing-bottom {
-			height: 560px;
+		.brighten {
+			height: 50%;
 			width: 100%;
 			position: absolute;
-			top: 335px;
+			bottom: 0;
 			left: 0;
-			z-index: -1;
-
-			background-color: $cianShade;
-			opacity: 1;
-
-			&:before {
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				transform-origin: bottom right;
-				transform: skewY(-7deg);
-
-				content: '';
-				background-color: inherit;
-				opacity: inherit;
-			}
-
-			&:after {
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				transform-origin: top right;
-				transform: skewY(7deg);
-
-				content: '';
-				background-color: inherit;
-				opacity: inherit;
-				border-top: 1px solid #bdc3c7;
-			}
-
-			@media screen and(orientation: landscape) {
-				height: 270px;
-				top: 390px;
-			}
-		}
-
-		.middle-1 {
-			height: 650px;
-			width: 100%;
-			position: absolute;
-			top: 51%;
-			left: 0;
-			z-index: -1;
-
-			background-color: $cianShade;
-			opacity: 1;
-
-			&:before {
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				transform-origin: bottom left;
-				transform: skewY(-7deg);
-
-				content: '';
-				background-color: inherit;
-				opacity: inherit;
-			}
-
-			&:after {
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				transform-origin: top left;
-				transform: skewY(7deg);
-
-				content: '';
-				background-color: inherit;
-				opacity: inherit;
-			}
 		}
 	}
 
 	.home-logo {
 		height: 100%;
-  		width: 100%;
+  	width: 100%;
 		position: relative;
 		top: 0;
 		left: 0;
-		margin: 340px 0 27px;
+		margin: 30px 0 27px;
 
-  		@include display-flex;
-  		@include align-items-center;
+		@include display-flex;
+		@include align-items-center;
 
 		div.logo {
-			width: 55%;
+			width: 70%;
 			position: relative;
 			margin: 0 auto;
 			opacity: 0;
@@ -158,45 +66,14 @@ section.home {
 		}
 	}
 
-	.home-img {
-		width: 150%;
-		margin: 0px auto 20px;
-		position: absolute;
-		top: 15px;
-		z-index: -2;
-
-		img {
-			display: block;
-			height: auto;
-			width: 100%;
-		}
-
-		.brighten {
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-
-			//background-color: rgba(255, 255, 255, .1);
-		}
-
-		@media screen and(orientation: landscape) {
-			width: 100%;
-			margin: 10px auto 20px;
-		}
-	}
-
-
-
-	div.home-content {
+	.home-content {
 		width: 100%;
 		margin: 0px 0 50px;
 		position: relative;
 		display: inline-block;
 		background-color: transparent;
 
-		div.header {
+		.header {
 			margin: 0 auto 33px;
 			padding: 0 20px;
 			color: rgba(192, 57, 43, .7);
@@ -215,36 +92,61 @@ section.home {
 			}
 		}
 
-		div.intro {
-			margin: 0 auto 95px;
+		.intro {
+			margin: 0 auto 50px;
 			padding: 0 20px;
-			width: 76%;
 
 			p {
 				text-align: justify;
 				word-wrap: break-word;
-				word-spacing: 0.10em;
-				color: $primary_black;
-				font-size: 18px;
+				color: $secondary_black;
 			}
 		}
 
-		div.bg-image-1 {
-			width: auto;
+		.la-bios {
+			width: 100%;
+			position: relative;
+
+			img {
+				width: 55%;
+				height: auto;
+				margin: 0 auto 20px;
+				padding: 30px;
+				display: block;
+				border: 1px solid rgba(black, .25);
+				box-shadow: 0 0 30px 0 rgba(black, .3);
+			}
+
+			.info {
+				width: 100%;
+				padding: 0 20px;
+				margin-bottom: 50px;
+				@include boxSizing(border-box);
+
+				p {
+					text-align: justify;
+					word-wrap: break-word;
+					color: $secondary_black;
+				}
+			}
+		}
+
+		.bg-image-1 {
+			width: 100%;
 			height: 150px;
-			margin-bottom: 60px;
+			margin: 0 auto 60px;
 			background-image: url('../images/home/ModelHairDryerMob.png');
 			background-repeat: no-repeat;
 			background-position: center left;
 			background-size: 100% auto;
 		}
 
-		div.services-wrapper {
+		.services-wrapper {
 			width: 100%;
 			@include display-flex;
 			@include flex-direction-column;
 
-			div.service {
+			.service {
 				margin: 0 10%;
 				text-align: center;
 
@@ -261,21 +163,22 @@ section.home {
 
 				img {
 					margin: 0 auto;
-					margin-bottom: 10px;
+					margin-bottom: 20px;
 				}
 
 				p {
-					width: 60%;
-					margin: 0 auto 70px;
+					width: 85%;
+					margin: 0 auto 50px;
 					text-align: justify;
 					color: rgba(0, 0, 0, .6);
 				}
 
 				a.see-more {
 					margin: 0 auto;
-					padding: 15px 50px;
+					padding: 10px 30px;
 					display: inline-block;
-					box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
+					-webkit-box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
+					        box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
 
 					background-color: #c0392b;
 					border: 1px solid rgba(255, 255, 255, .9);
@@ -300,5 +203,5 @@ section.home {
 
 
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
 @import "home-media";

@@ -31,14 +31,14 @@
 					div.icon {
 						.icons {
 							font-size: 30px;
-							color: rgba($cianShade, .85);
+							color: rgba($white, .85);
 						}
 					}
 
 					div.body {
 						p.body, a {
 							font-size: 14px;
-							color: rgba($cianShade, .7);
+							color: rgba($white, .7);
 							line-height: 22px;
 						}
 					}
@@ -73,7 +73,7 @@
 
 			.header {
  				margin-bottom: 15px;
-				color: rgba($cianShade, .85);
+				color: rgba($white, .85);
 			}
 
 			.icons-wrap {
@@ -84,7 +84,7 @@
 
 				a.icons-social {
 					font-size: 40px;
-					color: rgba($cianShade, .7);
+					color: rgba($white, .7);
 				}
 			}
 		}
@@ -103,7 +103,7 @@
 
 		h4 {
 			text-align: center;
-			color: rgba($cianShade, .70);
+			color: rgba($white, .70);
 			line-height: 1.3;
 		}
 	}

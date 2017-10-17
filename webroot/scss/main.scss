@@ -1,4 +1,4 @@
-	// IMPORTS	
+// IMPORTS
 @import "partials/reset";
 @import "partials/variables";
 @import "partials/mixins";
@@ -14,10 +14,6 @@
 	z-index: 9999;
 	background-color: white;
 
-	/*@include display-flex;
-	@include justify-content-center;
-	@include align-items-center;*/
-
 	.spinner-wrap {
 		width: 150px;
 		height: 150px;
@@ -26,9 +22,11 @@
 		margin-left: -75px;
 		top: 50%;
 		margin-top: -75px;
+		-webkit-transition: all 0.3s linear;
 		transition: all 0.3s linear;
 		opacity: 0;
-		animation: appear 0.5s linear forwards;
+		-webkit-animation: appear 0.5s linear forwards;
+		        animation: appear 0.5s linear forwards;
 
 		@include display-flex;
 		@include justify-content-center;
@@ -45,7 +43,8 @@
 			border: 1px solid transparent;
 			border-top-color: rgba(0, 0, 0, 0.7);
 			border-bottom-color: rgba(0, 0, 0, 0.7);
-			animation: spinner 2s linear infinite;
+			-webkit-animation: spinner 2s linear infinite;
+			        animation: spinner 2s linear infinite;
 
 		}
 
@@ -60,13 +59,37 @@
 		}
 	}
 
-	@keyframes spinner {
+	@-webkit-keyframes spinner {
 		0% {
-			transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			        transform: rotate(0deg);
 		}
 
 		100% {
-			transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+			        transform: rotate(360deg);
+		}
+	}
+
+	@keyframes spinner {
+		0% {
+			-webkit-transform: rotate(0deg);
+			        transform: rotate(0deg);
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			        transform: rotate(360deg);
+		}
+	}
+
+	@-webkit-keyframes appear {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
 		}
 	}
 
@@ -96,7 +119,8 @@
 
 .scale-spinner-down {
 	//transform: scale(0);
-	animation: hide 0.4s linear forwards;
+	-webkit-animation: hide 0.4s linear forwards;
+	        animation: hide 0.4s linear forwards;
 }
 
 .wrapper960s {
@@ -143,7 +167,8 @@ button {
 .centerVH {
 	position: absolute;
 	top: 50%; left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 }
 
 /////////////////
@@ -167,11 +192,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	font-size: 2em;	
+	font-size: 2em;
 }
 
 h2 {
-	font-size: 1.5em;	
+	font-size: 1.5em;
 }
 
 h3 {
@@ -212,6 +237,7 @@ textarea, input, button { outline: none; }
 	color: rgba(140, 10, 10, .6);
 	display: block;
 	z-index: 9998;
+	-webkit-transition: all 0.6s ease-in-out;
 	transition: all 0.6s ease-in-out;
 }
 

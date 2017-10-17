@@ -18,7 +18,7 @@
 
 		.sub-header {
 			#home-btn, #menu-trigger {
-				// Remove menu trigger btn and home btn wnen not mobiles 
+				// Remove menu trigger btn and home btn wnen not mobiles
 				visibility: hidden;
 			}
 
@@ -33,7 +33,7 @@
 			z-index: 101;
 
 			opacity: 1;
-			background-color: $cianShade;
+			background-color: $white;
 
 			@include flex-direction-row;
 			@include align-items-center;
@@ -95,7 +95,7 @@
 			z-index: 101;
 
 			opacity: 1;
-			background-color: $cianShade;
+			background-color: $white;
 
 			@include boxSizing(border-box);
 
@@ -138,7 +138,7 @@
 				}
 			}
 		}
-		
+
 	}
-	
+
 }

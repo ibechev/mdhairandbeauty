@@ -1,4 +1,6 @@
+'use strict';
 var transit = require('jquery.transit');
+
 
 //=======================
 // Menu - Navigation code
@@ -93,7 +95,7 @@ var nav = {
 			nav.menu.css('top', '-100vh').css('height', '100vh');
 
 			// Add 'overflow: scroll' to the menu only if the devise is mobile
-			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent && nav.getViewportSize().width < 768)) {
 				nav.menu.css('overflow-y', 'scroll');
 			}
 
@@ -166,6 +168,7 @@ var nav = {
 
 	//	Get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
 	getViewportSize: function(){
+		let my_width, my_height;
 	    if (typeof(window.innerWidth) == 'number') {
 	        my_width = window.innerWidth;
 	        my_height = window.innerHeight;
