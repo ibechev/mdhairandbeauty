@@ -109,7 +109,7 @@ $(document).ready(function() {
 			//============
 			if ($(this).scrollTop() > 100) {
 				$('#scroller-top').css({
-					'bottom': '65px'
+					'bottom': '30px'
 				});
 			} else {
 				$('#scroller-top').css({
