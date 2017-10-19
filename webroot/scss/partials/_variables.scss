@@ -10,17 +10,16 @@ $secondary_black: rgba(0, 0, 0, 0.75);
 $ternary_black: rgba(0, 0, 0, 0.35);
 
 $redShade: #c0392b;
-$greenShade: #E7EDEA;
-$orangeShade: #FFC52C;
 $blueShade: #2c3e50;
-$slantedContainers: #f7f7f7;
+$grayShade: #f5f5f5;
 
 // === FONTS ===
 // Import Google fonts
-@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Saira);
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Saira|Artifika);
 
 $text: 'Saira', sans-serif;
 $heading: 'Julius Sans One', sans-serif;
+$firstChar: 'Artifika', serif;
 
 
 // === SIZES ===
