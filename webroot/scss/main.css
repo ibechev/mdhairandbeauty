@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Saira);
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One|Saira|Artifika);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 html, body, ul, ol, li, form, fieldset, legend {
 	margin: 0;
@@ -619,11 +619,11 @@ section.home {
 	section.home .home-img {
 		width: 90%;
 		margin: 45px auto 0;
+		padding: 4px;
 		position: relative;
-		z-index: -2;
-		background-color: #f7f7f7;
-		-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
-		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7); }
+		border: 1px solid #999;
+		background-color: white;
+		z-index: -2; }
 		section.home .home-img img {
 			display: block;
 			height: auto;
@@ -673,18 +673,6 @@ section.home {
 		position: relative;
 		display: inline-block;
 		background-color: transparent; }
-		section.home .home-content .header {
-			margin: 0 auto 33px;
-			padding: 0 20px;
-			color: rgba(192, 57, 43, 0.7);
-			text-align: center; }
-			section.home .home-content .header h1.luxury {
-				margin-bottom: 2px;
-				text-align: center;
-				font-size: 18px; }
-			section.home .home-content .header h1.mallorca {
-				text-align: center;
-				font-size: 30px; }
 		section.home .home-content .intro {
 			margin: 0 auto 50px; }
 			section.home .home-content .intro p {
@@ -703,9 +691,7 @@ section.home {
 				margin: 0 auto 20px;
 				padding: 12px 55px;
 				display: block;
-				border: 1px solid rgba(0, 0, 0, 0.25);
-				-webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
-				box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7); }
+				border: 1px solid rgba(0, 0, 0, 0.25); }
 			section.home .home-content .la-bios .info-one {
 				width: 100%;
 				margin-bottom: 30px;
@@ -735,7 +721,7 @@ section.home {
 				width: 85%;
 				padding: 30px;
 				margin: 0 auto;
-				background-color: rgba(0, 0, 0, 0.04);
+				background-color: #f5f5f5;
 				box-sizing: border-box;
 				-moz-box-sizing: border-box; }
 				section.home .home-content .la-bios .info-two ul h4 {
@@ -782,8 +768,6 @@ section.home {
 					margin: 0 auto;
 					padding: 10px 30px;
 					display: inline-block;
-					-webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
-					box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
 					background-color: #c0392b;
 					border: 1px solid rgba(255, 255, 255, 0.9);
 					border-radius: 5px;
@@ -953,11 +937,11 @@ section.about {
 			-ms-flex-align: center;
 			align-items: center; }
 			.contact .form form .inputs, .contact .form form .submit {
-				width: 100%; }
+				width: 90%; }
 			.contact .form form input, .contact .form form textarea {
 				border-radius: 0; }
 			.contact .form form .inputs {
-				margin-bottom: 20px; }
+				margin-bottom: 35px; }
 				.contact .form form .inputs .box {
 					width: 100%;
 					padding: 0 10px;
@@ -978,8 +962,20 @@ section.about {
 						padding: 15px 10px;
 						resize: vertical;
 						border: 1px solid #2c3e50;
+						-webkit-box-shadow: none;
+						box-shadow: none;
 						color: #2c3e50;
-						font-size: 16px; }
+						font-size: 16px;
+						-webkit-appearance: none;
+						appearance: none; }
+						.contact .form form .inputs .box input::-webkit-input-placeholder, .contact .form form .inputs .box textarea::-webkit-input-placeholder {
+							font-size: 16px; }
+						.contact .form form .inputs .box input:-ms-input-placeholder, .contact .form form .inputs .box textarea:-ms-input-placeholder {
+							font-size: 16px; }
+						.contact .form form .inputs .box input::-ms-input-placeholder, .contact .form form .inputs .box textarea::-ms-input-placeholder {
+							font-size: 16px; }
+						.contact .form form .inputs .box input::placeholder, .contact .form form .inputs .box textarea::placeholder {
+							font-size: 16px; }
 			.contact .form form .submit {
 				padding: 0 10px;
 				box-sizing: border-box;
@@ -989,7 +985,9 @@ section.about {
 					padding: 15px 10px;
 					background-color: #2c3e50;
 					color: #ffffff;
-					font-size: 16px; }
+					font-size: 16px;
+					-webkit-appearance: none;
+					appearance: none; }
 	.contact .address {
 		margin-bottom: 40px;
 		display: -webkit-box;
@@ -1032,8 +1030,9 @@ section.about {
 				font-family: "Julius Sans One", sans-serif; }
 	.contact .map {
 		height: 400px;
-		width: 100;
-		padding: 0 10px 50px;
+		width: 80%;
+		margin: 0 auto;
+		padding: 0 0 50px;
 		box-sizing: border-box;
 		-moz-box-sizing: border-box; }
 		.contact .map iframe {
@@ -1264,6 +1263,18 @@ button:hover {
 
 .hide {
 	opacity: 0; }
+
+.firstChar {
+	float: left;
+	color: #c0392b;
+	font-family: "Artifika", serif;
+	font-size: 48px;
+	line-height: 39px;
+	padding: 4px 7px 0 3px; }
+
+.shadow {
+	-webkit-box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.5); }
 
 html {
 	height: 100%; }

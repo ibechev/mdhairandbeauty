@@ -4,11 +4,11 @@ section.home {
 	.home-img {
 		width: 90%;
 		margin: 45px auto 0;
+		padding: 4px;
 		position: relative;
+		border: 1px solid #999;
+		background-color: white;
 		z-index: -2;
-		background-color: $slantedContainers;
-		-webkit-box-shadow: 0 0 10px 0 rgba(black, .7);
-		        box-shadow: 0 0 10px 0 rgba(black, .7);
 
 		img {
 			display: block;
@@ -58,25 +58,6 @@ section.home {
 		display: inline-block;
 		background-color: transparent;
 
-		.header {
-			margin: 0 auto 33px;
-			padding: 0 20px;
-			color: rgba(192, 57, 43, .7);
-
-			text-align: center;
-
-			h1.luxury {
-				margin-bottom: 2px;
-				text-align: center;
-				font-size: 18px;
-			}
-
-			h1.mallorca {
-				text-align: center;
-				font-size: 30px;
-			}
-		}
-
 		.intro {
 			margin: 0 auto 50px;
 
@@ -101,8 +82,6 @@ section.home {
 				padding: 12px 55px;
 				display: block;
 				border: 1px solid rgba(black, .25);
-				-webkit-box-shadow: 0 0 15px 0 rgba(black, .7);
-				        box-shadow: 0 0 15px 0 rgba(black, .7);
 			}
 
 			.info-one {
@@ -142,7 +121,7 @@ section.home {
 					width: 85%;
 					padding: 30px;
 					margin: 0 auto;
-					background-color: rgba(black, .04);
+					background-color: $grayShade;
 
 					@include boxSizing(border-box);
 
@@ -204,8 +183,6 @@ section.home {
 					margin: 0 auto;
 					padding: 10px 30px;
 					display: inline-block;
-					-webkit-box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
-					        box-shadow: 0 0 30px 0 rgba(0 ,0, 0,  .5);
 
 					background-color: #c0392b;
 					border: 1px solid rgba(255, 255, 255, .9);

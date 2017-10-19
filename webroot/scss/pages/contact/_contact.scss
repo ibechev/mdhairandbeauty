@@ -27,7 +27,7 @@
 			@include align-items-center;
 
 			.inputs, .submit {
-				width: 100%;
+				width: 90%;
 			}
 
 			input, textarea {
@@ -35,7 +35,7 @@
 			}
 
 			.inputs {
-				margin-bottom: 20px;
+				margin-bottom: 35px;
 
 				.box {
 					width: 100%;
@@ -58,8 +58,29 @@
 						padding: 15px 10px;
 						resize: vertical;
 						border: 1px solid $blueShade;
+						-webkit-box-shadow: none;
+						        box-shadow: none;
 						color: $blueShade;
 						font-size: 16px;
+						-webkit-appearance: none;
+										appearance: none;
+
+
+						&::-webkit-input-placeholder {
+							font-size: 16px;
+						}
+
+						&:-ms-input-placeholder {
+							font-size: 16px;
+						}
+
+						&::-ms-input-placeholder {
+							font-size: 16px;
+						}
+
+						&::placeholder {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -74,6 +95,8 @@
 					background-color: $blueShade;
 					color: $white;
 					font-size: 16px;
+					-webkit-appearance: none;
+									appearance: none;
 				}
 			}
 		}
@@ -127,8 +150,9 @@
 
 	.map {
 		height: 400px;
-		width: 100;
-		padding: 0 10px 50px;
+		width: 80%;
+		margin: 0 auto;
+		padding: 0 0 50px;
 
 		@include boxSizing(border-box);
 
