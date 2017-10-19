@@ -1,5 +1,3 @@
-var bxSlider = require('bxSlider');
-
 /*
 //=================================
 // Find spesific page section
@@ -56,7 +54,6 @@ function setHomeHeight() {
 //  Set Landing for Logo and Text on the home page
 //==========================================================
 function homeLogoParallax() {
-
 	$('.home-logo .logo').removeClass('hide').addClass('show');
 };
 
@@ -65,8 +62,6 @@ $(document).ready(function() {
 	setTimeout(homeLogoParallax, 2000);
 
 	setHomeHeight();
-
-	$('.bxslider').bxSlider();
 
 	//=============================================================
 	// Set min height for the HOME section, when orientation change
