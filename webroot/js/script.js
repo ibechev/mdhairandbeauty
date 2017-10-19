@@ -108,7 +108,7 @@ $(document).ready(function() {
 			//============
 			// Back to top
 			//============
-			if ($(this).scrollTop() > 300) {
+			if ($(this).scrollTop() > 100) {
 				$('#scroller-top').css({
 					'bottom': '25px'
 				});
