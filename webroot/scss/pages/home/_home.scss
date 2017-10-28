@@ -36,7 +36,7 @@ section.home {
 		@include display-flex;
 		@include align-items-center;
 
-		div.logo {
+		.logo {
 			width: 70%;
 			position: relative;
 			margin: 0 auto;
@@ -59,7 +59,7 @@ section.home {
 		background-color: transparent;
 
 		.intro {
-			margin: 0 auto 50px;
+			margin: 0 auto 80px;
 
 			p {
 				width: 90%;
@@ -73,7 +73,7 @@ section.home {
 		.la-bios {
 			width: 100%;
 			position: relative;
-			margin-bottom: 80px;
+			margin-bottom: 100px;
 
 			.img-one {
 				width: 55%;
@@ -86,7 +86,7 @@ section.home {
 
 			.info-one {
 				width: 100%;
-				margin-bottom: 30px;
+				margin-bottom: 60px;
 				@include boxSizing(border-box);
 
 				p {
@@ -101,11 +101,11 @@ section.home {
 			.img-two {
 				width: 100%;
 				height: 215px;
-				margin: 0 auto 30px;
+				margin: 0 auto 60px;
 				background-image: url('../images/home/la-bios2@1x.jpg');
 				background-repeat: no-repeat;
 				background-position: center left;
-				background-size: 100% auto;
+				background-size: cover;
 			}
 
 			.info-two {

@@ -1,21 +1,8 @@
 @media screen and(orientation: landscape) {
 	section.home {
-		.home-logo {
-			margin: 0 0 240px;
-
-			div.logo {
-				width: 60%;
-			}
-		}
-	}
-}
-
-@media only screen and(min-width: 460px) {
-	section.home {
-
 		.home-img {
 			width: 60%;
-			margin: 12px auto 0;
+			margin: 0 auto;
 
 			.brighten {
 				background: transparent;
@@ -25,36 +12,98 @@
 		}
 
 		.home-logo {
-			margin: -85px 0 27px;
+			margin: -110px 0 70px;
 
-			div.logo {
-				width: 45%;
+			.logo {
+				width: 50%;
 			}
 		}
 
 		.home-content {
 			.intro {
 				p {
-					width: 75%;
+					width: 70%;
 				}
 			}
 
 			.la-bios {
 				.img-one {
-					width: 25%;
+					width: 40%;
 				}
 
 				.info-one {
 					p {
-						width: 75%;
+						width: 55%;
 					}
 				}
 
 				.img-two {
-					width: 70%;
+					width: 60%;
 				}
 
 				.info-two {
+					p {
+						width: 55%;
+					}
+
+
+					ul {
+						width: 55%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and(min-width: 768px) {
+	section.home {
+		.home-img {
+			width: 70%;
+			margin: 40px auto 0;
+
+			.brighten {
+				background: transparent;
+				background: -webkit-gradient(linear, left top, left bottom, from(rgba($white, .0)), to(rgba($white, .7)));
+				background: linear-gradient(to bottom, rgba($white, .0), rgba($white, .7));
+			}
+		}
+
+		.home-logo {
+			margin: -95px 0 65px;
+
+			.logo {
+				width: 50%;
+			}
+		}
+
+		.home-content {
+			.intro {
+				p {
+					width: 70%;
+				}
+			}
+
+			.la-bios {
+				.img-one {
+					width: 41%;
+				}
+
+				.info-one {
+					p {
+						width: 55%;
+					}
+				}
+
+				.img-two {
+					width: 65%;
+				}
+
+				.info-two {
+					p {
+						width: 55%;
+					}
+
 					ul {
 						width: 60%;
 					}
@@ -66,6 +115,10 @@
 					img {
 						width: 75%;
 					}
+
+					p {
+						width: 55%;
+					}
 				}
 			}
 		}
@@ -74,15 +127,50 @@
 
 
 
-@media only screen and(min-width: 768px) {
+@media only screen and(min-width: 1024px) {
 	section.home {
+		.home-img {
+			width: 70%;
+			margin: 40px auto 0;
 
-		.home-logo {
-
+			.brighten {
+				background: transparent;
+				background: -webkit-gradient(linear, left top, left bottom, from(rgba($white, .0)), to(rgba($white, .7)));
+				background: linear-gradient(to bottom, rgba($white, .0), rgba($white, .7));
+			}
 		}
 
-		.home-img {
-			width: 100%;
+		.home-logo {
+			margin: -100px 0 65px;
+
+			div.logo {
+				width: 40%;
+			}
+		}
+	}
+
+	.home-content {
+		.intro {
+			p {
+				width: 70%;
+			}
+		}
+
+		.la-bios {
+			.img-one {
+				width: 41%;
+			}
+
+			.info-one {
+				p {
+					width: 55%;
+				}
+			}
+
+			.img-two {
+				width: 50%;
+				height: 300px;
+			}
 		}
 	}
 }

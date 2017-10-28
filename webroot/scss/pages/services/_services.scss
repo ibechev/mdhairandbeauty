@@ -1,19 +1,19 @@
-section.services { 
-	
+section.services {
+
 
 	div.services-wrapper {
 		position: relative;
 
 		div.service {
-			padding-top: 80px;
+			padding: 20px 0 60px;
 
 			div.head {
 				margin-bottom: 20px;
 				padding: 0 20px;
-				
+
 				@include display-flex;
 
-				div.image {	
+				div.image {
 					@include display-flex;
 
 					height: 120px;
@@ -33,7 +33,7 @@ section.services {
 					@include align-items-center;
 
 					width: 55%;
-					
+
 					h1 {
 
 					}
@@ -62,5 +62,5 @@ section.services {
 
 
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
 @import "services-media";

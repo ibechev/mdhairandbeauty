@@ -103,7 +103,7 @@ var nav = {
 		},
 
 		setInitPosDesk: function() { // Default position for desktop
-			nav.menu.css('opacity', 1).css('height', 'unset').css('top', 'unset');
+			nav.menu.css('opacity', 1).css('height', '50px').css('top', 'unset');
 			nav.opened = false;
 			nav.screenMode.set('desktop');
 		}
