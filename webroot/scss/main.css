@@ -519,13 +519,10 @@ section.home {
 					word-wrap: break-word;
 					color: rgba(0, 0, 0, 0.75); }
 			section.home .home-content .la-bios .img-two {
-				width: 100%;
-				height: 215px;
+				width: 80%;
+				height: auto;
 				margin: 0 auto 60px;
-				background-image: url("../images/home/la-bios2@1x.jpg");
-				background-repeat: no-repeat;
-				background-position: center left;
-				background-size: cover; }
+				display: block; }
 			section.home .home-content .la-bios .info-two p {
 				width: 75%;
 				margin: 0 auto 20px;
@@ -577,7 +574,7 @@ section.home {
 				section.home .home-content .services-wrapper .service p {
 					width: 85%;
 					margin: 0 auto 50px;
-					text-align: justify;
+					text-align: center;
 					color: rgba(0, 0, 0, 0.6); }
 				section.home .home-content .services-wrapper .service a.see-more {
 					margin: 0 auto;
@@ -605,7 +602,7 @@ section.home {
 			background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.7)));
 			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)); }
 	section.home .home-logo {
-		margin: -110px 0 70px; }
+		margin: -85px 0 70px; }
 		section.home .home-logo .logo {
 			width: 50%; }
 	section.home .home-content .intro p {
@@ -619,7 +616,11 @@ section.home {
 	section.home .home-content .la-bios .info-two p {
 		width: 55%; }
 	section.home .home-content .la-bios .info-two ul {
-		width: 55%; } }
+		width: 55%; }
+	section.home .home-content .services-wrapper .service img {
+		width: 75%; }
+	section.home .home-content .services-wrapper .service p {
+		width: 60%; } }
 
 @media only screen and (min-width: 768px) {
 	section.home .home-img {
@@ -652,7 +653,7 @@ section.home {
 
 @media only screen and (min-width: 1024px) {
 	section.home .home-img {
-		width: 70%;
+		width: 55%;
 		margin: 40px auto 0; }
 		section.home .home-img .brighten {
 			background: transparent;
@@ -660,40 +661,82 @@ section.home {
 			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)); }
 	section.home .home-logo {
 		margin: -100px 0 65px; }
-		section.home .home-logo div.logo {
+		section.home .home-logo .logo {
 			width: 40%; }
-	.home-content .intro p {
-		width: 70%; }
-	.home-content .la-bios .img-one {
-		width: 41%; }
-	.home-content .la-bios .info-one p {
-		width: 55%; }
-	.home-content .la-bios .img-two {
+	section.home .home-content .intro p {
+		width: 50%; }
+	section.home .home-content .la-bios .img-one {
+		width: 30%; }
+	section.home .home-content .la-bios .info-one p {
+		width: 50%; }
+	section.home .home-content .la-bios .img-two {
 		width: 50%;
-		height: 300px; } }
+		height: 300px; }
+	section.home .home-content .la-bios .info-two p {
+		width: 50%; }
+	section.home .home-content .la-bios .info-two ul {
+		width: 45%; } }
 
-section.services div.services-wrapper {
+.services .services-nav {
+	margin: 30px auto 60px; }
+	.services .services-nav h3 {
+		text-align: center;
+		margin-bottom: 30px; }
+	.services .services-nav ul {
+		width: 50%;
+		margin: 0 auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center; }
+		.services .services-nav ul li {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 7px 15px;
+			border-radius: 5px;
+			border: 1px solid white;
+			background-color: #c0392b;
+			color: rgba(255, 255, 255, 0.8);
+			letter-spacing: 2px;
+			font-weight: bold;
+			font-style: italic;
+			text-align: center; }
+			.services .services-nav ul li:not(last-child) {
+				margin-bottom: 6px; }
+
+.services .services-wrapper {
 	position: relative; }
-	section.services div.services-wrapper div.service {
-		padding: 20px 0 60px; }
-		section.services div.services-wrapper div.service div.head {
+	.services .services-wrapper .service {
+		margin: 0 auto;
+		padding: 20px 20px 60px; }
+		.services .services-wrapper .service .head {
 			margin-bottom: 20px;
-			padding: 0 20px;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex; }
-			section.services div.services-wrapper div.service div.head div.image {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
+			.services .services-wrapper .service .head .img-container {
 				height: 120px;
 				width: 45%; }
-				section.services div.services-wrapper div.service div.head div.image img {
+				.services .services-wrapper .service .head .img-container .img-wrapper {
 					margin: auto;
 					height: 120px;
 					width: 120px;
-					border-radius: 50%; }
-			section.services div.services-wrapper div.service div.head div.head-text {
+					border-radius: 50%;
+					overflow: hidden; }
+					.services .services-wrapper .service .head .img-container .img-wrapper img {
+						height: 100%;
+						width: auto;
+						position: relative; }
+			.services .services-wrapper .service .head .head-text {
 				display: -webkit-box;
 				display: -ms-flexbox;
 				display: flex;
@@ -704,17 +747,29 @@ section.services div.services-wrapper {
 				-ms-flex-align: center;
 				align-items: center;
 				width: 55%; }
-		section.services div.services-wrapper div.service div.text {
-			padding: 0 20px; }
-			section.services div.services-wrapper div.service div.text p {
-				font-size: 18px;
-				text-align: justify;
-				word-wrap: break-word;
-				word-spacing: 0.10em;
-				color: black; }
-				section.services div.services-wrapper div.service div.text p a {
-					text-decoration: underline;
-					color: rgba(0, 0, 0, 0.35); }
+		.services .services-wrapper .service .text p {
+			text-align: justify;
+			word-wrap: break-word;
+			word-spacing: 0.10em;
+			color: black; }
+			.services .services-wrapper .service .text p a {
+				text-decoration: underline;
+				color: rgba(0, 0, 0, 0.35); }
+	.services .services-wrapper .hair .head .img-container .img-wrapper img {
+		left: -50px; }
+	.services .services-wrapper .skin .head .img-container .img-wrapper img {
+		left: -16px; }
+	.services .services-wrapper .nails .head .img-container .img-wrapper img {
+		left: -60px; }
+	.services .services-wrapper .body .head .img-container .img-wrapper img {
+		left: -60px; }
+
+@media only screen and (orientation: landscape) {
+	.services .services-nav ul {
+		width: 35%; }
+	.services .services-wrapper .service {
+		padding: 20px 0 60px;
+		width: 70%; } }
 
 section.about {
 	position: relative; }

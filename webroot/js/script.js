@@ -23,6 +23,26 @@ function jumpTo(pageSection) {
 */
 
 //=================================
+// Handle services navigation (services page)
+//=================================
+
+function handleServicesNav(callback) {
+	let clickedLi;
+	$('#services-nav').click(function(e) {
+		clickedLi = e.target.id.replace('nav-', '');
+		$('body').animate({opacity: 0}, 200, function() {
+			callback(clickedLi);
+		});
+		$('body').animate({opacity: 1}, 400);
+	});
+}
+
+function scrollTo(section) {
+	$(window).scrollTop($('#' + section).offset().top);
+}
+
+
+//=================================
 // Loading Screen
 //=================================
 
@@ -58,6 +78,8 @@ function homeLogoParallax() {
 };
 
 $(document).ready(function() {
+
+	handleServicesNav(scrollTo);
 
 	setTimeout(homeLogoParallax, 2000);
 
