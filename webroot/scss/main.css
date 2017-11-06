@@ -720,6 +720,7 @@ section.home {
 		padding: 20px 20px 60px; }
 		.services .services-wrapper .service .head {
 			margin-bottom: 20px;
+			padding: 0 20px;
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex; }
@@ -747,14 +748,15 @@ section.home {
 				-ms-flex-align: center;
 				align-items: center;
 				width: 55%; }
+				.services .services-wrapper .service .head .head-text h1 {
+					text-align: center; }
 		.services .services-wrapper .service .text p {
 			text-align: justify;
 			word-wrap: break-word;
 			word-spacing: 0.10em;
 			color: black; }
-			.services .services-wrapper .service .text p a {
-				text-decoration: underline;
-				color: rgba(0, 0, 0, 0.35); }
+			.services .services-wrapper .service .text p:not(:first-child) {
+				margin-top: 10px; }
 	.services .services-wrapper .hair .head .img-container .img-wrapper img {
 		left: -50px; }
 	.services .services-wrapper .skin .head .img-container .img-wrapper img {
@@ -762,7 +764,7 @@ section.home {
 	.services .services-wrapper .nails .head .img-container .img-wrapper img {
 		left: -60px; }
 	.services .services-wrapper .body .head .img-container .img-wrapper img {
-		left: -60px; }
+		left: -22px; }
 
 @media only screen and (orientation: landscape) {
 	.services .services-nav ul {
@@ -772,53 +774,158 @@ section.home {
 		width: 70%; } }
 
 section.about {
-	position: relative; }
-	section.about div.founder {
-		padding-top: 60px; }
-		section.about div.founder h1.header {
+	position: relative;
+	/*div.founder {
+		padding-top: 60px;
+
+		h1.header {
 			margin-bottom: 30px;
 			padding-top: 30px;
 			text-align: center;
 			font-size: 40px;
 			letter-spacing: 3px;
-			opacity: 0.4; }
-		section.about div.founder div.image {
+			opacity: 0.4;
+		}
+
+		div.image {
 			height: 175px;
 			width: auto;
 			margin: 0 20px 30px 20px;
 			background-image: url("../images/DesiPortraitMob.png");
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-size: 100% auto; }
-		section.about div.founder div.founder-text {
-			position: relative; }
-			section.about div.founder div.founder-text h1 {
+			background-size: 100% auto;
+		}
+
+		div.founder-text {
+			position: relative;
+
+			h1 {
 				text-align: center;
-				color: rgba(0, 0, 0, 0.35); }
-			section.about div.founder div.founder-text p {
+				color: $ternary-black;
+			}
+
+			p {
 				padding: 15px 20px 30px 20px;
 				text-align: justify;
 				word-wrap: break-word;
 				word-spacing: 0.10em;
-				font-size: 18px; }
-	section.about div.story {
-		background-color: #5a5a5a; }
-		section.about div.story h1 {
-			margin-bottom: 30px;
-			padding-top: 30px;
-			text-align: center;
-			font-size: 40px;
-			letter-spacing: 3px;
-			color: white;
-			opacity: 0.4; }
-		section.about div.story p {
-			padding: 0 20px 30px 20px;
-			text-align: justify;
-			word-wrap: break-word;
-			word-spacing: 0.10em;
-			color: black;
-			font-size: 18px;
-			color: #dadada; }
+				font-size: 18px;
+
+			}
+		}
+	}*/ }
+	section.about .header-about {
+		text-align: center;
+		margin: 30px 0 0; }
+	section.about .prelude {
+		width: 90%;
+		margin: 40px auto 70px;
+		text-align: justify;
+		word-wrap: break-word; }
+	section.about .employee {
+		width: 90%;
+		position: relative;
+		margin: 140px auto 0;
+		padding-bottom: 15px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.05); }
+		section.about .employee:last-child {
+			margin-bottom: 100px; }
+		section.about .employee:first-child {
+			background-color: red; }
+		section.about .employee .header {
+			width: 100%;
+			height: 177px;
+			position: relative;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			justify-content: space-evenly;
+			background-color: #1e4a77; }
+			section.about .employee .header .image {
+				width: 75%;
+				max-width: 320px;
+				height: auto;
+				position: absolute;
+				bottom: 50%; }
+			section.about .employee .header .name {
+				position: absolute;
+				bottom: 0;
+				text-align: center; }
+				section.about .employee .header .name h2 {
+					margin-bottom: 5px;
+					color: rgba(255, 255, 255, 0.8); }
+				section.about .employee .header .name h4 {
+					margin-bottom: 15px;
+					color: rgba(255, 255, 255, 0.6); }
+		section.about .employee .bio {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			width: 95%;
+			margin: 25px auto 25px;
+			padding: 20px 10px;
+			background-color: #e1e1e1; }
+		section.about .employee .info {
+			width: 95%; }
+			section.about .employee .info p {
+				text-align: justify;
+				word-wrap: break-word;
+				word-spacing: 0.10em;
+				color: black; }
+				section.about .employee .info p:not(:last-child) {
+					margin-bottom: 6px; }
+
+@media only screen and (orientation: landscape) {
+	section.about .employee {
+		width: 85%; }
+		section.about .employee .header .image {
+			width: 45%; } }
+
+@media only screen and (min-width: 768px) {
+	section.about .prelude {
+		width: 75%; }
+	section.about .employee {
+		width: 75%; }
+		section.about .employee .header {
+			height: 160px; }
+			section.about .employee .header .image {
+				position: relative;
+				bottom: unset; }
+			section.about .employee .header .name {
+				position: relative; }
+				section.about .employee .header .name h4 {
+					margin-bottom: unset; }
+		section.about .employee .bio {
+			margin-top: 65px; } }
+
+@media only screen and (min-width: 1025px) {
+	section.about .prelude {
+		width: 65%;
+		max-width: 800px; }
+	section.about .employee {
+		width: 65%;
+		max-width: 800px; }
+		section.about .employee .header .image {
+			width: 45%; } }
 
 .contact {
 	padding-top: 30px;
@@ -1181,7 +1288,7 @@ button:hover {
 	font-family: "Artifika", serif;
 	font-size: 48px;
 	line-height: 39px;
-	padding: 4px 7px 0 3px; }
+	padding: 4px 5px 0 3px; }
 
 .shadow {
 	-webkit-box-shadow: 0 8px 7px -5px rgba(0, 0, 0, 0.5);

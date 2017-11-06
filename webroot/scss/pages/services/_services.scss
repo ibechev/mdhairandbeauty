@@ -52,6 +52,7 @@
 
 			.head {
 				margin-bottom: 20px;
+				padding: 0 20px;
 
 				@include display-flex;
 
@@ -82,7 +83,7 @@
 					width: 55%;
 
 					h1 {
-
+						text-align: center;
 					}
 				}
 			}
@@ -95,9 +96,8 @@
 					word-spacing: 0.10em;
 					color: $primary_black;
 
-					a {
-						text-decoration: underline;
-						color: $ternary_black;
+					&:not(:first-child) {
+						margin-top: 10px;
 					}
 				}
 			}
@@ -113,7 +113,7 @@
 			left: -60px;
 		}
 		.body .head .img-container .img-wrapper img {
-			left: -12px;
+			left: -22px;
 		}
 	}
 }

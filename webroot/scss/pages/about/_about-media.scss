@@ -1,0 +1,67 @@
+@media only screen and(orientation: landscape) {
+  section.about {
+    .employee {
+      width: 85%;
+
+      .header {
+        .image {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 768px) {
+  section.about {
+
+    .prelude {
+      width: 75%;
+    }
+
+    .employee {
+      width: 75%;
+
+      .header {
+        height: 160px;
+
+        .image {
+          position: relative;
+          bottom: unset;
+        }
+
+        .name {
+          position: relative;
+
+          h4 {
+            margin-bottom: unset;
+          }
+        }
+      }
+
+      .bio {
+        margin-top: 65px;
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 1025px) {
+  section.about {
+    .prelude {
+      width: 65%;
+      max-width: 800px;
+    }
+
+    .employee {
+      width: 65%;
+      max-width: 800px;
+
+      .header {
+        .image {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
