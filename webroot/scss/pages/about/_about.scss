@@ -18,10 +18,6 @@ section.about {
 			margin-bottom: 100px;
 		}
 
-		&:first-child {
-			background-color: red;
-		}
-
 		width: 90%;
 		position: relative;
 		margin: 140px auto 0;
@@ -37,8 +33,7 @@ section.about {
 		    -ms-flex-align: center;
 		        align-items: center;
 
-		background-color: rgba(black, .05);
-
+		background-color: rgba(black, .02);
 
 		.header {
 			width: 100%;
@@ -91,7 +86,11 @@ section.about {
 			width: 95%;
 			margin: 25px auto 25px;
 			padding: 20px 10px;
-			background-color: #e1e1e1;
+
+			.bio-ul {
+				text-align: center;
+				color: rgba(black, .5);
+			}
 		}
 
 		.info {
@@ -109,47 +108,6 @@ section.about {
 			}
 		}
 	}
-
-	/*div.founder {
-		padding-top: 60px;
-
-		h1.header {
-			margin-bottom: 30px;
-			padding-top: 30px;
-			text-align: center;
-			font-size: 40px;
-			letter-spacing: 3px;
-			opacity: 0.4;
-		}
-
-		div.image {
-			height: 175px;
-			width: auto;
-			margin: 0 20px 30px 20px;
-			background-image: url("../images/DesiPortraitMob.png");
-			background-repeat: no-repeat;
-			background-position: center center;
-			background-size: 100% auto;
-		}
-
-		div.founder-text {
-			position: relative;
-
-			h1 {
-				text-align: center;
-				color: $ternary-black;
-			}
-
-			p {
-				padding: 15px 20px 30px 20px;
-				text-align: justify;
-				word-wrap: break-word;
-				word-spacing: 0.10em;
-				font-size: 18px;
-
-			}
-		}
-	}*/
 }
 
 

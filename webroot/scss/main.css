@@ -774,47 +774,7 @@ section.home {
 		width: 70%; } }
 
 section.about {
-	position: relative;
-	/*div.founder {
-		padding-top: 60px;
-
-		h1.header {
-			margin-bottom: 30px;
-			padding-top: 30px;
-			text-align: center;
-			font-size: 40px;
-			letter-spacing: 3px;
-			opacity: 0.4;
-		}
-
-		div.image {
-			height: 175px;
-			width: auto;
-			margin: 0 20px 30px 20px;
-			background-image: url("../images/DesiPortraitMob.png");
-			background-repeat: no-repeat;
-			background-position: center center;
-			background-size: 100% auto;
-		}
-
-		div.founder-text {
-			position: relative;
-
-			h1 {
-				text-align: center;
-				color: $ternary-black;
-			}
-
-			p {
-				padding: 15px 20px 30px 20px;
-				text-align: justify;
-				word-wrap: break-word;
-				word-spacing: 0.10em;
-				font-size: 18px;
-
-			}
-		}
-	}*/ }
+	position: relative; }
 	section.about .header-about {
 		text-align: center;
 		margin: 30px 0 0; }
@@ -838,11 +798,9 @@ section.about {
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
-		background-color: rgba(0, 0, 0, 0.05); }
+		background-color: rgba(0, 0, 0, 0.02); }
 		section.about .employee:last-child {
 			margin-bottom: 100px; }
-		section.about .employee:first-child {
-			background-color: red; }
 		section.about .employee .header {
 			width: 100%;
 			height: 177px;
@@ -882,8 +840,10 @@ section.about {
 			-moz-box-sizing: border-box;
 			width: 95%;
 			margin: 25px auto 25px;
-			padding: 20px 10px;
-			background-color: #e1e1e1; }
+			padding: 20px 10px; }
+			section.about .employee .bio .bio-ul {
+				text-align: center;
+				color: rgba(0, 0, 0, 0.5); }
 		section.about .employee .info {
 			width: 95%; }
 			section.about .employee .info p {
@@ -915,7 +875,7 @@ section.about {
 				section.about .employee .header .name h4 {
 					margin-bottom: unset; }
 		section.about .employee .bio {
-			margin-top: 65px; } }
+			margin-top: 40px; } }
 
 @media only screen and (min-width: 1025px) {
 	section.about .prelude {
