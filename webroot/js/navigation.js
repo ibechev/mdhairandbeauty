@@ -64,20 +64,28 @@ var nav = {
 
 	touchScroll: {
 		enable() {
-			document.addEventListener('touchmove', (e) => {
+			window.addEventListener('touchmove', (e) => {
 				return true;
 			});
-			document.addEventListener('touchstart', (e) => {
+			window.addEventListener('touchstart', (e) => {
+				return true;
+			});
+			window.addEventListener('scroll', (e) => {
 				return true;
 			});
 		},
 
 		disable() {
-			document.addEventListener('touchmove',(e) => {
+			window.addEventListener('touchmove',(e) => {
 				e.preventDefault();
 				e.stopPropagation();
 			}, false);
-			document.addEventListener('touchstart',(e) => {
+			window.addEventListener('touchstart',(e) => {
+				e.preventDefault();
+				e.stopPropagation();
+			}, false);
+			window.addEventListener('scroll',(e) => {
+				window.scrollTo(0, 0);
 				e.preventDefault();
 				e.stopPropagation();
 			}, false);
