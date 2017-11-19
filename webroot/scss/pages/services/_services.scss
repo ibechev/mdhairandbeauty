@@ -2,13 +2,14 @@
 	.services-nav {
 		margin: 30px auto 60px;
 
-		h3 {
+		h1 {
 			text-align: center;
 			margin-bottom: 30px;
 		}
 
 		ul {
-			width: 50%;
+			width: 60%;
+			max-width: 250px;
 			margin: 0 auto;
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -21,24 +22,39 @@
 			    -ms-flex-align: center;
 			        align-items: center;
 
-			li {
-					@include boxSizing(border-box);
-					width: 100%;
-					margin-left: auto;
-					margin-right: auto;
-					padding: 7px 15px;
-					border-radius: 5px;
-					border: 1px solid white;
-					background-color: $redShade;
-					color: rgba(white, .8);
-					letter-spacing: 2px;
-					font-weight: bold;
-					font-style: italic;
-					text-align: center;
+			.option {
+				@include boxSizing(border-box);
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 7px 15px;
+				border-radius: 3px;
 
-					&:not(last-child) {
-						margin-bottom: 6px;
-					}
+				border: 1px solid rgba($redShade, .15);
+				background-color: rgba(0, 0, 0, .02);
+				box-shadow: 0 8px 7px -5px rgba(black, .15);
+				color: rgba(black, .8);
+				letter-spacing: 2px;
+				font-weight: bold;
+				font-style: italic;
+				text-align: center;
+				cursor: pointer;
+
+				&:not(last-child) {
+					margin-bottom: 14px;
+				}
+			}
+
+			.top-line {
+				width: 50%;
+				margin: 0 auto 30px;
+				border-top: 1px solid rgba(black, .1);
+			}
+
+			.bottom-line {
+				width: 50%;
+				margin: 16px auto 0;
+				border-top: 1px solid rgba(black, .1);
 			}
 		}
 	}
@@ -47,40 +63,41 @@
 		position: relative;
 
 		.service {
+			max-width: 800px;
 			margin: 0 auto;
-			padding: 20px 20px 60px;
+			padding: 20px 20px 100px;
+
+			&:nth-child(even) {
+				.head {
+					.head-text {
+						order: 0;
+					}
+				}
+			}
 
 			.head {
-				margin-bottom: 20px;
-				padding: 0 20px;
+				margin-bottom: 40px;
 
-				@include display-flex;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
 
 				.img-container {
 					height: 120px;
-					width: 45%;
 
-					.img-wrapper {
-						margin: auto;
-						height: 120px;
-						width: 120px;
-						border-radius: 50%;
-						overflow: hidden;
-
-						img {
-							height: 100%;
-							width: auto;
-							position: relative;
-						}
+					img {
+						height: 100%;
+						width: auto;
+						position: relative;
 					}
 				}
 
 				.head-text {
-					@include display-flex;
-					@include justify-content-center;
-					@include align-items-center;
-
-					width: 55%;
+					min-height: 100px;
+					padding: 0 10px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 
 					h1 {
 						text-align: center;

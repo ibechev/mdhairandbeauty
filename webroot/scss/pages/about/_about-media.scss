@@ -26,6 +26,7 @@
         height: 160px;
 
         .image {
+          width: 45%;
           position: relative;
           bottom: unset;
         }
@@ -41,6 +42,16 @@
 
       .bio {
         margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 970px) and (min-width: 768px) {
+  section.about {
+    .employee {
+      .header {
+        height: 130px;
       }
     }
   }

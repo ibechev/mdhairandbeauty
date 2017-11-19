@@ -1,3 +1,4 @@
+import nav from './navigation';
 /*
 //=================================
 // Find spesific page section
@@ -38,7 +39,8 @@ function handleServicesNav(callback) {
 }
 
 function scrollTo(section) {
-	$(window).scrollTop($('#' + section).offset().top);
+	let add = nav.screenMode.get() === 'desktop' ? 100 : 0;
+	$(window).scrollTop($('#' + section).offset().top - add);
 }
 
 

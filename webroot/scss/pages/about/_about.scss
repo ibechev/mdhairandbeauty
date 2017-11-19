@@ -6,13 +6,6 @@ section.about {
 		margin: 30px 0 0;
 	}
 
-	.prelude {
-		width: 90%;
-		margin: 40px auto 70px;
-		text-align: justify;
-		word-wrap: break-word;
-	}
-
 	.employee {
 		&:last-child {
 			margin-bottom: 100px;
@@ -54,7 +47,8 @@ section.about {
 			        align-items: center;
 			justify-content: space-evenly;
 
-			background-color: #1e4a77;
+			background-color: rgba(black, .06);
+			border-bottom: 6px solid $redShade;
 
 			.image {
 				width: 75%;
@@ -62,6 +56,8 @@ section.about {
 				height: auto;
 				position: absolute;
 				bottom: 50%;
+
+				box-shadow: 0 5px 14px -3px rgba(black, .7);
 			}
 
 			.name {
@@ -71,12 +67,12 @@ section.about {
 
 				h2 {
 					margin-bottom: 5px;
-					color: rgba(white, .8);
+					color: black;
 				}
 
 				h4 {
 					margin-bottom: 15px;
-					color: rgba(white, .6);
+					color: rgba(black, .6);
 				}
 			}
 		}

@@ -1,8 +1,6 @@
 @media only screen and(orientation: landscape) {
   .services {
   	.services-nav {
-
-
   		ul {
         width: 35%;
       }
@@ -10,8 +8,38 @@
 
     .services-wrapper {
       .service {
-        padding: 20px 0 60px;
-        width: 70%;
+        padding: 20px 0 100px;
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 768px) {
+  .services {
+    .services-wrapper {
+      .service {
+        padding: 20px 0 100px;
+        width: 65%;
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 924px) {
+  .services {
+    .services-wrapper {
+      .service {
+        .head {
+          .img-container {
+            height: unset;
+            width: 55%;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
       }
     }
   }

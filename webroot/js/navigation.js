@@ -25,10 +25,10 @@ var nav = {
 	},
 
 	screenMode: {	// Sets and checks in what currens style is the menu ( mobile or desktop )
-		get: function() {
+		get() {
 			return nav.screenStyle;
 		},
-		set: function(mode) {
+		set(mode) {
 			if ($.inArray(mode, nav.screenModes) != -1) {	// Check if the mode is valid
 				nav.screenStyle = mode;
 			} else {
@@ -40,17 +40,18 @@ var nav = {
 	btnClick: {	// Button click object
 
 		// Do something when a button is clicked
-		listen: function() {
+		listen() {
 			$('#menu-trigger').click(function() {
 				// Triggering menu
 				if (nav.checkAnimQ() === true) {
-
 					if (nav.opened === false) {
 						nav.animation.showMenu();
+						//nav.touchScroll.disable();
 						$('html, body').css({'overflow': 'hidden'});
 
 					} else {
 						nav.animation.hideMenu();
+						//nav.touchScroll.enable();
 						$('html, body').css({'overflow': 'auto'});
 					}
 				}
@@ -58,10 +59,24 @@ var nav = {
 		}
 	},
 
-	resize: {
-		listen: function() {	// Listen for any kind of resizing
-			$(window).on('resize', function() {
+	touchScroll: {
+		enable() {
+			document.body.addEventListener('touchmove', (e) => {
+				return true;
+			})
+		},
 
+		disable() {
+			document.body.addEventListener('touchmove', (e) => {
+				e.preventDefault();
+				e.stopPropagation();
+			}, false)
+		}
+	},
+
+	resize: {
+		listen() {	// Listen for any kind of resizing
+			$(window).on('resize', function() {
 				switch(window.innerWidth < 768) {
 					// Mobile menu
 					case true:
@@ -73,13 +88,15 @@ var nav = {
 
 					// Desktop menu
 					case false:
-						nav.resize.setInitPosDesk();
+						if (nav.screenMode.get() === 'mobile') {
+							nav.resize.setInitPosDesk();
+						}
 					break;
 				}
 			});
 		},
 
-		init: function() {
+		init() {
 			if (nav.getViewportSize().width < 768) {
 				this.setInitPosMob();
 			} else {
@@ -89,7 +106,7 @@ var nav = {
 			this.listen();
 		},
 
-		setInitPosMob: function() {
+		setInitPosMob() {
 		// Set the default position and dimentions of the mobile menu (when closed)
 
 			nav.menu.css('top', '-100vh').css('height', '100vh');
@@ -102,10 +119,12 @@ var nav = {
 			nav.screenMode.set('mobile');
 		},
 
-		setInitPosDesk: function() { // Default position for desktop
+		setInitPosDesk() { // Default position for desktop
 			nav.menu.css('opacity', 1).css('height', '50px').css('top', 'unset');
+			$('html, body').css({'overflow': 'auto'});
 			nav.opened = false;
 			nav.screenMode.set('desktop');
+			nav.touchScroll.enable();
 		}
 	},
 
@@ -114,7 +133,6 @@ var nav = {
 
 		showMenu: function() {
 			nav.resize.setInitPosMob();
-			//nav.fixedBar.animate({opacity: '1'}, 1);
 			nav.menu.animate({opacity: '0.95'}, 1);
 			nav.menu.animate({top: (nav.fixedBar.innerHeight() / 2)}, this.slideSpeed, function() {
 				nav.animation.menuTriggerOpened();
@@ -183,8 +201,6 @@ var nav = {
 	}
 }
 
-
-
 $(document).ready(function() {
 
 	//=============================
@@ -193,5 +209,6 @@ $(document).ready(function() {
 
 	nav.init();
 
-
 });
+
+export default nav;

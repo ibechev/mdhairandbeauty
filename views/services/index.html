@@ -1,12 +1,14 @@
 <section class="index services">
 
 	<div class="services-nav">
-		<h3>Browse our services</h3>
+		<h1>Browse our services</h1>
 		<ul id='services-nav'>
-			<li id='nav-hair' class="shadow">Hair care</li>
-			<li id='nav-skin' class="shadow">Skin &#38 Makeup</li>
-			<li id='nav-nails' class="shadow">Nail bar</li>
-			<li id='nav-body' class="shadow">Body massage</li>
+			<li class='top-line'></li>
+			<li id='nav-hair' class="option">Hair care</li>
+			<li id='nav-skin' class="option">Skin &amp; Makeup</li>
+			<li id='nav-nails' class="option">Nail bar</li>
+			<li id='nav-body' class="option">Body massage</li>
+			<li class='bottom-line'></li>
 		</ul>
 	</div>
 
@@ -14,13 +16,11 @@
 
 		<div id="hair" class="service hair">
 			<div class="head">
-				<div class="img-container">
-					<div class="img-wrapper shadow">
-						<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_hair@1x.png" alt="Hair care">
-					</div>
-				</div>
 				<div class="head-text">
 					<h1>Hair Care</h1>
+				</div>
+				<div class="img-container">
+					<img class='shadow' src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services_hair@1x.png" alt="Hair care">
 				</div>
 			</div>
 			<div class="text">
@@ -35,16 +35,14 @@
 		<div id="skin" class="service skin">
 			<div class="head">
 				<div class="head-text">
-					<h1>Skin &#38 Makeup</h1>
+					<h1>Skin &amp; Makeup</h1>
 				</div>
 				<div class="img-container">
-					<div class="img-wrapper shadow">
-						<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-skin@1x.png"
+						<img class='shadow' src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-skin@1x.png"
 						srcset="
 							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-skin@1x.png 750w,
 							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-skin@2x.jpg 1500w"
-						alt="Skin care">
-					</div>
+						alt="Skin care" />
 				</div>
 			</div>
 			<div class="text">
@@ -60,17 +58,15 @@
 
 		<div id="nails" class="service nails">
 			<div class="head">
-				<div class="img-container">
-					<div class="img-wrapper shadow">
-						<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@1x.jpg"
-						srcset="
-							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@1x.jpg 750w,
-							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@2x.jpg 1500w"
-						alt="Nail bar">
-					</div>
-				</div>
 				<div class="head-text">
 					<h1>Nail bar</h1>
+				</div>
+				<div class="img-container">
+					<img class='shadow' src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@1x.jpg"
+					srcset="
+						<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@1x.jpg 750w,
+						<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-nail@2x.jpg 1500w"
+					alt="Nail bar" />
 				</div>
 			</div>
 			<div class="text">
@@ -85,13 +81,11 @@
 					<h1>Body massage</h1>
 				</div>
 				<div class="img-container">
-					<div class="img-wrapper shadow">
-						<img src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@1x.png"
-							srcset="
-								<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@1x.png 750w,
-								<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@2x.jpg 1500w"
-							alt="Body massage">
-					</div>
+					<img class='shadow' src="<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@1x.png"
+						srcset="
+							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@1x.png 750w,
+							<?php echo $GLOBALS['environment']; ?>/webroot/images/home/services/services-body@2x.jpg 1500w"
+						alt="Body massage" />
 				</div>
 			</div>
 			<div class="text">
