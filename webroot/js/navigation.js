@@ -47,7 +47,10 @@ var nav = {
 					if (nav.opened === false) {
 						nav.animation.showMenu();
 						//nav.touchScroll.disable();
-						$('html, body').css({'overflow': 'hidden'});
+						$('html, body').css({
+							'overflow-x': 'hidden',
+							'overflow-y': 'hidden'
+						});
 
 					} else {
 						nav.animation.hideMenu();
