@@ -61,16 +61,23 @@ var nav = {
 
 	touchScroll: {
 		enable() {
-			document.ontouchstart = (e) => {
+			document.addEventListener('touchmove', (e) => {
 				return true;
-			}
+			});
+			document.addEventListener('touchstart', (e) => {
+				return true;
+			});
 		},
 
 		disable() {
-			document.ontouchstart = (e) => {
+			document.addEventListener('touchmove',(e) => {
 				e.preventDefault();
 				e.stopPropagation();
-			}
+			}, false);
+			document.addEventListener('touchstart',(e) => {
+				e.preventDefault();
+				e.stopPropagation();
+			}, false);
 		}
 	},
 
