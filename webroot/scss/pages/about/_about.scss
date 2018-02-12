@@ -13,7 +13,7 @@ section.about {
 
 		width: 90%;
 		position: relative;
-		margin: 140px auto 0;
+		margin: 160px auto 0;
 		padding-bottom: 15px;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -77,15 +77,22 @@ section.about {
 			}
 		}
 
-		.bio {
+		.quote {
 			@include boxSizing(border-box);
 			width: 95%;
 			margin: 25px auto 25px;
 			padding: 20px 10px;
 
-			.bio-ul {
+			.quote-ul {
 				text-align: center;
 				color: rgba(black, .5);
+
+				.quote-li {
+					.quote-p {
+						font-size: 1.5em;
+						font-family: $heading;
+					}
+				}
 			}
 		}
 
@@ -96,6 +103,7 @@ section.about {
 				text-align: justify;
 		    word-wrap: break-word;
 		    word-spacing: 0.10em;
+				font-size: 1.2em;
 		    color: black;
 
 				&:not(:last-child) {
