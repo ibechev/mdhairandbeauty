@@ -17,6 +17,7 @@ header {
 		opacity: 0;
 		background-color: #0f1a25;
 		border-left: 5px solid rgba($white, .75);
+		visibility: hidden;
 
 		#close-menu {
 			position: absolute;

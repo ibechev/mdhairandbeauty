@@ -38,26 +38,25 @@ var nav = {
 	},
 
 	btnClick: {	// Button click object
-
 		// Do something when a button is clicked
 		listen() {
-			$('#open-menu').click(function() {
+			$('#open-menu').click(() => {
 				nav.animation.showMenu();
 			});
 
-			$('#close-menu').click(function() {
+			$('#close-menu').click(() => {
 				nav.animation.hideMenu();
 			});
 
-			 document.getElementById('menu-Curtain').onclick = () => {
-				 nav.animation.hideMenu();
-			 }
+			document.getElementById('menu-Curtain').onclick = () => {
+			 nav.animation.hideMenu();
+			}
 		}
 	},
 
 	resize: {
 		listen() {	// Listen for any kind of resizing
-			$(window).on('resize', function() {
+			$(window).on('resize', () => {
 				switch(window.innerWidth < 768) {
 					// Mobile menu
 					case true:
@@ -89,9 +88,11 @@ var nav = {
 		setInitPosMob() {
 		// Set the default position and dimentions of the mobile menu (when closed)
 
-			nav.menu
-				.css('right', '-' + nav.menu.outerWidth() + 'px')
-				.css('height', '100vh');
+			nav.menu.css({
+				'visibility': 'hidden',
+				'right': '-' + nav.menu.outerWidth() + 'px',
+				'height': '100vh'
+			});
 
 			// Add 'overflow: scroll' to the menu only if the devise is mobile
 			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent && nav.getViewportSize().width < 768)) {
@@ -102,14 +103,19 @@ var nav = {
 		},
 
 		setInitPosDesk() { // Default position for desktop
-			nav.menu
-				.css('opacity', 1)
-				.css('height', '50px')
-				.css('right', '0');
-			nav.menuCurtain
-				.css('opacity', 'o')
-				.css('visibility', 'hidden');
-			$('html, body').css({'overflow': 'auto'});
+			nav.menu.css({
+				'visibility': 'visible',
+				'opacity': '1',
+				'height': '50px',
+				'right': '0'
+			});
+
+			nav.menuCurtain.css({
+				'opacity': '0',
+				'visibility': 'hidden'
+			});
+
+			nav.root.css({'overflow': 'auto'});
 
 			nav.screenMode.set('desktop');
 		}
@@ -120,12 +126,18 @@ var nav = {
 
 		showMenu: function() {
 			nav.resize.setInitPosMob();
-			nav.menu.animate({opacity: '0.95'}, 1);
-			nav.menu.animate({right: 0}, this.slideSpeed, function() {
-				// some callback
-			});
-			nav.menuCurtain.css({'visibility': 'visible'}).animate({opacity: .75}, this.slideSpeed);
-			$('html, body').css({
+			nav.menu
+				.css({
+					'visibility': 'visible',
+					'opacity': '0.95'
+				})
+				.animate({right: 0}, this.slideSpeed);
+
+			nav.menuCurtain
+				.css({'visibility': 'visible'})
+				.animate({opacity: .75}, this.slideSpeed);
+
+			nav.root.css({
 				'overflow-x': 'hidden',
 				'overflow-y': 'hidden'
 			});
@@ -133,12 +145,18 @@ var nav = {
 
 		hideMenu: function(href) {
 			nav.menu.animate({right: '-' + nav.menu.outerWidth() + 'px'}, this.slideSpeed, function() {
-				nav.menu.animate({opacity: '0'}, 1);
+				$(this)
+					.css({
+						'opacity': '0',
+						'visibility': 'hidden'
+					});
 			});
+
 			nav.menuCurtain.animate({opacity: 0}, this.slideSpeed, () => {
 				nav.menuCurtain.css({'visibility': 'hidden'});
 			});
-			$('html, body').css({'overflow': 'auto'});
+
+			nav.root.css({'overflow': 'auto'});
 		},
 
 		// // Animate the trigger button
@@ -167,15 +185,6 @@ var nav = {
 			// 	nav.barMiddle.css({x: 0, width: 35, rotate: 0});
 			// 	nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
 			// }
-	},
-
-	checkAnimQ: function() {	// Check if all animations have complete ( queue is empty )
-		console.log(nav.menu);
-		if (this.menu.queue().length == 0 && this.fixedBar.queue().length == 0 && $('.menu-ul li').queue().length == 0) {
-			return true;
-		} else {
-			return false;
-		}
 	},
 
 	//	Get the viewport size. Tested on IE4+, Firefox, Chrome, Safari, Opera.
