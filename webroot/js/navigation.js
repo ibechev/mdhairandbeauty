@@ -7,9 +7,9 @@ var transit = require('jquery.transit');
 //=======================
 
 var nav = {
-	menu					: $('.menu-ul'),
 	fixedBar			: $('header'),
-	opened		    : false, // Whether the menu is opened or closed
+	menu					: $('.menu-wrap'),
+	menuCurtain		: $('.menu-curtain'),
 	screenStyle		: null, // The current style of device
 	root					: $('html, body'),
 	screenModes		: ['mobile', 'desktop'], // possible values of screen mode
@@ -41,54 +41,17 @@ var nav = {
 
 		// Do something when a button is clicked
 		listen() {
-			$('#menu-trigger').click(function() {
-				// Triggering menu
-				if (nav.checkAnimQ() === true) {
-					if (nav.opened === false) {
-						nav.animation.showMenu();
-						//nav.touchScroll.disable();
-						$('html, body').css({
-							'overflow-x': 'hidden',
-							'overflow-y': 'hidden'
-						});
+			$('#open-menu').click(function() {
+				nav.animation.showMenu();
+			});
 
-					} else {
-						nav.animation.hideMenu();
-						//nav.touchScroll.enable();
-						$('html, body').css({'overflow': 'auto'});
-					}
-				}
+			$('#close-menu').click(function() {
+				nav.animation.hideMenu();
 			});
-		}
-	},
 
-	touchScroll: {
-		enable() {
-			window.addEventListener('touchmove', (e) => {
-				return true;
-			});
-			window.addEventListener('touchstart', (e) => {
-				return true;
-			});
-			window.addEventListener('scroll', (e) => {
-				return true;
-			});
-		},
-
-		disable() {
-			window.addEventListener('touchmove',(e) => {
-				e.preventDefault();
-				e.stopPropagation();
-			}, false);
-			window.addEventListener('touchstart',(e) => {
-				e.preventDefault();
-				e.stopPropagation();
-			}, false);
-			window.addEventListener('scroll',(e) => {
-				window.scrollTo(0, 0);
-				e.preventDefault();
-				e.stopPropagation();
-			}, false);
+			 document.getElementById('menu-Curtain').onclick = () => {
+				 nav.animation.hideMenu();
+			 }
 		}
 	},
 
@@ -100,7 +63,6 @@ var nav = {
 					case true:
 						if (nav.screenMode.get() === 'desktop') {
 							nav.resize.setInitPosMob();
-							nav.animation.menuTriggerDefault();
 						}
 					break;
 
@@ -127,7 +89,9 @@ var nav = {
 		setInitPosMob() {
 		// Set the default position and dimentions of the mobile menu (when closed)
 
-			nav.menu.css('top', '-100vh').css('height', '100vh');
+			nav.menu
+				.css('right', '-' + nav.menu.outerWidth() + 'px')
+				.css('height', '100vh');
 
 			// Add 'overflow: scroll' to the menu only if the devise is mobile
 			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent && nav.getViewportSize().width < 768)) {
@@ -138,63 +102,75 @@ var nav = {
 		},
 
 		setInitPosDesk() { // Default position for desktop
-			nav.menu.css('opacity', 1).css('height', '50px').css('top', 'unset');
+			nav.menu
+				.css('opacity', 1)
+				.css('height', '50px')
+				.css('right', '0');
+			nav.menuCurtain
+				.css('opacity', 'o')
+				.css('visibility', 'hidden');
 			$('html, body').css({'overflow': 'auto'});
-			nav.opened = false;
+
 			nav.screenMode.set('desktop');
-			nav.touchScroll.enable();
 		}
 	},
 
 	animation: {	// Menu and menu button animation
-		slideSpeed: 250,
+		slideSpeed: 300,
 
 		showMenu: function() {
 			nav.resize.setInitPosMob();
 			nav.menu.animate({opacity: '0.95'}, 1);
-			nav.menu.animate({top: (nav.fixedBar.innerHeight() / 2)}, this.slideSpeed, function() {
-				nav.animation.menuTriggerOpened();
+			nav.menu.animate({right: 0}, this.slideSpeed, function() {
+				// some callback
 			});
-			nav.opened = true;
+			nav.menuCurtain.css({'visibility': 'visible'}).animate({opacity: .75}, this.slideSpeed);
+			$('html, body').css({
+				'overflow-x': 'hidden',
+				'overflow-y': 'hidden'
+			});
 		},
 
 		hideMenu: function(href) {
-			nav.menu.animate({top: '-100vh'}, this.slideSpeed, function() {
+			nav.menu.animate({right: '-' + nav.menu.outerWidth() + 'px'}, this.slideSpeed, function() {
 				nav.menu.animate({opacity: '0'}, 1);
-				nav.animation.menuTriggerClosed(href);
 			});
-			nav.opened = false;
+			nav.menuCurtain.animate({opacity: 0}, this.slideSpeed, () => {
+				nav.menuCurtain.css({'visibility': 'hidden'});
+			});
+			$('html, body').css({'overflow': 'auto'});
 		},
 
-		// Animate the trigger button
-			btnSpeed: 250,
-			// Menu opened - showing X
-			menuTriggerOpened: function() {
-				nav.barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, this.btnSpeed);
-				nav.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
-				nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
-			},
-
-			// Menu closed - showing 3 horizontal bars
-			menuTriggerClosed: function(href) {
-				nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
-				nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed,
-					// Loading the selected page after the last animation has completed
-					function(href) {
-						if (href) {window.location = href;}
-					});
-			},
+		// // Animate the trigger button
+		// 	btnSpeed: 250,
+		// 	// Menu opened - showing X
+		// 	menuTriggerOpened: function() {
+		// 		nav.barTop.transition({y: 9, x: 2.5, rotate: 45, width: 30}, this.btnSpeed);
+		// 		nav.barMiddle.transition({x: 3, rotate: 45, width: 30}, this.btnSpeed);
+		// 		nav.barBottom.transition({y: -9, x: 2.5, rotate: -45, width: 30}, this.btnSpeed);
+		// 	},
+    //
+		// 	// Menu closed - showing 3 horizontal bars
+		// 	menuTriggerClosed: function(href) {
+		// 		nav.barTop.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed);
+		// 		nav.barMiddle.transition({x: 0, width: 35, rotate: 0}, this.btnSpeed);
+		// 		nav.barBottom.transition({y: 0, x: 0, width: 35, rotate: 0}, this.btnSpeed,
+		// 			// Loading the selected page after the last animation has completed
+		// 			function(href) {
+		// 				if (href) {window.location = href;}
+		// 			});
+		// 	},
 
 			// Menu trigger in default position ( no animation )
-			menuTriggerDefault: function() {
-				nav.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
-				nav.barMiddle.css({x: 0, width: 35, rotate: 0});
-				nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
-			}
+			// menuTriggerDefault: function() {
+			// 	nav.barTop.css({y: 0, x: 0, width: 35, rotate: 0});
+			// 	nav.barMiddle.css({x: 0, width: 35, rotate: 0});
+			// 	nav.barBottom.css({y: 0, x: 0, width: 35, rotate: 0});
+			// }
 	},
 
 	checkAnimQ: function() {	// Check if all animations have complete ( queue is empty )
+		console.log(nav.menu);
 		if (this.menu.queue().length == 0 && this.fixedBar.queue().length == 0 && $('.menu-ul li').queue().length == 0) {
 			return true;
 		} else {

@@ -10,51 +10,57 @@
 </div>
 
 <header>
+	<nav class='menu-wrap'>
+		<div id='close-menu'><i class="fa fa-times" aria-hidden="true"></i></div>
+		<ul class="menu">
+			<li>
+				<a <?php if (App::getRouter()->getController() == 'home') { ?> class="active" <?php } ?>
+					href="<?php echo $GLOBALS['environment']; ?>/home" class="go-to-page"><strong>home</strong></a>
+			</li>
+
+			<li></li>
+
+			<li>
+				<a <?php if (App::getRouter()->getController() == 'services') { ?> class="active" <?php } ?>
+				href="<?php echo $GLOBALS['environment']; ?>/services" class="go-to-page"><strong>services</strong></a>
+			</li>
+
+			<li></li>
+
+			<li>
+				<a <?php if (App::getRouter()->getController() == 'gallery') { ?> class="active" <?php } ?>
+				href="<?php echo $GLOBALS['environment']; ?>/gallery" class="go-to-page"><strong>gallery</strong></a>
+			</li>
+
+			<li></li>
+
+			<li>
+				<a <?php if (App::getRouter()->getController() == 'contact') { ?> class="active" <?php } ?>
+				href="<?php echo $GLOBALS['environment']; ?>/contact" class="go-to-page"><strong>contact</strong></a>
+			</li>
+
+			<li></li>
+
+			<li>
+				<a <?php if (App::getRouter()->getController() == 'about') { ?> class="active" <?php } ?>
+				href="<?php echo $GLOBALS['environment']; ?>/about" class="go-to-page"><strong>about</strong></a>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div id='menu-Curtain' class='menu-curtain'></div>
+
 	<div class="sub-header">
 		<div id="home-btn">
 			<a href="<?php echo $GLOBALS['environment']; ?>/home"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
 		</div>
 
-		<div id="menu-trigger">
+		<div id="open-menu">
 			<span class="bar-1"></span>
 			<span class="bar-2"></span>
 			<span class="bar-3"></span>
 		</div>
 
 	</div>
-	<ul class="menu-ul">
-
-		<li>
-			<a <?php if (App::getRouter()->getController() == 'home') { ?> class="active" <?php } ?>
-				href="<?php echo $GLOBALS['environment']; ?>/home" class="go-to-page"><strong>home</strong></a>
-		</li>
-
-		<li></li>
-
-		<li>
-			<a <?php if (App::getRouter()->getController() == 'services') { ?> class="active" <?php } ?>
-			href="<?php echo $GLOBALS['environment']; ?>/services" class="go-to-page"><strong>services</strong></a>
-		</li>
-
-		<li></li>
-
-		<li>
-			<a <?php if (App::getRouter()->getController() == 'gallery') { ?> class="active" <?php } ?>
-			href="<?php echo $GLOBALS['environment']; ?>/gallery" class="go-to-page"><strong>gallery</strong></a>
-		</li>
-
-		<li></li>
-
-		<li>
-			<a <?php if (App::getRouter()->getController() == 'about') { ?> class="active" <?php } ?>
-			href="<?php echo $GLOBALS['environment']; ?>/about" class="go-to-page"><strong>about</strong></a>
-		</li>
-
-		<li></li>
-
-		<li>
-			<a <?php if (App::getRouter()->getController() == 'contact') { ?> class="active" <?php } ?>
-			href="<?php echo $GLOBALS['environment']; ?>/contact" class="go-to-page"><strong>contact</strong></a>
-		</li>
-	</ul>
 </header>

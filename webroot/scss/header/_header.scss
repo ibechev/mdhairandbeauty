@@ -7,11 +7,92 @@ header {
 
 	@include boxSizing(border-box);
 
+	.menu-wrap {
+		height: 100vh;
+		width: 80%;
+		z-index: 100;
+		position: fixed;
+		top: 0;
+		right: -80%;
+		opacity: 0;
+		background-color: #0f1a25;
+		border-left: 5px solid rgba($white, .75);
+
+		#close-menu {
+			position: absolute;
+			top: 15px;
+			left: 20px;
+			color: rgba($white, .7);
+			z-index: 100;
+			transition: all .4s ease-in-out;
+
+			i {
+				font-size: 30px;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+
+		.menu {
+			height: 100%;
+			width: 100%;
+			position: relative;
+
+			@include display-flex;
+			@include flex-direction-column;
+			@include justify-content-center;
+			@include boxSizing(border-box);
+
+			li {
+				min-height: 50px;
+				padding: 15px 0 15px 20px;
+
+				@include even() {
+					display: none;
+				}
+
+				@include display-flex;
+				@include justify-content-flex-start;
+				@include boxSizing(border-box);
+
+				a {
+					color: rgba(255, 255, 255, 0.70);
+					font-family: $heading;
+					font-size: 18px;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					text-align: center;
+
+					img.la-biostethique {
+						width: 50%;
+						height: auto;
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+
+
+	}
+
+	.menu-curtain {
+		position: fixed;
+		height: 100vh;
+		width: 100vh;
+		z-index: 99;
+		opacity: 0;
+		background-color: black;
+		visibility: hidden;
+	}
+
 	.sub-header {
 		height: 100%;
 		width: 100%;
 		position: relative;
-		z-index: 100;
+		z-index: 50;
 
 		background-color: $white;
 
@@ -35,7 +116,7 @@ header {
 		}
 
 
-		#menu-trigger {
+		#open-menu {
 			position: relative;
 			display: block;
 			right: 0;
@@ -72,54 +153,10 @@ header {
 		}
 	}
 
+
 }
 
-.menu-ul {
-	height: 100vh;
-	width: 100%;
-	z-index: 99;
-	position: fixed;
-	top: -100vh;
-	opacity: 0;
 
-	background-color: #0e0e0e;
-	color: $white;
-
-	@include display-flex;
-	@include flex-direction-column;
-	@include justify-content-center;
-	@include boxSizing(border-box);
-
-	li {
-		min-height: 50px;
-		padding: 20px 0;
-
-		@include even() {
-			display: none;
-		}
-
-		@include display-flex;
-		@include justify-content-center;
-		@include boxSizing(border-box);
-
-		a {
-			margin: 0 auto;
-
-			color: rgba(255, 255, 255, 0.70);
-			font-family: $heading;
-			font-size: 18px;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			text-align: center;
-
-			img.la-biostethique {
-				width: 50%;
-				height: auto;
-				opacity: 0.7;
-			}
-		}
-	}
-}
 
 // MEDIA QUERIES
 
