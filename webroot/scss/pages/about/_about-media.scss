@@ -1,6 +1,6 @@
 @media only screen and(orientation: landscape) {
   section.about {
-    .employee {
+    .about-card {
       width: 85%;
 
       .header {
@@ -8,6 +8,10 @@
           width: 45%;
         }
       }
+    }
+
+    .about-article {
+      width: 85%;
     }
   }
 }
@@ -19,11 +23,36 @@
       width: 75%;
     }
 
-    .employee {
+    .about-card {
       width: 75%;
 
       .header {
         height: 160px;
+
+        .image {
+          width: 45%;
+          position: relative;
+          bottom: unset;
+        }
+
+        .name {
+          position: relative;
+
+          h4 {
+            margin-bottom: unset;
+          }
+        }
+      }
+
+      .bio {
+        margin-top: 40px;
+      }
+    }
+
+    .about-article {
+      width: 75%;
+
+      .header {
 
         .image {
           width: 45%;
@@ -49,7 +78,13 @@
 
 @media only screen and(max-width: 970px) and (min-width: 768px) {
   section.about {
-    .employee {
+    .about-card {
+      .header {
+        height: 130px;
+      }
+    }
+
+    .about-article {
       .header {
         height: 130px;
       }
@@ -64,7 +99,17 @@
       max-width: 800px;
     }
 
-    .employee {
+    .about-card {
+      width: 65%;
+      max-width: 800px;
+
+      .header {
+        .image {
+          width: 45%;
+        }
+      }
+    }
+    .about-article {
       width: 65%;
       max-width: 800px;
 
