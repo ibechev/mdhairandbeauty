@@ -1,14 +1,12 @@
-@media only screen and(orientation: landscape) {
+@media only screen and(orientation: landscape) and(max-width: 768px) {
 	header {
 		.menu-wrap {
 			.menu {
 				justify-content: flex-end;
 
 				li {
-					@media only screen and(max-width: 768px) {
-						height: 40px;
-						padding: 10px 20px;
-					}
+					height: 40px;
+					padding: 10px 20px;
 				}
 			}
 		}
