@@ -1,3 +1,38 @@
+.gallery {
+  h1 {
+    margin: 30px 0;
+    text-align: center;
+  }
 
-// MEDIA QUERIES 
+  .thumbnails-drid {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+
+    .cell {
+      width: 130px;
+      margin: 1rem;
+
+      img {
+        display: block;
+      }
+
+      .responsive-image {
+        max-width: 100%;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERIES
 @import "gallery-media";

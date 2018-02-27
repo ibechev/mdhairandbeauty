@@ -120,15 +120,45 @@
 			}
 		}
 
-		.hair .head .img-container .img-wrapper img {
-			left: -50px;
+		// individual sections styling
+
+		.hair {
+			.head .img-container .img-wrapper img {
+				left: -50px;
+			}
+
+			.text {
+				ul {
+					width: 85%;
+					padding: 20px 30px;
+					margin: 30px auto 0;
+					background-color: $grayShade;
+
+					@include boxSizing(border-box);
+
+					h4 {
+						text-align: center;
+						margin-bottom: 10px;
+					}
+
+					li {
+						list-style: initial;
+						list-style-type: disc;
+						list-style-position: inside;
+						color: rgba(black, .8);
+					}
+				}
+			}
 		}
+
 		.skin .head .img-container .img-wrapper img {
 			left: -16px;
 		}
+
 		.nails .head .img-container .img-wrapper img {
 			left: -60px;
 		}
+
 		.body .head .img-container .img-wrapper img {
 			left: -22px;
 		}

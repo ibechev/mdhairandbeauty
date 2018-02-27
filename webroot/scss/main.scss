@@ -6,6 +6,13 @@
 @import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
 //@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 
+// PhotoSwipe
+	// Core CSS
+@import '../../node_modules/photoswipe/dist/photoswipe';
+	// Skin CSS file (styling of UI - buttons, caption, etc.)
+@import '../../node_modules/photoswipe/dist/default-skin/default-skin';
+	//
+
 
 .loader {
 	height: 100vh;
@@ -43,7 +50,7 @@
 			border: 1px solid transparent;
 			border-top-color: rgba(0, 0, 0, 0.7);
 			border-bottom-color: rgba(0, 0, 0, 0.7);
-			-webkit-animation: spinner 2s linear infinite;	
+			-webkit-animation: spinner 2s linear infinite;
 			        animation: spinner 2s linear infinite;
 
 		}

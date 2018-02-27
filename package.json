@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/ibechev/mdhair-beauty#readme",
   "dependencies": {
-    "bxslider": "^4.2.13",
     "jquery": "^3.2.1",
-    "jquery.transit": "^0.9.12"
+    "jquery.transit": "^0.9.12",
+    "photoswipe": "^4.1.2"
   },
   "devDependencies": {
     "webpack": "^3.11.0"
