@@ -50,6 +50,12 @@
     transform: $var1;
 }
 
+@mixin translate($var1, $var2) {
+	-webkit-transform: translate($var1, $var2);
+      -ms-transform: translate($var1, $var2);
+          transform: translate($var1, $var2);
+}
+
 @mixin placeholder {
 	&::-webkit-input-placeholder {@content}
 	&:-moz-placeholder           {@content}

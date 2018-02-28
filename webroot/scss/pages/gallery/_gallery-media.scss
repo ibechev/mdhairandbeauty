@@ -1,10 +1,11 @@
 .gallery {
-  @media only screen and(min-width: 600px) {
-    .thumbnails-drid {
+  @media only screen and(min-width: 700px) {
+    .thumbnails-grid {
+      max-width: 800px;
 
       .cell {
         width: 200px;
-        margin: 1rem;
+        height: 200px;
       }
     }
   }

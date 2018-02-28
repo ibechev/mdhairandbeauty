@@ -1,5 +1,5 @@
 'use strict';
-var transit = require('jquery.transit');
+//var transit = require('jquery.transit');
 
 
 //=======================

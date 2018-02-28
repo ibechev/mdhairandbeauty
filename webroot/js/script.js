@@ -1,4 +1,7 @@
+'use strict';
+
 import nav from './navigation';
+
 /*
 //=================================
 // Find spesific page section
@@ -63,9 +66,6 @@ $(window).on('load', function(){
 //============================================
 function setHomeHeight() {
 	var docHeight = $(window).height();
-
-
-	$('section.index:not(home)').css('min-height', docHeight + 'px');
 
 
 	// Set height for the Loading div element
