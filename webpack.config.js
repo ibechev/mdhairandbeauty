@@ -4,10 +4,17 @@ var webpack = require('webpack');
 module.exports = {
   context: __dirname + "/webroot/js",
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./entry.js",
+  entry: ['babel-polyfill', './entry.js'],
   output: {
     path: __dirname + "/webroot/js/build/",
     filename: "scripts.min.js"
+  },
+  module: {
+    loaders: [{
+      test: /\.js?$/,
+      exclude: /(node_modules)/,
+      loader: 'babel-loader'
+    }]
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

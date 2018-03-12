@@ -1,63 +1,6 @@
 var PhotoSwipe = require('photoswipe');
 var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default');
 
-var galleryPage = () => {
-
-  var pswpElement = document.querySelector('.pswp');
-
-  var items = [
-    {
-        src: 'images/gallery/people-q-c-600-400-2.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 1'
-    },
-    {
-        src: 'images/gallery/people-q-c-600-400-4.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 2'
-    },
-    {
-        src: 'images/gallery/people-q-c-600-400-5.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 3'
-    },
-    {
-        src: 'images/gallery/people-q-c-600-400-6.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 4'
-    },
-    {
-        src: 'images/gallery/people-q-c-600-400-7.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 5'
-    },
-    {
-        src: 'images/gallery/people-q-c-600-400-8.jpg',
-        w: 600,
-        h: 400,
-        title: 'Some title 6'
-    },
-  ];
-
-  // define options (if needed)
-  var options = {
-      // optionName: 'option value'
-      focus: true,
-      history: true,
-      index: 0 // start at first slide
-  };
-
-  // Initializes and opens PhotoSwipe
-  var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-  gallery.init();
-
-}
-
 // Start PhotoSwipe from a click on a thumbnail
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
@@ -265,7 +208,9 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 // Dinamically populate image thumbnails
-var populateThumbnails = (thumbnails) => {
+async function loadThumbnails(url) {
+  const thumbnails = await getInstagramMedia(url);
+
   thumbnails.map(thumbnail => {
     let figure = $("<figure class='cell shadow' itemprop: 'associatedMedia' itemscope itemtype: 'http://schema.org/ImageObject'></figure>");
 
@@ -289,12 +234,17 @@ var populateThumbnails = (thumbnails) => {
     figure.append(anchor);
     $('#thumbnails-grid').append(figure);
   })
-};
+}
+
+
+
 
 $(document).ready(() => {
+  const instaURL = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=203960036.f9b0e7d.a45634cd86b0486da84160f7cc603b32';
+
   $.when(
     // Populate image thumbnails
-    populateThumbnails(galleryContent)
+    loadThumbnails(instaURL)
   ).done(() => {
     // execute above function
     initPhotoSwipeFromDOM('.thumbnails-grid')
@@ -302,7 +252,54 @@ $(document).ready(() => {
 });
 
 
-export default galleryPage;
+const renderElement = (data) => {
+  let imgData = data.data[0].images.standard_resolution;
+
+  let image = $('<img>', {
+    class: 'insta-image',
+    src: imgData.url,
+    alt: imgData.alt
+  });
+
+  //$('.gallery').append(image);
+}
+
+
+async function getInstaData(url) {
+  try {
+    let response = await fetch(url);
+    let feed = await response.json();
+    return feed;
+  } catch(error) {
+    console.log('Error! ', error);
+  }
+}
+
+async function getInstagramMedia(url) {
+  const instaData = await getInstaData(url);
+  let galleryData;
+
+  galleryData = instaData.data.map((
+    {
+      images: {thumbnail, low_resolution, standard_resolution},
+      caption: {text},
+      type
+    }
+  ) => {
+    return {
+      a: {
+        href: standard_resolution.url,
+        dataSize: `${standard_resolution.width}x${standard_resolution.height}`
+      },
+      img: {
+        thumbnailSrc: thumbnail.url,
+        alt: text
+      }
+    };
+  });
+
+  return galleryData;
+}
 
 
 var galleryContent = [
