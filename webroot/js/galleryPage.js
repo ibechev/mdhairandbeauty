@@ -240,6 +240,7 @@ async function loadThumbnails(url) {
 
 
 $(document).ready(() => {
+  // const instaURL = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=203960036.f9b0e7d.a45634cd86b0486da84160f7cc603b32';
   const instaURL = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=203960036.f9b0e7d.a45634cd86b0486da84160f7cc603b32';
 
   $.when(
@@ -300,73 +301,3 @@ async function getInstagramMedia(url) {
 
   return galleryData;
 }
-
-
-var galleryContent = [
-  {
-    a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-2.jpg',
-      dataSize: '600x400'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-2.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  },
-  {
-    a: {
-      href: 'webroot/images/gallery/animals-h-c-400-600-2.jpg',
-      dataSize: '400x600'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/animals-h-c-400-600-2.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  },
-  {
-    a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-4.jpg',
-      dataSize: '600x400'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-4.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  },
-  {
-    a: {
-      href: 'webroot/images/gallery/fashion-h-c-400-600-10.jpg',
-      dataSize: '400x600'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/fashion-h-c-400-600-10.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  },
-  {
-    a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-7.jpg',
-      dataSize: '600x400'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-7.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  },
-  {
-    a: {
-      href: 'webroot/images/gallery/nightlife-h-c-400-600-1.jpg',
-      dataSize: '400x600'
-    },
-    img: {
-      thumbnailSrc: 'webroot/images/gallery/nightlife-h-c-400-600-1.jpg',
-      alt: 'Some description'
-    },
-    caption: 'Some caption'
-  }
-]
