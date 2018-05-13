@@ -1,5 +1,6 @@
 var PhotoSwipe = require('photoswipe');
 var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default');
+import { galleryImageObjects } from './galleryImageObjects';
 
 // Start PhotoSwipe from a click on a thumbnail
 var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -208,9 +209,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 // Dinamically populate image thumbnails
-async function loadThumbnails(url) {
-  const thumbnails = await getInstagramMedia(url);
-
+const populateThumbnails = (thumbnails) => {
   thumbnails.map(thumbnail => {
     let figure = $("<figure class='cell shadow' itemprop: 'associatedMedia' itemscope itemtype: 'http://schema.org/ImageObject'></figure>");
 
@@ -234,70 +233,14 @@ async function loadThumbnails(url) {
     figure.append(anchor);
     $('#thumbnails-grid').append(figure);
   })
-}
-
-
-
+};
 
 $(document).ready(() => {
-  // const instaURL = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=203960036.f9b0e7d.a45634cd86b0486da84160f7cc603b32';
-  const instaURL = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=203960036.f9b0e7d.a45634cd86b0486da84160f7cc603b32';
-
   $.when(
     // Populate image thumbnails
-    loadThumbnails(instaURL)
+    populateThumbnails(galleryImageObjects)
   ).done(() => {
     // execute above function
     initPhotoSwipeFromDOM('.thumbnails-grid')
   });
 });
-
-
-const renderElement = (data) => {
-  let imgData = data.data[0].images.standard_resolution;
-
-  let image = $('<img>', {
-    class: 'insta-image',
-    src: imgData.url,
-    alt: imgData.alt
-  });
-
-  //$('.gallery').append(image);
-}
-
-
-async function getInstaData(url) {
-  try {
-    let response = await fetch(url);
-    let feed = await response.json();
-    return feed;
-  } catch(error) {
-    console.log('Error! ', error);
-  }
-}
-
-async function getInstagramMedia(url) {
-  const instaData = await getInstaData(url);
-  let galleryData;
-
-  galleryData = instaData.data.map((
-    {
-      images: {thumbnail, low_resolution, standard_resolution},
-      caption: {text},
-      type
-    }
-  ) => {
-    return {
-      a: {
-        href: standard_resolution.url,
-        dataSize: `${standard_resolution.width}x${standard_resolution.height}`
-      },
-      img: {
-        thumbnailSrc: thumbnail.url,
-        alt: text
-      }
-    };
-  });
-
-  return galleryData;
-}
