@@ -1,66 +1,66 @@
 export const galleryImageObjects = [
   {
     a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-2.jpg',
-      dataSize: '600x400'
+      href: 'webroot/images/gallery/gallery_image_640_01.jpg',
+      dataSize: '640x433'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-2.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_01.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
   },
   {
     a: {
-      href: 'webroot/images/gallery/animals-h-c-400-600-2.jpg',
-      dataSize: '400x600'
+      href: 'webroot/images/gallery/gallery_image_640_02.jpg',
+      dataSize: '640x346'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/animals-h-c-400-600-2.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_02.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
   },
   {
     a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-4.jpg',
-      dataSize: '600x400'
+      href: 'webroot/images/gallery/gallery_image_640_03.jpg',
+      dataSize: '640x801'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-4.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_03.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
   },
   {
     a: {
-      href: 'webroot/images/gallery/fashion-h-c-400-600-10.jpg',
-      dataSize: '400x600'
+      href: 'webroot/images/gallery/gallery_image_640_04.jpg',
+      dataSize: '640x801'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/fashion-h-c-400-600-10.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_04.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
   },
   {
     a: {
-      href: 'webroot/images/gallery/people-q-c-600-400-7.jpg',
-      dataSize: '600x400'
+      href: 'webroot/images/gallery/gallery_image_640_05.jpg',
+      dataSize: '640x801'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/people-q-c-600-400-7.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_05.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
   },
   {
     a: {
-      href: 'webroot/images/gallery/nightlife-h-c-400-600-1.jpg',
-      dataSize: '400x600'
+      href: 'webroot/images/gallery/gallery_image_640_06.jpg',
+      dataSize: '640x801'
     },
     img: {
-      thumbnailSrc: 'webroot/images/gallery/nightlife-h-c-400-600-1.jpg',
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_06.jpg',
       alt: 'Some description'
     },
     caption: 'Some caption'
