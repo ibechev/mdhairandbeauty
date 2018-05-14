@@ -1,4 +1,5 @@
 .contact {
+
 	padding-top: 30px;
 	background-color: $white;
 
@@ -22,6 +23,9 @@
 		}
 
 		form {
+			max-width: 800px;
+			margin: auto;
+
 			@include display-flex;
 			@include flex-direction-column;
 			@include align-items-center;
@@ -119,12 +123,14 @@
 
 		.underheader {
 			width: 70%;
+			max-width: 800px;
 			margin: 0 auto 30px;
 			text-align: center;
 		}
 
 		.content {
 			width: 60%;
+			max-width: 350px;
 			margin: 0 auto;
 			@include display-flex;
 			@include justify-content-space-between;
@@ -151,8 +157,9 @@
 	.map {
 		height: 400px;
 		width: 95%;
-		margin: 0 auto;
-		padding: 0 0 50px;
+		max-width: 800px;
+		margin: 0 auto 100px;
+
 
 		@include boxSizing(border-box);
 

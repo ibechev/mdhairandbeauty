@@ -1,4 +1,4 @@
-// IMPORTS
+// Iports
 @import "partials/reset";
 @import "partials/variables";
 @import "partials/mixins";
@@ -294,13 +294,13 @@ textarea, input, button { outline: none; }
 	}
 
 	.one {
-		right: 21px;
+		right: 20px;
 		transform-origin: 14.5px 1.5px;
 		transform: rotate(-45deg);
 	}
 
 	.two {
-		left: 21px;
+		left: 20px;
 		transform-origin: 1.5px 1.5px;
 		transform: rotate(45deg);
 	}
@@ -314,3 +314,7 @@ textarea, input, button { outline: none; }
 .index {
 	position: relative;
 }
+
+
+// Script to install node-sass when vendor folder is missing:
+// sudo npm install --unsafe-perm --verbose -g node-sass
