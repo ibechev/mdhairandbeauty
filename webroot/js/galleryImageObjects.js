@@ -64,5 +64,27 @@ export const galleryImageObjects = [
       alt: 'Some description'
     },
     caption: 'Some caption'
-  }
+  },
+  {
+    a: {
+      href: 'webroot/images/gallery/gallery_image_640_07.jpg',
+      dataSize: '640x801'
+    },
+    img: {
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_07.jpg',
+      alt: 'Some description'
+    },
+    caption: 'Some caption'
+  },
+  {
+    a: {
+      href: 'webroot/images/gallery/gallery_image_640_08.jpg',
+      dataSize: '640x512'
+    },
+    img: {
+      thumbnailSrc: 'webroot/images/gallery/gallery_image_640_08.jpg',
+      alt: 'Some description'
+    },
+    caption: 'Some caption'
+  },
 ]

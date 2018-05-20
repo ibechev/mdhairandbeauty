@@ -1,6 +1,5 @@
 var PhotoSwipe = require('photoswipe');
 var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default');
-import { galleryImageObjects } from './galleryImageObjects';
 
 // Start PhotoSwipe from a click on a thumbnail
 var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -238,9 +237,12 @@ const populateThumbnails = (thumbnails) => {
 $(document).ready(() => {
   $.when(
     // Populate image thumbnails
-    populateThumbnails(galleryImageObjects)
+    populateThumbnails(data)
   ).done(() => {
     // execute above function
     initPhotoSwipeFromDOM('.thumbnails-grid')
   });
+
+
+
 });
