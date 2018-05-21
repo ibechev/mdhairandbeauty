@@ -1,6 +1,6 @@
 var PhotoSwipe = require("photoswipe");
 var PhotoSwipeUI_Default = require("photoswipe/dist/photoswipe-ui-default");
-console.log("Gallery page loaded");
+
 // Start PhotoSwipe from a click on a thumbnail
 var initPhotoSwipeFromDOM = function(gallerySelector) {
   // parse slide data (url, title, size ...) from DOM elements
