@@ -7,108 +7,105 @@
 //@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 
 // PhotoSwipe
-	// Core CSS
-@import '../../node_modules/photoswipe/dist/photoswipe';
-	// Skin CSS file (styling of UI - buttons, caption, etc.)
-@import '../../node_modules/photoswipe/dist/default-skin/default-skin';
-
-
+// Core CSS
+@import "../../node_modules/photoswipe/dist/photoswipe";
+// Skin CSS file (styling of UI - buttons, caption, etc.)
+@import "../../node_modules/photoswipe/dist/default-skin/default-skin";
 
 .loader {
-	height: 100vh;
-	width: 100%;
-	position: fixed;
-	z-index: 9999;
-	background-color: white;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: white;
 
-	.spinner-wrap {
-		width: 150px;
-		height: 150px;
-		position: absolute;
-		left: 50%;
-		margin-left: -75px;
-		top: 50%;
-		margin-top: -75px;
-		-webkit-transition: all 0.3s linear;
-		transition: all 0.3s linear;
-		opacity: 0;
-		-webkit-animation: appear 0.5s linear forwards;
-		        animation: appear 0.5s linear forwards;
+  .spinner-wrap {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -75px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    opacity: 0;
+    -webkit-animation: appear 0.5s linear forwards;
+    animation: appear 0.5s linear forwards;
 
-		@include display-flex;
-		@include justify-content-center;
-		@include align-items-center;
+    @include display-flex;
+    @include justify-content-center;
+    @include align-items-center;
 
-		.spinner {
-			@include boxSizing(border-box);
-			@include transition(all 0.4s linear);
+    .spinner {
+      @include boxSizing(border-box);
+      @include transition(all 0.4s linear);
 
-			width: 100%;
-			height: 100%;
+      width: 100%;
+      height: 100%;
 
-			border-radius: 50%;
-			border: 1px solid transparent;
-			border-top-color: rgba(0, 0, 0, 0.7);
-			border-bottom-color: rgba(0, 0, 0, 0.7);
-			-webkit-animation: spinner 2s linear infinite;
-			        animation: spinner 2s linear infinite;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.7);
+      border-bottom-color: rgba(0, 0, 0, 0.7);
+      -webkit-animation: spinner 2s linear infinite;
+      animation: spinner 2s linear infinite;
+    }
 
-		}
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -48px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
 
-		.text {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			margin-top: -10px;
-			margin-left: -48px;
-			line-height: 20px;
-			color: rgba(0, 0, 0, 0.7);
-		}
-	}
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
 
-	@-webkit-keyframes spinner {
-		0% {
-			-webkit-transform: rotate(0deg);
-			        transform: rotate(0deg);
-		}
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			        transform: rotate(360deg);
-		}
-	}
+  @keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
 
-	@keyframes spinner {
-		0% {
-			-webkit-transform: rotate(0deg);
-			        transform: rotate(0deg);
-		}
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 
-		100% {
-			-webkit-transform: rotate(360deg);
-			        transform: rotate(360deg);
-		}
-	}
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+    }
 
-	@-webkit-keyframes appear {
-		0% {
-			opacity: 0;
-		}
+    100% {
+      opacity: 1;
+    }
+  }
 
-		100% {
-			opacity: 1;
-		}
-	}
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
 
-	@keyframes appear {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 // IMPORTS
@@ -121,84 +118,85 @@
 // CLASSES
 //==============
 
-
 // -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
 .scale-spinner-down {
-	//transform: scale(0);
-	-webkit-animation: hide 0.4s linear forwards;
-	        animation: hide 0.4s linear forwards;
+  //transform: scale(0);
+  -webkit-animation: hide 0.4s linear forwards;
+  animation: hide 0.4s linear forwards;
 }
 
 .wrapper960s {
-	max-width: 960px;
-	width: 100%;
-	margin: 0px auto;
-	padding: 0px;
-	position: relative;
+  max-width: 960px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px;
+  position: relative;
 }
 
-.center { /* Centering the element inside */
-	display: table; /* Allow the centering to work */
-	margin: 0px auto;
+.center {
+  /* Centering the element inside */
+  display: table; /* Allow the centering to work */
+  margin: 0px auto;
 }
 
 .nav-fixed {
-	position: fixed;
-	width: 100%;
-	top: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 button {
-	&:focus {
-		outline: 0;
-	}
+  &:focus {
+    outline: 0;
+  }
 
-	&:hover {
-		cursor: pointer;
-		}
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // For active menu-navigation names
 .active {
-	color: #ff5f5c !important;
-	opacity: 1;
+  color: #ff5f5c !important;
+  opacity: 1;
 
-	@media only screen and(min-width: 768px) {
-		color: #ff5f5c !important;
-		opacity: 1;
-	}
+  @media only screen and(min-width: 768px) {
+    color: #ff5f5c !important;
+    opacity: 1;
+  }
 }
 
 // Center div in another div. Code is for the inner. The outher must be with relative position
 .centerVH {
-	position: absolute;
-	top: 50%; left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-					transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 // General landing elements show/hide classes
 .show {
-	opacity: 1;
+  opacity: 1;
 }
 
 .hide {
-	opacity: 0;
+  opacity: 0;
 }
 
 .firstChar {
-	float: left;
-	color: $redShade;
-	font-family: $firstChar;
-	font-size: 48px;
-	line-height: 39px;
-	padding: 4px 5px 0 3px;
+  float: left;
+  color: $redShade;
+  font-family: $firstChar;
+  font-size: 48px;
+  line-height: 39px;
+  padding: 4px 5px 0 3px;
 }
 
 .shadow {
-	-webkit-box-shadow: 0 8px 7px -5px rgba(black, .5);
-					box-shadow: 0 8px 7px -5px rgba(black, .5);
+  -webkit-box-shadow: 0 8px 7px -5px rgba(black, 0.5);
+  box-shadow: 0 8px 7px -5px rgba(black, 0.5);
 }
 
 /////////////////
@@ -210,111 +208,120 @@ button {
 }
 
 html {
-	height: 100%;
-	box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-	position: relative;
-	margin: 0;
-	padding: 0;
-	background-color: white;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 
-h1, h2, h3, h4, h5 {
-	font-family: $heading;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $heading;
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 h2 {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h3 {
-	font-size: 1.17em;
+  font-size: 1.17em;
 }
 
 h4 {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 h5 {
-	font-size: .83em;
+  font-size: 0.83em;
 }
 
 h6 {
-	font-size: .2;
+  font-size: 0.2;
 }
-p, a, li {
-	font-family: $text;
+p,
+a,
+li {
+  font-family: $text;
 }
 
 p {
-	line-height: 1.5;
+  line-height: 1.5;
 }
 
 a {
-	text-decoration: none;
-	cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-textarea, input, button { outline: none; }
+textarea,
+input,
+button {
+  outline: none;
+}
 
 #scroller-top {
-	width: 45px;
-	height: 45px;
-	position: fixed;
-	bottom: -100px;
-	right: 25px;
-	display: block;
-	z-index: 95;
-	-webkit-transition: all 0.6s ease-in-out;
-	transition: all 0.6s ease-in-out;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  bottom: -100px;
+  right: 25px;
+  display: block;
+  z-index: 95;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
-	border: 1px solid rgba(white, 1);
-	border-radius: 50%;
-	background-color: $redShade;
+  border: 1px solid rgba(white, 1);
+  border-radius: 50%;
+  background-color: $redShade;
 
+  .one,
+  .two {
+    width: 16px;
+    height: 3px;
+    position: absolute;
+    top: 30%;
 
-	.one, .two {
-		width: 16px;
-		height: 3px;
-		position: absolute;
-		top: 30%;
+    border-radius: 1.5px;
+    background-color: white;
+  }
 
-		border-radius: 1.5px;
-		background-color: white;
-	}
+  .one {
+    right: 20px;
+    transform-origin: 14.5px 1.5px;
+    transform: rotate(-45deg);
+  }
 
-	.one {
-		right: 20px;
-		transform-origin: 14.5px 1.5px;
-		transform: rotate(-45deg);
-	}
-
-	.two {
-		left: 20px;
-		transform-origin: 1.5px 1.5px;
-		transform: rotate(45deg);
-	}
-
+  .two {
+    left: 20px;
+    transform-origin: 1.5px 1.5px;
+    transform: rotate(45deg);
+  }
 }
 
 //=======================================================================
 
-
 // Sections General
 .index {
-	position: relative;
+  position: relative;
 }
-
 
 // Script to install node-sass when vendor folder is missing:
 // sudo npm install --unsafe-perm --verbose -g node-sass

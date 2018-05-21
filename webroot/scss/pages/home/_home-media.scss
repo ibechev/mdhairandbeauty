@@ -1,199 +1,225 @@
 @media screen and(orientation: landscape) {
-	section.home {
-		.home-img {
-			width: 60%;
-			margin: 0 auto;
+  section.home {
+    .home-img {
+      width: 60%;
+      margin: 0 auto;
 
-			.brighten {
-				background: transparent;
-				background: -webkit-gradient(linear, left top, left bottom, from(rgba($white, .0)), to(rgba($white, .7)));
-				background: linear-gradient(to bottom, rgba($white, .0), rgba($white, .7));
-			}
-		}
+      .brighten {
+        background: transparent;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba($white, 0)),
+          to(rgba($white, 1))
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba($white, 0),
+          rgba($white, 1)
+        );
+      }
+    }
 
-		.home-logo {
-			margin: -85px 0 70px;
+    .home-logo {
+      margin: -85px 0 70px;
 
-			.logo {
-				width: 50%;
-			}
-		}
+      .logo {
+        width: 50%;
+      }
+    }
 
-		.home-content {
-			.intro {
-				p {
-					width: 70%;
-				}
-			}
+    .home-content {
+      .intro {
+        p {
+          width: 70%;
+        }
+      }
 
-			.la-bios {
-				.img-one {
-					width: 40%;
-				}
+      .la-bios {
+        .img-one {
+          width: 40%;
+        }
 
-				.info-one {
-					p {
-						width: 55%;
-					}
-				}
+        .info-one {
+          p {
+            width: 55%;
+          }
+        }
 
-				.img-two {
-					width: 60%;
-				}
+        .img-two {
+          width: 60%;
+        }
 
-				.info-two {
-					p {
-						width: 55%;
-					}
+        .info-two {
+          p {
+            width: 55%;
+          }
 
-					ul {
-						width: 55%;
-					}
-				}
-			}
+          ul {
+            width: 55%;
+          }
+        }
+      }
 
-			.services-wrapper {
-				.service {
-					img {
-						width: 75%;
-					}
+      .services-wrapper {
+        .service {
+          img {
+            width: 75%;
+          }
 
-					p {
-						width: 60%;
-					}
-				}
-			}
-		}
-	}
+          p {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
 }
-
 
 @media only screen and(min-width: 768px) {
-	section.home {
-		.home-img {
-			width: 70%;
-			margin: 40px auto 0;
+  section.home {
+    .home-img {
+      width: 70%;
+      margin: 40px auto 0;
 
-			.brighten {
-				background: transparent;
-				background: -webkit-gradient(linear, left top, left bottom, from(rgba($white, .0)), to(rgba($white, .7)));
-				background: linear-gradient(to bottom, rgba($white, .0), rgba($white, .7));
-			}
-		}
+      .brighten {
+        background: transparent;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba($white, 0)),
+          to(rgba($white, 1))
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba($white, 0),
+          rgba($white, 1)
+        );
+      }
+    }
 
-		.home-logo {
-			margin: -95px 0 65px;
+    .home-logo {
+      margin: -95px 0 65px;
 
-			.logo {
-				width: 50%;
-			}
-		}
+      .logo {
+        width: 50%;
+      }
+    }
 
-		.home-content {
-			.intro {
-				p {
-					width: 70%;
-				}
-			}
+    .home-content {
+      .intro {
+        p {
+          width: 70%;
+        }
+      }
 
-			.la-bios {
-				.img-one {
-					width: 41%;
-				}
+      .la-bios {
+        .img-one {
+          width: 41%;
+        }
 
-				.info-one {
-					p {
-						width: 55%;
-					}
-				}
+        .info-one {
+          p {
+            width: 55%;
+          }
+        }
 
-				.img-two {
-					width: 65%;
-				}
+        .img-two {
+          width: 65%;
+        }
 
-				.info-two {
-					p {
-						width: 55%;
-					}
+        .info-two {
+          p {
+            width: 55%;
+          }
 
-					ul {
-						width: 60%;
-					}
-				}
-			}
+          ul {
+            width: 60%;
+          }
+        }
+      }
 
-			.services-wrapper {
-				.service {
-					img {
-						width: 75%;
-					}
+      .services-wrapper {
+        .service {
+          img {
+            width: 75%;
+          }
 
-					p {
-						width: 55%;
-					}
-				}
-			}
-		}
-	}
+          p {
+            width: 55%;
+          }
+        }
+      }
+    }
+  }
 }
 
-
-
 @media only screen and(min-width: 1024px) {
-	section.home {
-		.home-img {
-			width: 55%;
-			margin: 40px auto 0;
+  section.home {
+    .home-img {
+      width: 55%;
+      margin: 40px auto 0;
 
-			.brighten {
-				background: transparent;
-				background: -webkit-gradient(linear, left top, left bottom, from(rgba($white, .0)), to(rgba($white, .7)));
-				background: linear-gradient(to bottom, rgba($white, .0), rgba($white, .7));
-			}
-		}
+      .brighten {
+        background: transparent;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba($white, 0)),
+          to(rgba($white, 1))
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba($white, 0),
+          rgba($white, 1)
+        );
+      }
+    }
 
-		.home-logo {
-			margin: -100px 0 65px;
+    .home-logo {
+      margin: -100px 0 65px;
 
-			.logo {
-				width: 40%;
-			}
-		}
+      .logo {
+        width: 40%;
+      }
+    }
 
+    .home-content {
+      .intro {
+        p {
+          width: 50%;
+        }
+      }
 
-		.home-content {
-			.intro {
-				p {
-					width: 50%;
-				}
-			}
+      .la-bios {
+        .img-one {
+          width: 30%;
+        }
 
-			.la-bios {
-				.img-one {
-					width: 30%;
-				}
+        .info-one {
+          p {
+            width: 50%;
+          }
+        }
 
-				.info-one {
-					p {
-						width: 50%;
-					}
-				}
+        .img-two {
+          width: 50%;
+          min-height: 300px;
+        }
 
-				.img-two {
-					width: 50%;
-					min-height: 300px;
-				}
+        .info-two {
+          p {
+            width: 50%;
+          }
 
-				.info-two {
-					p {
-						width: 50%;
-					}
-
-					ul {
-						width: 45%;
-					}
-				}
-			}
-		}
-	}
+          ul {
+            width: 45%;
+          }
+        }
+      }
+    }
+  }
 }
