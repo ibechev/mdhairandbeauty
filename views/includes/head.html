@@ -1,11 +1,12 @@
 <head>
-	<title><?= Config::get('site_name') ?></title>
+	<title><?= Config::get('title'); ?></title>
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta http-equiv="Cache-Control" content="max-age=200" />
-	
-
+	<meta name="keywords" content="<?= implode(', ', Config::get('meta_keywords')); ?>" />
+	<meta name="description" content="<?= Config::get('description'); ?>" />
+	<meta name="google-site-verification" content="hDmtdjUp4Vqav6zzHjnDMKDdAr6UiJfufwE3UIEvVvI" />
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS['environment']; ?>/webroot/scss/main.min.css">
 
@@ -14,13 +15,14 @@
 	<![endif]-->
 
 	<script>
-		(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-		  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk')
-		);
-	</script>
+	(function(d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
+</script>
 </head>
