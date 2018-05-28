@@ -3,8 +3,8 @@
 $GLOBALS['config'] = array(
 
 	// HTML head
-	'title'	=>	'MD hair & beauty salon | Dedicated to making you look and feel your best!',
-	'description' => 'The beauty-professionals at MD Hair & Beauty Salon are dedicated to making you look and feel your best, every time you walk through our door.',
+	'title'	=>	'MD Hair & Beauty Salon | Dedicated to making you look and feel your best!',
+	'description' => 'Welcome to MD Hair & Beauty Salon in Palma de Mallorca. Our team is dedicated to making you look and feel your best, every time you walk through our door.',
 	'meta_keywords' => array(
 		'hair', 'haircut', 'beauty', 'skincare', 'manicure', 'makeup', 	'treatment', 'look', 'haircare', 'hairloss', 'care', 'loss', 'colour', 'dyeing', 'diagnostic', 'helthy', 'nail', 'feet', 'body', 'massage', 'kids', 'children', 'scalp', 'premium', 'mallorca', 'palmanova'),
 
