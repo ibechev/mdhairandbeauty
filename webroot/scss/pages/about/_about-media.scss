@@ -27,12 +27,12 @@
       width: 75%;
 
       .header {
-        height: 160px;
+        // height: 160px;
 
         .image {
           width: 45%;
           position: relative;
-          bottom: unset;
+          bottom: 30%;
         }
 
         .name {
@@ -76,22 +76,6 @@
   }
 }
 
-@media only screen and(max-width: 970px) and (min-width: 768px) {
-  section.about {
-    .about-card {
-      .header {
-        height: 130px;
-      }
-    }
-
-    .about-article {
-      .header {
-        height: 130px;
-      }
-    }
-  }
-}
-
 @media only screen and(min-width: 1025px) {
   section.about {
     .prelude {
@@ -106,6 +90,7 @@
       .header {
         .image {
           width: 45%;
+          bottom: 45%;
         }
       }
     }
