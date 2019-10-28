@@ -8,9 +8,9 @@
 
 // PhotoSwipe
 // Core CSS
-@import "../../node_modules/photoswipe/dist/photoswipe";
+@import "partials/photoswipe";
 // Skin CSS file (styling of UI - buttons, caption, etc.)
-@import "../../node_modules/photoswipe/dist/default-skin/default-skin";
+@import "partials/default-skin";
 
 .loader {
   height: 100vh;
