@@ -3,22 +3,6 @@
     .home-img {
       width: 60%;
       margin: 0 auto;
-
-      .brighten {
-        background: transparent;
-        background: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          from(rgba($white, 0)),
-          to(rgba($white, 1))
-        );
-        background: linear-gradient(
-          to bottom,
-          rgba($white, 0),
-          rgba($white, 1)
-        );
-      }
     }
 
     .home-logo {
@@ -80,22 +64,6 @@
     .home-img {
       width: 70%;
       margin: 40px auto 0;
-
-      .brighten {
-        background: transparent;
-        background: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          from(rgba($white, 0)),
-          to(rgba($white, 1))
-        );
-        background: linear-gradient(
-          to bottom,
-          rgba($white, 0),
-          rgba($white, 1)
-        );
-      }
     }
 
     .home-logo {
@@ -157,22 +125,6 @@
     .home-img {
       width: 55%;
       margin: 40px auto 0;
-
-      .brighten {
-        background: transparent;
-        background: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          from(rgba($white, 0)),
-          to(rgba($white, 1))
-        );
-        background: linear-gradient(
-          to bottom,
-          rgba($white, 0),
-          rgba($white, 1)
-        );
-      }
     }
 
     .home-logo {
